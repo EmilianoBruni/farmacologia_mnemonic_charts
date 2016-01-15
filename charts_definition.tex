@@ -1,0 +1,126 @@
+\tikzset{
+	%Define standard arrow tip
+	>=stealth',node distance=1cm, auto,font=\tiny,
+	%Define style for boxes
+	itm/.style={
+		rectangle,
+		rounded corners,
+		draw=black, very thick,
+		minimum width=5em,
+		minimum height=1.5em,
+		text centered,
+		align=center,
+		inner sep=3pt,
+	},
+	% Define arrow style
+	ar/.style={
+		<-,
+		thick,
+		shorten <=2pt,
+		shorten >=2pt,},
+	dummyar/.style={
+		thick,
+		shorten <=0pt,
+		shorten >=2pt,},
+	dummy/.style={
+		minimum width=10ex,
+		minimum height=0,
+		inner sep=0,
+		outer sep=0,
+	},
+	dummy0/.style={
+		minimum width=0,
+		minimum height=0,
+		inner sep=0,
+		outer sep=0,
+	},
+	count/.style={
+		draw,
+		circle,
+		inner sep=.3ex,
+		outer sep=.3ex,
+		thick,
+		anchor=south,fill=blue!30!white!10
+	},
+}
+\def \lastitem {}
+\def \dummy #1{\node[dummy,right=of #1] (#1_dummy) {};\gdef\lastitem{#1_dummy}}
+\def \dummyz #1{\node[dummy0,right=of #1] (#1_dummy) {}}
+\def \dummyzar #1{\node[dummy0,right=of #1] (#1_dummy) {} edge[ar] (#1.east);\gdef\lastitem{#1_dummy}}
+\def \dummystart #1#2{\node[dummy0, below=of #2] (start#1) {};\gdef\lastitem{start#1}}
+\def \dummyend #1{\node[dummy0,right=of #1] (#1_end) {} edge[ar] (#1.east);;\gdef\lastitem{#1_end}}
+\def \itm #1#2{\gdef\lastitem{#1};\node[itm,fill=blue!40!white!40] (#1) {#2}}
+
+\def \itmright #1#2#3#4{\node[itm, right=of #1] (#2) {#3} edge[ar] (#4.east);\gdef\lastitem{#2}}
+%\def \itmabove #1#2#3#4{\node[itm, above=of #1] (#2) {#3} edge[ar] (#4.east);\gdef\lastitem{#2}}
+\def \itmabove #1#2#3#4{
+	\node[itm, above=of #1] (#2) {#3}; 
+	\draw[thick,shorten <=2pt] (#4.east) -- ++(.3,0) [shorten >=2pt,shorten <=0pt,->] to[out=0,in=225] (#2.south west);
+	\gdef\lastitem{#2}
+}
+\def \itmbelow #1#2#3#4{
+	\node[itm, below=of #1] (#2) {#3};
+	\draw[thick,shorten >=2pt,->] ($(#4.east) + (.3,0)$)  to[out=0,in=155] (#2.north west);
+	\gdef\lastitem{#2};
+}
+
+\def \itmrightnoarrow #1#2#3{\node[itm, right=of #1] (#2) {#3}}
+
+\def \itmrights #1#2#3{\itmright{#1}{#2}{#3}{#1}}
+\def \itmaboves #1#2#3{
+		\node[itm, above=of #1] (#2) {#3};
+		\draw[ar]($(#2.south) + (.5cm,0)$) to[bend left] ($(#1.north)+ (.5cm,0)$);
+		\gdef\lastitem{#2}
+}
+\def \itmbelows #1#2#3{
+	\node[itm, below=of #1] (#2) {#3};
+	\draw[ar]($(#2.north) + (-.5cm,0)$) to[bend left] ($(#1.south)+ (-.5cm,0)$);
+	\gdef\lastitem{#2}
+}
+
+\def \itmsplit #1#2#3#4#5{\dummy{#1};
+	\itmabove{#1_dummy}{#2}{#3}{#1};
+	\itmbelow{#1_dummy}{#4}{#5}{#1}}
+
+\def \itmmerge #1#2#3#4#5{\dummyz{#1_dummy}
+			edge[dummyar] (#2.east)
+			edge[dummyar] (#3.east);
+	\node[itm, right=of #1_dummy_dummy] (#4) {#5}
+			edge[ar,shorten >=0pt] (#1_dummy_dummy.north)}
+
+\def \itmsplitthree #1#2#3#4#5#6#7{
+	\itmrights{#1}{#4}{#5};
+	\itmabove{#4}{#2}{#3}{#1};
+	\itmbelow{#4}{#6}{#7}{#1};
+}
+
+\def \itmsplitfour #1#2#3#4#5#6#7#8#9{
+	\node[itm,above right=0em and 3em of #1] (#4) {#5};
+	\node[itm,above right=3em and 3em of #1] (#2) {#3};
+	\node[itm,below right=0em and 3em of #1] (#6) {#7};
+	\node[itm,below right=3em and 3em of #1] (#8) {#9};
+	
+	\draw[thick,shorten <=2pt] (#1.east) -- ++(.3,0) [shorten >=2pt,shorten <=0pt,->] to[out=0,in=225] (#2.south west);
+	\draw[thick,shorten >=2pt,->] ($(#1.east) + (.3,0)$)  to[out=0,in=205] (#4.south west);
+	\draw[thick,shorten >=2pt,->] ($(#1.east) + (.3,0)$)  to[out=0,in=155] (#6.north west);
+	\draw[thick,shorten >=2pt,->] ($(#1.east) + (.3,0)$)  to[out=0,in=135] (#8.north west);
+}
+
+\def \armergetwo #1#2#3{ 
+	\draw[thick,shorten <=2pt] (#1.east) to[out=0,in=180] ($(#3.west) + (-.3cm,0)$);
+	\draw[thick,shorten <=2pt,shorten >=2pt,->] (#2.east) to[out=0,in=180] ($(#3.west) + (-.3cm,0)$) -- (#3.west);
+}
+
+\def \armergethree #1#2#3{
+	\draw[thick,shorten <=2pt] (#1.east) to[out=0,in=180] ($(#3.west) + (-.3cm,0)$);
+	\draw[thick,shorten <=2pt] (#2.east) to[out=0,in=180] ($(#3.west) + (-.3cm,0)$);
+}
+
+\def \itmcount #1#2{\node[count] at (#2.north) {#1};}
+
+\newcounter{itmcvalue}
+\def \itmcinit #1{\setcounter{itmcvalue}{#1}}
+\def \itmcnoinc {\addtocounter{itmcvalue}{-1};}
+\def \itmc #1{\itmcount{\arabic{itmcvalue}}{#1};\addtocounter{itmcvalue}{1};}
+
+\def\itmr #1#2{\itmrights{\lastitem}{#1}{#2}}

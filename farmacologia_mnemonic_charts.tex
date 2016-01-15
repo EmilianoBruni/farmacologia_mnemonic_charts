@@ -1,0 +1,75 @@
+\documentclass[12pt, a4paper,oneside]{scrartcl}
+
+
+% /-- Packages loading --------------------------------------------------------\
+\usepackage[italian]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{svn-multi}          % supporto SVN
+\usepackage{parskip}            % paragrafi senza indentazione prima riga
+\usepackage{tikz}
+\usepackage{fancyhdr}           % Header e Footer 
+%\usepackage[version=3]{mhchem}
+%\usepackage{ccicons}            % Creative Commons Icons
+% \----------------------------------------------------------------------------/
+
+% /-- title and authors -------------------------------------------------------\
+\def\gtitle#1{\gdef\gtitle{#1}}
+\def\gauthor#1{\gdef\gauthor{#1}}
+\title{Farmacologia Flash Cards}
+\gtitle{Farmacologia Flash Cards}
+\author{Emiliano Bruni (info@ebruni.it)}
+\gauthor{Emiliano Bruni (info@ebruni.it)}
+\date{} %%If commented, the current date is used.
+% \----------------------------------------------------------------------------/
+
+\pdfinfo {
+/Title (\gtitle)
+/Author (\gauthor)
+/Subject (Flash Cards for Farmacologia)
+/Keywords (farmacology, university, medicine, book, charts, mnemonic, flash, card, italian, Chieti)
+/Copyright (copyrighted)
+}
+
+\def\tikzbyncsa{
+	\draw[fill=black] (2pt,2pt) rectangle (78pt,13pt);
+	\begin{scope}
+	\clip (0,0) rectangle (80pt,15pt);
+	\fill[gray!67] (12pt,7.5pt) circle [x radius=19pt,y radius=14pt];
+	\node[draw,
+		circle,
+		inner sep=2pt,
+		outer sep=0ex,
+		very thick, fill=white] at (15pt,7.5pt) {\small\bf\textsf{cc}};
+	\end{scope}
+	\draw[line width=1pt, white] (78pt,14pt)--(1pt,14pt)--(1pt,1pt) -- (78pt,1pt);
+	\draw[line width=1pt] (0,0) rectangle (80pt,15pt);
+	\node[white] at (55pt,7.5pt) {\scriptsize\bf\textsf{BY-NC-SA}};
+}
+
+
+
+% /-- Sezione/numeropag. nell'header e date e numero di revisione nel footer --\
+\pagestyle{fancy}
+\newcommand{\helv}{\fontfamily{phv}\fontseries{b}\fontsize{8}{10}\selectfont}
+\fancyhf{}
+\fancyhead[LO]{\helv \rightmark}
+\fancyhead[LO]{\helv \leftmark}
+\fancyhead[RO]{\helv \thepage}
+\fancyfoot[ol]{\begin{tikzpicture}[scale=0.6, transform shape,baseline=2pt ]\tikzbyncsa\end{tikzpicture}\ \scriptsize\it Copyright \copyright\ 2016 \gauthor }
+\fancyfoot[or]{\scriptsize \it Revisione \svnrev\  del \svnyear -\svnmonth -\svnday\ \svnhour :\svnminute } % Date
+% \----------------------------------------------------------------------------/
+
+\usetikzlibrary{shapes,arrows,matrix,calc,automata,positioning}
+\numberwithin{equation}{section}  % numeri delle equazioni del tipo x.y
+\numberwithin{table}{section}     % numeri delle tabelle del tipo x.y
+\numberwithin{figure}{section}    % numeri delle figure del tipo x.y
+
+\begin{document}
+	\maketitle
+	\input{charts_definition.tex}
+	\input{mnemonic_charts.tex}
+\end{document}
