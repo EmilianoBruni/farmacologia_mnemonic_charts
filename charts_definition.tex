@@ -54,12 +54,12 @@
 \def \itmright #1#2#3#4{\node[itm, right=of #1] (#2) {#3} edge[ar] (#4.east);\gdef\lastitem{#2}}
 %\def \itmabove #1#2#3#4{\node[itm, above=of #1] (#2) {#3} edge[ar] (#4.east);\gdef\lastitem{#2}}
 \def \itmabove #1#2#3#4{
-	\node[itm, above=of #1] (#2) {#3}; 
+	\node[itm, above=1em of #1] (#2) {#3}; 
 	\draw[thick,shorten <=2pt] (#4.east) -- ++(.3,0) [shorten >=2pt,shorten <=0pt,->] to[out=0,in=225] (#2.south west);
 	\gdef\lastitem{#2}
 }
 \def \itmbelow #1#2#3#4{
-	\node[itm, below=of #1] (#2) {#3};
+	\node[itm, below=1em of #1] (#2) {#3};
 	\draw[thick,shorten >=2pt,->] ($(#4.east) + (.3,0)$)  to[out=0,in=155] (#2.north west);
 	\gdef\lastitem{#2};
 }

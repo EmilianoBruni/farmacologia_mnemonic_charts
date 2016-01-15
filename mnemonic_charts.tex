@@ -52,10 +52,15 @@
 
 \begin{tikzpicture}
 	\itm{main}{Recettore colinergico\\ (ionotropo)};
-	\itmsplit{main}{muscarinico}{muscarinico\\ (proteine G)}{nicotinico}{nicotinico\\ (canale)};
-	\itmsplitfour{muscarinico}{a}{M${}_1$}{b}{M${}_2$}{c}{M${}_3$}{d}{M${}_4$}
-	\node[itm, below=4.5em of c] (e) {M${}_5$};
-	\draw[thick,shorten <=2pt] (muscarinico.east) -- ++(.3,0) [shorten >=2pt,shorten <=0pt,->] to[out=-45,in=125] (e.north west);
+	\dummy{main};
+	\itmabove{main_dummy}{muscarinico}{muscarinico\\ (proteine G)}{main};
+	\node[itm, below=10em of main_dummy] (nicotinico) {nicotinico\\ (canale)};
+	\draw[thick,shorten >=2pt,->] ($(main.east) + (.3,0)$)  to[out=-45,in=155] (nicotinico.north west);
+	\itmsplitfour{muscarinico}{a}{M${}_1\, \uparrow\text{IP}_3, \text{Ca}^{2+}$ eccitatorio (SNC, simpatico post--gangliare)}{b}{M${}_2\, \downarrow$cAMP inibitorio (cuore)}{c}{M${}_3\, \uparrow\text{IP}_3$ eccitatorio (ghiandole esocrine)}{d}{M${}_4$ eccitatorio (SNC)}
+	\node[itm, below=4.5em of c] (e) {M${}_5$ eccitatorio (endotelio vasale)};
+	\draw[thick,shorten <=2pt] (muscarinico.east) -- ++(.3,0) [shorten >=2pt,shorten <=0pt,->] to[out=-45,in=155] (e.north west);
+	
+	\itmsplit{nicotinico}{f}{N${}_\text{N}$ para e\\ ortosimpatico gangliare}{g}{N${}_\text{M}$ giunzione\\ neuromuscolare};
 \end{tikzpicture}
 
 \subsection{Noradrenalina}
@@ -86,6 +91,44 @@
 	\itmsplit{maina}{x}{MAO in fegato e cellule ?????}{y}{COMT nei neuroni}
 \end{tikzpicture}
 
+\begin{tikzpicture}
+	\itm{main}{Recettore adrenergico\\ (metabotropo \\ a proteine G)};
+	\itmsplit{main}{a}{$\alpha$}{b}{$\beta$};
+	\itmsplit{a}{c}{$\alpha_1\,\text{G}_{\text{q}} \uparrow\text{IP}_3, \uparrow\text{Ca}^{2+}$ (postsinaptiche muscolo liscio) }{d}{$\alpha_2\,\text{G}_{\text{i}} \downarrow\text{cAMP}$ (presinaptiche muscolo liscio) };
+	\itmsplitthree{b}{e}{$\beta_1\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti,\\ iuxaglomerulare, epitelio corpi ciliari)}{f}{$\beta_2\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche muscolo liscio e cuore)}{g}{$\beta_3\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti, vescica)};
+\end{tikzpicture}
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\textbf{Organo} & \textbf{Tipo} & \textbf{Recettore} & \textbf{Azione} \\ 
+\hline\hline 
+M. radiale & simpatico & $\alpha_1$ & costrizione \\ 
+\hline 
+M. circolare & parasimpatico & M${}_3$ & costrizione pupilla \\ 
+\hline 
+M. ciliare & simpatico & $\beta$ & rilasciamento \\ 
+\hline 
+M. ciliare & parasimpatico & M${}_2$ & contrazione \\ 
+\hline 
+Nodo SA & simpatico & $\beta_1\beta_2$ & accellerazione \\ 
+\hline 
+Nodo SA & parasimpatico & M${}_2$ & rallentamento \\ 
+\hline 
+Forza contrazione & simpatico & $\beta_1\beta_2$ & aumento \\ 
+\hline 
+Forza contrazione & parasimpatico & M${}_2$ & diminuzione \\ 
+\hline 
+vasi muscolari & simpatico & $\beta$ & rilasciamento \\ 
+\hline 
+muscolo gastrointestinale & simpatico & $\alpha_2\beta_2$ & rilasciamento \\ 
+\hline 
+muscolo gastrointestinale & parasimpatico & M${}_3$ & contrazione \\ 
+\hline 
+sfinteri gastrointestinali & simpatico & $\alpha_1$ & contrazione \\ 
+\hline 
+sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\ 
+\hline 
+\end{tabular} 
 
 \subsection{Serotonina}
 
