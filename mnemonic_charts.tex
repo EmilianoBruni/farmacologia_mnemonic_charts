@@ -152,9 +152,87 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 
 \subsection{Serotonina}
 
+Serotonina o 5-HT o 5-idrossitriptamina
+
+\begin{tikzpicture}
+	\tikzset{level 3/.style={level distance=130pt}}
+	\Tree
+ 	[.Recettore
+ 		[.5-HT1
+ 			[.SNC {GpCR,$\downarrow$cAMP, inibizione presinaptica} ]
+ 		]
+ 		[.5-HT2
+ 			[.{muscolo liscio\\ piastrine} {$\uparrow$IP3, DAG, GpCR} ]
+ 		]
+ 		[.5-HT3
+ 			[.{SNP (nocicettori\\ neuroni enterici)} {canale ionico stimolatore} ]
+ 		]
+ 		[.5-HT4
+ 			[.{SNC,vescica\\ cuore} {$\uparrow$cAMP,GpCR,eccitazione} ]
+ 		]
+ 	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=80pt,level 3/.style={level distance=130pt},
+	level 2/.style={level distance=130pt}}
+	\Tree 
+	[.Sintesi 
+		[.Triptofano  \edge node[smallfont,yshift=5pt,xshift=5.5em]{triptofano} node[smallfont,yshift=-5pt,xshift=5.5em]{idrossilasi} ; 
+			[.{5-idrossitriptofano} \edge node[smallfont,yshift=5pt,xshift=5.5em]{amminoacido} node[smallfont,yshift=-5pt,xshift=5.5em]{decarbossilasi}; 5-HT 
+			]
+		]
+	]	
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=130pt}
+	\Tree 
+	[.Degradazione {MAO (mono-ammino ossidasi)}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=160pt}
+	\Tree
+	[.Effetti {piastrine: aggregazione} {terminazioni nervose: dolore} {SNC: eccitatorio 5-HT4,\\ inibitorio 5-HT1} {vasi: costrizione} {gastroenterico: attivazione secrezione\\ e peristalsi} ]
+\end{tikzpicture}
+
 \subsection{Neurotrasmettitori purinici}
 
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=130pt}}
+ 	\Tree
+ 	[.{Neurotrasmettitori\\ purinici} 
+ 		[.ATP {Aumento della permeabilit\`a di membrana} ]
+ 		[.Adenosina {vasodilatatore tranne che nel rene} {inibizione dell'aggreg. piastrinica} {blocco della conduzione AV}
+ 		]
+ 	]
+\end{tikzpicture}
+
 \subsection{Monossido d'azoto (NO)}
+
+\begin{tikzpicture}
+	\Tree
+	[.Tipi
+		[.iNOS {prodotto dai macrofagi tramite IF$\gamma$}
+		]
+		[.eNOS {endotelio e piastrine}
+		]
+		[.nNOS neuroni
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=160pt}
+	\Tree
+	[.Causa {vasodilatazione} {inibizione dell'aggregazione piastrinica} {plasticit\`a sinaptica} {difesa da cellule neoplastiche, batteri, parassiti} ]
+\end{tikzpicture}
+
+Per via inalatoria $\downarrow$shunt, $\downarrow$broncocostrizione, $\downarrow$ipertensione polmonare e quindi utile anche nella cura dell'asma.
+
+Utile nel trattamento delle malattie neurovegetative e shock settico dove aumenta e nell'ateorscelosi e ipercolesterolemia dove diminuisce. 
 
 \subsection{Dopamina}
 
