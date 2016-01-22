@@ -3,98 +3,92 @@
 \section{Farmaci del SNC e del SNP}
 
 \begin{tikzpicture}
-	\itm{snc}{Sistema nervoso};
-	\itmsplit{snc}{orto}{Simpatico\\ (toraco--addominale)}{para}{Parasimpatico \\(nervi crani e sacrale)}
-	\itmr{}{nell'intima degli organi}
-	\itmrights{orto}{}{gangli pre e para--vertebrali}
+	\Tree
+	[ .{Sistema nervoso} 
+		 [ .{Simpatico\\ (toraco--addominale)} {gangli pre e para--vertebrali} ]
+		 [ .{Parasimpatico \\(nervi crani e sacrale)} {nell'intima degli organi} ]
+	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\itm{main}{Neurotrasmettitori};
-	\itmsplitfour{main}{a}{acetilcolina}{b}{noradrenalina}{c}{serotonina}{d}{monossido d'azoto (NO)}
-	\itmrights{a}{}{recettori colinergici};
-	\itmrights{b}{}{recettori adrenergici};
-	\itmrights{c}{}{recettori serotoninergici};
-	\node[itm, below=4.5em of c] (purine) {purine};
-	\draw[thick,shorten <=2pt] (main.east) -- ++(.3,0) [shorten >=2pt,shorten <=0pt,->] to[out=-45,in=125] (purine.north west);
+	\Tree
+	[.Neurotrasmettitori 
+		 [.acetilcolina {recettori colinergici} ]
+		 [.noradrenalina {recettori adrenergici} ]
+		 [.serotonina {recettori serotoninergici} ]
+		 [.{monossido d'azoto (NO)} ] 
+		 [.purine ]
+	]
 \end{tikzpicture}
 
 \subsection{Acetilcolina}
 
 \begin{tikzpicture}
-	\itm{mainh}{acetilcolina};
-	\itmsplitfour{mainh}{a}{tutte le fibre pregangliali sia pra che orto}{b}{parasimpatiche post gangliali (quasi tutte). Tipo muscarinico}{c}{qualche simpatico postgangliare soprattutto ghiandole sudoripare}{d}{giunzione neuromuscolare}
+	\tikzset{level 1/.style={level distance=150pt}}
+	\Tree
+	[.acetilcolina {tutte le fibre pregangliali sia pra che orto} {parasimpatiche post gangliali (quasi tutte).\\ Tipo muscarinico} {qualche simpatico postgangliare\\ soprattutto ghiandole sudoripare} {giunzione neuromuscolare} ]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\itm{main}{Sintesi};
-	\itmr{a}{acetilCOA + colina}
-	\dummyzar{a}
-	\itmr{b}{acetilcolina}
-	
-	\node[above right=-.5em and 1em of a] {colina};
-	\node[below right=-.5em and 0em of a] {acetiltrasferasi};
+	\tikzset{level 2/.style={level distance=120pt}}
+	\Tree
+	[.Sintesi
+		[.{acetilCOA + colina} \edge node[smallfont,yshift=-5pt,xshift=5em]{acetiltrasferasi} node[smallfont,yshift=5pt,xshift=5em]{colina}; acetilcolina ]
+	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\itm{main}{Degradazione};
-	\itmr{a}{acetilcolina}
-	\dummyzar{a}
-	\itmr{b}{acetato + colina}
-	\node[below right=-.5em and -.3em of a] {acetilcolinesterasi};
+	\tikzset{level 2/.style={level distance=130pt}}
+	\Tree
+	[.Degradazione
+		[.acetilcolina \edge node[smallfont, yshift=-5pt,xshift=5.5em]{acetilcolinesterasi}; {acetato + colina} ]
+	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\itm{main}{Recettore colinergico\\ (ionotropo)};
-	\dummy{main};
-	\itmabove{main_dummy}{muscarinico}{muscarinico\\ (proteine G)}{main};
-	\node[itm, below=10em of main_dummy] (nicotinico) {nicotinico\\ (canale)};
-	\draw[thick,shorten >=2pt,->] ($(main.east) + (.3,0)$)  to[out=-45,in=155] (nicotinico.north west);
-	\itmsplitfour{muscarinico}{a}{M${}_1\, \uparrow\text{IP}_3, \text{Ca}^{2+}$ eccitatorio (SNC, simpatico post--gangliare)}{b}{M${}_2\, \downarrow$cAMP inibitorio (cuore)}{c}{M${}_3\, \uparrow\text{IP}_3$ eccitatorio (ghiandole esocrine)}{d}{M${}_4$ eccitatorio (SNC)}
-	\node[itm, below=4.5em of c] (e) {M${}_5$ eccitatorio (endotelio vasale)};
-	\draw[thick,shorten <=2pt] (muscarinico.east) -- ++(.3,0) [shorten >=2pt,shorten <=0pt,->] to[out=-45,in=155] (e.north west);
-	
-	\itmsplit{nicotinico}{f}{N${}_\text{N}$ para e\\ ortosimpatico gangliare}{g}{N${}_\text{M}$ giunzione\\ neuromuscolare};
+	\Tree
+	[.{Recettore colinergico\\ (ionotropo)}
+		[.{muscarinico\\ (proteine G)}
+			{M${}_1\, \uparrow\text{IP}_3, \text{Ca}^{2+}$ eccitatorio\\ (SNC, simpatico post--gangliare)}
+			{M${}_2\, \downarrow$cAMP inibitorio (cuore)}
+			{M${}_3\, \uparrow\text{IP}_3$ eccitatorio\\ (ghiandole esocrine)}
+			{M${}_4$ eccitatorio (SNC)}
+			{M${}_5$ eccitatorio (endotelio vasale)}
+		]
+		[.{nicotinico\\ (canale)}
+			{N${}_\text{N}$ para e\\ ortosimpatico gangliare}
+			{N${}_\text{M}$ giunzione\\ neuromuscolare}
+		]
+	]
 \end{tikzpicture}
 
 \subsection{Noradrenalina}
 
 \begin{tikzpicture}
-	\itm{main}{noradrenalina};
-	\itmr{}{simpatiche postgangliari}
+	\Tree
+	[.noradrenalina {simpatiche postgangliari} ]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\itm{main}{Sintesi};
-	\itmr{a}{Tirosina}
-	\dummyzar{a}
-	\itmr{b}{DOPA}
-	\itmr{c}{dopamina}
-	\itmr{d}{noradrenalina}
-	\dummyend{d}
-	
-	\dummystart{e}{main}
-	\itmr{f}{adrenalina}
-	
-	\node[above right=-.5em and -.2em of a] {tirosin--idrossilasi};
-	\node[below right=-.5em and 0em of a] {tappa limitante};
-\end{tikzpicture}
-
-\begin{tikzpicture}
+	\begin{scope}
+	\tikzset{level distance=80pt,level 2/.style={level distance=130pt}}
 	\Tree 
 	[.Sintesi 
-		[.Tirosina 
+		[.Tirosina  \edge node[smallfont,yshift=-5pt,xshift=5.5em]{tirosin--idrossilasi} node[smallfont,yshift=5pt,xshift=5.5em]{tappa limitante}; 
 			[.Dopa 
-				[.\node[farmaco]{dopamina};
-					[.\node[farmaco]{noradrenalina}; 
-						[.\node[farmaco]{adrenalina}; ]
-					]
-				]
+				[.\node[farmaco]{dopamina}; \node[dummyc]{};]
 			]
 		]
 	]
-						
-	]
+	\end{scope}
+	\begin{scope}[yshift=-3em,xshift=1em]
+	\tikzset{level distance=80pt}
+	\Tree
+	[.\node[dummyc]{}; 
+		[.\node[farmaco]{noradrenalina}; \node[farmaco]{adrenalina};]
+	]	
+	\end{scope}				
+	
 \end{tikzpicture}
 
 \begin{tikzpicture}
@@ -165,48 +159,54 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 \section{Farmaci anti--ipertensivi}
 
 \begin{tikzpicture}
-	\itm{diuretici}{Diuretici\\ (capitolo ah hoc)};
-	\itmsplitthree{diuretici}{ansa}{Diuretici dell'ansa}{simporto}{Inibitori del simporto\\ $\text{Na}^+\text{-Cl}^-$}{potassio}{Risparmiatori di $\text K^+$}
-	\itmrights{ansa}{}{furosamide}
-	\itmrights{simporto}{}{tiazidici}
-	\itmrights{potassio}{}{spironolattone}
+	\Tree
+	[.{Diuretici\\ (capitolo ah hoc)}
+		[.{Diuretici dell'ansa} \node[farmaco]{furosamide}; ]
+		[.{Inibitori del simporto\\ $\text{Na}^+\text{-Cl}^-$} \node[farmaco]{tiazidici}; ]
+		[. {Risparmiatori di $\text K^+$} \node[farmaco]{spironolattone}; ]
+	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\itm{simpaticolitici}{Simpaticolitici};
-	\itmsplitfour{simpaticolitici}{snc}{SNC}{betab}{$\beta$--bloccanti}{alfaa}{$\alpha$--agonisti}{alfabeta}{Misti $\alpha$/$\beta$};
-%	\dummy{snc}
-	\itmrights{snc}{clonidina}{clonidina}
-%	\draw[thick,shorten >=2pt] (snc) -- (clonidina);
-	\itmabove{clonidina}{metildopa}{$\alpha$--metildopa}{snc};
-	\itmrights{betab}{propranololo}{propranololo};
-	\itmrights{alfaa}{}{doxazosina};
-	\itmrights{alfabeta}{labetalolo}{labetalolo};
-	
-	\itmrights{clonidina}{}{Agonista $\alpha_2$. $\downarrow$noradrenalina\\ Usato in gravidanza \\ Da sonnolenza, depressione\\ $\downarrow$libido, secchezza fauci };
-	\itmrights{metildopa}{}{Inibitore dopa--carbossilasi\\ emergenza ipertensiva \\ Da sedazione, tossicit\`a epatica\\ coombs positivo}
-	\itmrights{propranololo}{}{Usato in ipertensione, scompenso cardiaco, \\ aritmie, glaucoma. Produce $\downarrow$GC e renina. \\ Da affaticamento,$\downarrow$umore, insomnia, $\uparrow$glicemia, \\ alterazione assetto lipidico (i non ASI). \\ Interruzione improvvisa $\uparrow$infarto.}
-	\itmrights{labetalolo}{}{ipertensione da feocromocitoma.\\ Da prurito intenso, $\downarrow$eiaculazione}
+	\tikzset{level 3/.style={level distance=120pt}}
+	\Tree
+	[.Simpaticolitici
+		[.{SNC}
+			[.\node[farmaco]{$\alpha$--metildopa}; {Inibitore dopa--carbossilasi\\ emergenza ipertensiva \\ Da sedazione, tossicit\`a epatica\\ coombs positivo} ]
+			[.\node[farmaco]{clonidina}; {Agonista $\alpha_2$. $\downarrow$noradrenalina\\ Usato in gravidanza \\ Da sonnolenza, depressione\\ $\downarrow$libido, secchezza fauci } ]
+		]		
+		[.{$\beta$--bloccanti}
+			[.\node[farmaco]{propranololo}; {Usato in ipertensione, scompenso cardiaco, \\ aritmie, glaucoma. Produce $\downarrow$GC e renina. \\ Da affaticamento,$\downarrow$umore, insomnia, $\uparrow$glicemia, \\ alterazione assetto lipidico (i non ASI). \\ Interruzione improvvisa $\uparrow$infarto.} ]
+		]		
+		[.{$\alpha$--agonisti} \node[farmaco]{doxazosina}; ]
+		[.{Misti $\alpha$/$\beta$}
+			[.\node[farmaco]{labetalolo}; {ipertensione da feocromocitoma.\\ Da prurito intenso, $\downarrow$eiaculazione} ]
+		]
+	 ]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\itm{vasodilatatori}{Vasodilatatori};
-	\itmsplit{vasodilatatori}{diretti}{direti}{indiretti}{indiretti};
-	\itmsplit{diretti}{arteriosi}{prevalentemente\\ arteriosi}{arterovenosi}{arterovenosi};
-	\itmsplit{arteriosi}{ip3}{Inibitori IP3}{bloccaca}{blocco canali Ca${}^{2+}$};
-	\itmrights{ip3}{}{idralazina\\ (non pi\`u usato)};
-	\itmrights{bloccaca}{}{nifedipina\\ (anche verapamil\\ e diltiazem\\ ma su cuore)};
-	\itmrights{arterovenosi}{no}{rilascio NO}
-	\itmrights{no}{}{nitroprussiato}
-	\itmrights{indiretti}{ace}{ACE inibitori}
-	\itmbelow{ace}{antat1}{Antagonisti AT--1}{indiretti}
-	\itmrights{ace}{cef}{captopril\\ enalapril\\ fosinopril}
-	\itmrights{antat1}{sartani}{sartani}
-	
-	
-	\itmrights{cef}{}{Dilata arteriole e grandi vene. \\$\downarrow$pre/post carico. \\ Non inficia riflesso barocettivo\\ ne secrezione di aldosterone. \\ $\uparrow$bradichinina da tosse secca\\ e edema angioneurotico.}
-	\itmrights{sartani}{}{Uso in ipertensione, ACC, \\ nefropatia diabetica\\ no in gravidanza}
-	
+	\tikzset{level distance=80pt, level 4/.style={level distance=100pt}}
+	\Tree
+	[.{Vasodilatatori}
+		[.{diretti}
+			[.{prevalentemente\\ arteriosi}
+				[.{Inibitori IP3} \node[farmaco]{idralazina\\ (non pi\`u usato)}; ]
+				[.{blocco canali Ca${}^{2+}$}  \node[farmaco]{nifedipina\\ (anche verapamil\\ e diltiazem\\ ma su cuore)}; ]
+			]
+			[.{arterovenosi} 
+				[.{rilascio NO} \node[farmaco]{nitroprussiato}; ]
+			]
+		]
+		[.{indiretti}
+			[.{ACE inibitori}
+				[.\node[farmaco]{captopril\\ enalapril\\ fosinopril}; {Dilata arteriole e grandi vene. \\$\downarrow$pre/post carico. \\ Non inficia riflesso barocettivo\\ ne secrezione di aldosterone. \\ $\uparrow$bradichinina da tosse secca\\ e edema angioneurotico.} ]
+			]
+			[.{Antagonisti AT--1}
+				[.{sartani} {Uso in ipertensione, ACC, \\ nefropatia diabetica\\ no in gravidanza} ]
+			]
+		]
+	]
 \end{tikzpicture}
 
 \newpage
@@ -214,23 +214,29 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 \section{Farmaci nell'angina e infarto cardiaco}
 
 \begin{tikzpicture}
-	\itm{vasodilatatori}{Vasodilatatori};
-	\itmsplit{vasodilatatori}{no}{Nitrati}{caa}{Ca${}^{2+}$ antagonisti};
-	\itmrights{no}{tnt}{Nitroglicerina}
-	\itmabove{tnt}{iso}{Isosorbide mononitrato}{no}
-	\itmrights{tnt}{}{Rilascio NO, $\uparrow$cGMP, relax muscolatura liscia.\\ Via sublinguale, transdermica, rapido assorbimento\\ grazie alla solubilit\`a lipidica}
-	\itmrights{iso}{}{Duranta d'azione pi\`u lunga}
-	\itmsplitthree{caa}{v}{verapamil\\ (diidropiridine)}{d}{diltiazem}{n}{nifedipina};
-	\itmrights{v}{}{$\downarrow$conduzione NSA. $\downarrow$ RVP}
-	\itmrights{d}{}{$\downarrow$conduzione NSA. $\downarrow$ RVP}
-	\itmrights{n}{}{$\updownarrow$conduzione NSA.  Possibile tachicardia riflessa\\ minori effetti cardiaci}
+	\tikzset{level distance=90pt, level 3/.style={level distance=130pt}}
+	\Tree
+	[.{Vasodilatatori}
+		[.Nitrati
+			[.\node[farmaco]{Isosorbide mononitrato}; {Duranta d'azione pi\`u lunga} ]
+			[.\node[farmaco]{Nitroglicerina}; {Rilascio NO, $\uparrow$cGMP, relax muscolatura lis.\\ Via sublinguale, transdermica, rapido assorbimento\\ grazie alla solubilit\`a lipidica}  ]	
+		]
+		[.{Ca${}^{2+}$ antagonisti}
+			[.\node[farmaco]{verapamil\\ (diidropiridine)}; {$\downarrow$conduzione NSA. $\downarrow$ RVP} ]
+			[.\node[farmaco]{diltiazem}; {$\downarrow$conduzione NSA. $\downarrow$ RVP} ]
+			[.\node[farmaco]{nifedipina}; {$\updownarrow$conduzione NSA.  Possibile tachicardia riflessa\\ minori effetti cardiaci} ]
+		]
+	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\itm{simpaticolitici}{Simpaticolitici};
-	\itmr{betab}{$\beta$--bloccanti}
-	\itmr{propranololo}{propranololo};
-	\itmrights{propranololo}{}{$\downarrow$GC, $\downarrow$PA, $\downarrow$consumo O${}_2$ micardico}
+	\tikzset{level distance=90pt, level 3/.style={level distance=130pt}}
+	\Tree
+	[.{Simpaticolitici}
+		[.{$\beta$--bloccanti}
+			[.\node[farmaco]{propranololo}; {$\downarrow$GC, $\downarrow$PA, $\downarrow$consumo O${}_2$ micardico} ]
+		]
+	]
 \end{tikzpicture}
 
 \newpage
@@ -238,31 +244,32 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 \section{Farmaci dell'emostasi}
 
 \begin{tikzpicture}
+	\tikzset{frontier/.style={distance from root=300pt}} 
 	\Tree 
 		[ .Tipologia 
 			[ .anticoagulanti 
 				[ .iniettabili 
-					[ .\node[farmaco]{eparina}; ]
+					\node[farmaco]{eparina};
 				]
 				[ .{inibitori della trombina} 
-					[ .\node[farmaco]{lepirudina\\ argatroban}; ]
+					\node[farmaco]{lepirudina\\ argatroban}; 
 				]
-				[ .orali [ .\node[farmaco]{warfarin}; ] ]
+				[ .orali \node[farmaco]{warfarin};  ]
 			]
 			[ .antiaggreganti 
 				[ .FANS ]
 				[ .{inibitori \\ della fosfodiesterasi} 
-					[ .\node[farmaco]{dipiridamolo\\ cilostazolo }; ]
+					\node[farmaco]{dipiridamolo\\ cilostazolo };
 				]
 				[ .{antagonisti recettori ADP} 
-					[ .\node[farmaco]{ticlopidina\\ clopidogrel }; ]
+					\node[farmaco]{ticlopidina\\ clopidogrel }; 
 				]
 				[ .{inibitori recettore\\ Gp IIb/IIIA} 
-					[ .\node[farmaco]{abciximab\\ tirofiban\\ eptifibatide}; ]				
+					\node[farmaco]{abciximab\\ tirofiban\\ eptifibatide}; 				
 				]
 			]
 			[ .trombolitici 
-				[ .\node[farmaco]{urochinasi\\ streptochinasi }; ]
+				\node[farmaco]{urochinasi\\ streptochinasi }; 
 			]
 		]
 			
