@@ -1,6 +1,5 @@
 \documentclass[12pt, a4paper,oneside]{scrartcl}
 
-
 % /-- Packages loading --------------------------------------------------------\
 \usepackage[italian]{babel}
 \usepackage[latin1]{inputenc}
@@ -8,9 +7,12 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amsfonts}
+\usepackage{units}
+\usepackage{cancel}
 \usepackage{svn-multi}          % supporto SVN
 \usepackage{parskip}            % paragrafi senza indentazione prima riga
 \usepackage{tikz}
+\usepackage{tikz-qtree}
 \usepackage{fancyhdr}           % Header e Footer 
 %\usepackage[version=3]{mhchem}
 %\usepackage{ccicons}            % Creative Commons Icons
@@ -69,7 +71,8 @@
 \numberwithin{figure}{section}    % numeri delle figure del tipo x.y
 
 \begin{document}
-	\maketitle
 	\input{charts_definition.tex}
+	\input{title.tex}
+	\input{farmacocinetica.tex}
 	\input{mnemonic_charts.tex}
 \end{document}

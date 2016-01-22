@@ -124,3 +124,33 @@
 \def \itmc #1{\itmcount{\arabic{itmcvalue}}{#1};\addtocounter{itmcvalue}{1};}
 
 \def\itmr #1#2{\itmrights{\lastitem}{#1}{#2}}
+
+% Set for tkiz-qtree
+\tikzset{
+	grow'=right,level distance=100pt,
+	frontier/.style={distance from root=800pt},
+	every tree node/.style={
+		rectangle,
+		rounded corners,
+		draw=black, very thick,
+		minimum width=5em,
+		minimum height=1.5em,
+		text centered,
+		align=center,
+		inner sep=3pt,
+		font=\ttfamily\normalsize\tiny
+	},
+	every level 0 node/.style={
+		top color=white, bottom color=blue!30
+	},
+	edge from parent/.append style={
+		draw,->, thick,
+		shorten <=0pt,
+		shorten >=2pt,edge from parent path={
+			(\tikzparentnode) to[out=0,in=180] (\tikzchildnode)
+		}
+	},
+		farmaco/.style={
+		top color=white, bottom color=green!30
+	},
+}

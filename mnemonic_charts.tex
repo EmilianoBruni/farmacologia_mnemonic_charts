@@ -1,10 +1,4 @@
-\begin{abstract}
-	Questo articolo riassume con delle carte mnemoniche gli argomenti di farmacologia spiegati nel IV anno del corso di laurea in medicina e chirurgia a Chieti.
-	L'uso di questo articolo non sostituisce la lettura e lo studio di un libro e degli appunti di farmacologia.
-	Per errori, omissioni o altre note, non esitate a contattarmi via e-mail.
-\end{abstract}
-
-\newpage\newpage
+\newpage\part{Flash Cards}
 
 \section{Farmaci del SNC e del SNP}
 
@@ -87,15 +81,44 @@
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\itm{maina}{Degradazione};
-	\itmsplit{maina}{x}{MAO in fegato e cellule ?????}{y}{COMT nei neuroni}
+	\Tree 
+	[.Sintesi 
+		[.Tirosina 
+			[.Dopa 
+				[.\node[farmaco]{dopamina};
+					[.\node[farmaco]{noradrenalina}; 
+						[.\node[farmaco]{adrenalina}; ]
+					]
+				]
+			]
+		]
+	]
+						
+	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\itm{main}{Recettore adrenergico\\ (metabotropo \\ a proteine G)};
-	\itmsplit{main}{a}{$\alpha$}{b}{$\beta$};
-	\itmsplit{a}{c}{$\alpha_1\,\text{G}_{\text{q}} \uparrow\text{IP}_3, \uparrow\text{Ca}^{2+}$ (postsinaptiche muscolo liscio) }{d}{$\alpha_2\,\text{G}_{\text{i}} \downarrow\text{cAMP}$ (presinaptiche muscolo liscio) };
-	\itmsplitthree{b}{e}{$\beta_1\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti,\\ iuxaglomerulare, epitelio corpi ciliari)}{f}{$\beta_2\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche muscolo liscio e cuore)}{g}{$\beta_3\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti, vescica)};
+	\Tree 
+	[.Degradazione
+		[.{MAO in fegato e cellule ?????} ]
+		[.{COMT nei neuroni} ]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree	
+	[.{Recettore adrenergico\\ (metabotropo \\ a proteine G)} 
+		[.{$\alpha$}
+			[ .{$\alpha_1\,\text{G}_{\text{q}} \uparrow\text{IP}_3, \uparrow\text{Ca}^{2+}$ (postsinaptiche muscolo liscio)} ]
+			[ .{$\alpha_2\,\text{G}_{\text{i}} \downarrow\text{cAMP}$ (presinaptiche muscolo liscio)} ]
+		]
+		[.{$\beta$}
+			[.{$\beta_1\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti,\\ iuxaglomerulare, epitelio corpi ciliari)} ]
+			[.{$\beta_2\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche muscolo liscio e cuore)} ]
+			[.{$\beta_3\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti, vescica)} ]		
+		]
+	]
 \end{tikzpicture}
 
 \begin{tabular}{|c|c|c|c|}
@@ -210,3 +233,37 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 	\itmrights{propranololo}{}{$\downarrow$GC, $\downarrow$PA, $\downarrow$consumo O${}_2$ micardico}
 \end{tikzpicture}
 
+\newpage
+
+\section{Farmaci dell'emostasi}
+
+\begin{tikzpicture}
+	\Tree 
+		[ .Tipologia 
+			[ .anticoagulanti 
+				[ .iniettabili 
+					[ .\node[farmaco]{eparina}; ]
+				]
+				[ .{inibitori della trombina} 
+					[ .\node[farmaco]{lepirudina\\ argatroban}; ]
+				]
+				[ .orali [ .\node[farmaco]{warfarin}; ] ]
+			]
+			[ .antiaggreganti 
+				[ .FANS ]
+				[ .{inibitori \\ della fosfodiesterasi} 
+					[ .\node[farmaco]{dipiridamolo\\ cilostazolo }; ]
+				]
+				[ .{antagonisti recettori ADP} 
+					[ .\node[farmaco]{ticlopidina\\ clopidogrel }; ]
+				]
+				[ .{inibitori recettore\\ Gp IIb/IIIA} 
+					[ .\node[farmaco]{abciximab\\ tirofiban\\ eptifibatide}; ]				
+				]
+			]
+			[ .trombolitici 
+				[ .\node[farmaco]{urochinasi\\ streptochinasi }; ]
+			]
+		]
+			
+\end{tikzpicture}

@@ -1,0 +1,55 @@
+\part{Farmacocinetica}
+
+
+\section{Emivita}
+
+L'emivita di un farmaco è definita come il tempo necessario a ridurre
+il farmaco a \unitfrac{1}{2} della quantità di farmaco presente nell'organismo
+allo steady-state.
+
+Presupponendo che la quantità di farmaco nell'organismo abbia un andamento esponenziale decrescente con il tempo, si pu definire questo matematicamente come:
+
+$$
+Q(t)=\alpha e^{-\beta t}
+$$
+
+Per trovare i due parametri $\alpha$ e $\beta$ consideriamo che a $t=0$
+$Q(0)=Q_{\text{TOT}}=\alpha$ e quindi l'equazione sopra si pro scrivere come
+$$
+Q(t)=Q_{\text{TOT}}e^{-\beta t}
+$$
+e d'altra parte se consideriamo la velocità di eliminazione del farmaco
+al tempo $t$ si ha che\vspace{.5em}
+
+$-\dfrac{\text{d}\,Q(t)}{\text{d}\,t}=v_{\text{elim}}(t)=-Q_{\text{TOT}}(-\beta)e^{-\beta t}$ \vspace{.5em}
+
+Ma d'altra parte, per definizione
+$$
+\text{CL} = \dfrac{v_\text{ELIM}^\text{STEADY STATE}}{c^\text{STEADY STATE}} =\dfrac{v_\text{ELIM}(0)}{c(0)}
+$$
+e, a $t=0\Rightarrow v_{\text{elim}}(0)=\text{CL}\cdot c(0)=-Q_{\text{TOT}}(-\beta)$ da cui
+$\beta=\dfrac{\text{CL\ensuremath{\cdot}}c(0)}{Q_{\text{TOT}}}$ ma
+
+$$V_\text{DIST} = \dfrac{Q_{\text{TOT}}}{c(0)}$$ 
+
+e quindi \vspace{.5em}
+
+$\beta=\dfrac{\text{CL\ensuremath{\cdot}}\cancel{c(0)}}{V_{\text{DIST}}\cdot\cancel{c(0)}}\Rightarrow\beta=\dfrac{\text{CL}}{V_{\text{DIST}}}$ e quindi
+
+$$
+Q(t)=Q_{\text{TOT}}e^{-\frac{\text{CL}}{V_{\text{DIST}}}t}
+$$
+
+
+a $t=t_{\unitfrac{1}{2}}\Rightarrow Q(t_{\unitfrac{1}{2}})=\dfrac{1}{2}\cancel{Q_{\text{TOT}}}=\cancel{Q_{\text{TOT}}}e^{-\frac{\text{CL}}{V_{\text{DIST}}}t_{\unitfrac{1}{2}}}$ 
+
+e passando ai logaritmi naturali
+
+$\ln\dfrac{1}{2}=-\dfrac{\text{CL}}{V_{\text{DIST}}}t_{\unitfrac{1}{2}}\Rightarrow t_{\unitfrac{1}{2}}=\ln\dfrac{1}{2}\cdot\left(-\dfrac{V_{\text{DIST}}}{\text{CL}}\right)=\dfrac{\ln2\cdot V_{\text{DIST}}}{\text{CL}}$
+
+e quindi
+
+\[
+t_{\unitfrac{1}{2}}\simeq0.7\cdot\dfrac{V_{\text{DIST}}}{\text{CL}}
+\]
+
