@@ -18,6 +18,7 @@
 		 [.serotonina {recettori serotoninergici} ]
 		 [.{monossido d'azoto (NO)} ] 
 		 [.purine ]
+		 [.dopamina ]
 	]
 \end{tikzpicture}
 
@@ -26,7 +27,7 @@
 \begin{tikzpicture}
 	\tikzset{level 1/.style={level distance=150pt}}
 	\Tree
-	[.acetilcolina {tutte le fibre pregangliali sia pra che orto} {parasimpatiche post gangliali (quasi tutte).\\ Tipo muscarinico} {qualche simpatico postgangliare\\ soprattutto ghiandole sudoripare} {giunzione neuromuscolare} ]
+	[.localizzazione {tutte le fibre pregangliali sia para che orto} {parasimpatiche post gangliali (quasi tutte).\\ Tipo muscarinico} {qualche simpatico postgangliare\\ soprattutto ghiandole sudoripare} {giunzione neuromuscolare} ]
 \end{tikzpicture}
 
 \begin{tikzpicture}
@@ -71,11 +72,12 @@
 
 \begin{tikzpicture}
 	\begin{scope}
-	\tikzset{level distance=80pt,level 2/.style={level distance=130pt}}
+	\tikzset{level distance=80pt,level 3/.style={level distance=150pt},
+	level 2/.style={level distance=130pt},level 4/.style={level distance=60pt}}
 	\Tree 
 	[.Sintesi 
 		[.Tirosina  \edge node[smallfont,yshift=-5pt,xshift=5.5em]{tirosin--idrossilasi} node[smallfont,yshift=5pt,xshift=5.5em]{tappa limitante}; 
-			[.Dopa 
+			[.{L-Dopa} \edge node[smallfont,yshift=-5pt,xshift=6em]{DOPA decarbossilasi};
 				[.\node[farmaco]{dopamina}; \node[dummyc]{};]
 			]
 		]
@@ -92,10 +94,11 @@
 \end{tikzpicture}
 
 \begin{tikzpicture}
+	\tikzset{level distance=130pt}
 	\Tree 
 	[.Degradazione
-		[.{MAO in fegato e cellule ?????} ]
-		[.{COMT nei neuroni} ]
+		[.{MAO (mono-ammino ossidasi)\\ in fegato e cellule ?????} ]
+		[.{COMT (catecolo O-metiltransferasi)\\ nei neuroni} ]
 	]
 \end{tikzpicture}
 
@@ -153,6 +156,9 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 
 \subsection{Monossido d'azoto (NO)}
 
+\subsection{Dopamina}
+
+
 \newpage
 
 
@@ -160,8 +166,13 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 
 \begin{tikzpicture}
 	\Tree
+	[.Anti-ipertensivi diuretici simpaticolitici vasodilatatori ]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
 	[.{Diuretici\\ (capitolo ah hoc)}
-		[.{Diuretici dell'ansa} \node[farmaco]{furosamide}; ]
+		[.{Diuretici dell'ansa} \node[farmaco]{furosemide}; ]
 		[.{Inibitori del simporto\\ $\text{Na}^+\text{-Cl}^-$} \node[farmaco]{tiazidici}; ]
 		[. {Risparmiatori di $\text K^+$} \node[farmaco]{spironolattone}; ]
 	]
@@ -172,7 +183,7 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 	\Tree
 	[.Simpaticolitici
 		[.{SNC}
-			[.\node[farmaco]{$\alpha$--metildopa}; {Inibitore dopa--carbossilasi\\ emergenza ipertensiva \\ Da sedazione, tossicit\`a epatica\\ coombs positivo} ]
+			[.\node[farmaco]{$\alpha$-metildopa}; {Inibitore dopa-carbossilasi\\ emergenza ipertensiva \\ Da sedazione, tossicit\`a epatica\\ coombs positivo} ]
 			[.\node[farmaco]{clonidina}; {Agonista $\alpha_2$. $\downarrow$noradrenalina\\ Usato in gravidanza \\ Da sonnolenza, depressione\\ $\downarrow$libido, secchezza fauci } ]
 		]		
 		[.{$\beta$--bloccanti}
@@ -192,10 +203,10 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 		[.{diretti}
 			[.{prevalentemente\\ arteriosi}
 				[.{Inibitori IP3} \node[farmaco]{idralazina\\ (non pi\`u usato)}; ]
-				[.{blocco canali Ca${}^{2+}$}  \node[farmaco]{nifedipina\\ (anche verapamil\\ e diltiazem\\ ma su cuore)}; ]
+				[.{Ca${}^{2+}$ antagonisti}  \node[farmaco]{nifedipina\footnotemark\\ (anche verapamil\\ e diltiazem\\ ma su cuore)}; ]
 			]
 			[.{arterovenosi} 
-				[.{rilascio NO} \node[farmaco]{nitroprussiato}; ]
+				[.{rilascio NO} \node[farmaco]{nitroprussiato\footnotemark\\ nitroglicerina}; ]
 			]
 		]
 		[.{indiretti}
@@ -203,15 +214,23 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 				[.\node[farmaco]{captopril\\ enalapril\\ fosinopril}; {Dilata arteriole e grandi vene. \\$\downarrow$pre/post carico. \\ Non inficia riflesso barocettivo\\ ne secrezione di aldosterone. \\ $\uparrow$bradichinina da tosse secca\\ e edema angioneurotico.} ]
 			]
 			[.{Antagonisti AT--1}
-				[.{sartani} {Uso in ipertensione, ACC, \\ nefropatia diabetica\\ no in gravidanza} ]
+				[.{sartani} {Uso in ipertensione, ACC, \\ nefropatia diabetica\\ NO in gravidanza} ]
 			]
 		]
 	]
 \end{tikzpicture}
 
+\footnotetext{Vedere farmaci angina}
+\footnotetext{Vedere farmaci angina}
+
 \newpage
 
 \section{Farmaci nell'angina e infarto cardiaco}
+
+\begin{tikzpicture}
+	\Tree
+	[.{angina\\ infarto} vasodilatatori simpaticomimetici ]
+\end{tikzpicture}
 
 \begin{tikzpicture}
 	\tikzset{level distance=90pt, level 3/.style={level distance=130pt}}
@@ -234,10 +253,12 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 	\Tree
 	[.{Simpaticolitici}
 		[.{$\beta$--bloccanti}
-			[.\node[farmaco]{propranololo}; {$\downarrow$GC, $\downarrow$PA, $\downarrow$consumo O${}_2$ micardico} ]
+			[.\node[farmaco]{propranololo\footnotemark}; {$\downarrow$GC, $\downarrow$PA, $\downarrow$consumo O${}_2$ micardico} ]
 		]
 	]
 \end{tikzpicture}
+
+\footnotetext{vedi farmaci anti-ipertensivi}
 
 \newpage
 
@@ -246,7 +267,7 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 \begin{tikzpicture}
 	\tikzset{frontier/.style={distance from root=300pt}} 
 	\Tree 
-		[ .Tipologia 
+		[ .Emostasi 
 			[ .anticoagulanti 
 				[ .iniettabili 
 					\node[farmaco]{eparina};
@@ -269,7 +290,9 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 				]
 			]
 			[ .trombolitici 
-				\node[farmaco]{urochinasi\\ streptochinasi }; 
+				[.{Attivatori tissutali\\ del plasminogeno (tPA)}
+					\node[farmaco]{urochinasi\\ streptochinasi }; 
+				]
 			]
 		]
 			
