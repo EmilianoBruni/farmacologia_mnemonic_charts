@@ -63,6 +63,61 @@
 	]
 \end{tikzpicture}
 
+\begin{tikzpicture}
+	\Tree
+	[.\node(main){Agonisti\\ Colinergici}; 
+		[.diretti
+			[.{attivano recettori} acetilcolina muscarina nicotina ]
+		]
+		[.indiretti
+			[.{blocco acetilcolinesterasi} {neostigmina} {carbarile} {somar (gas nervino)} {organofosfati} ]
+		]
+	]	
+	\begin{scope}[yshift=-20em]
+		\tikzset{level distance=80pt, level 3/.style={level distance=140pt}}
+		\Tree
+		[.\node(sub){Effetti}; 
+			[.occhio 
+				[.{diretti\\ indiretti} 
+					{contrazione muscolo sfintere dell'iride (miosi)\\ contrazione muscolo ciliare (accomodamento da vicino)}
+				]
+			]
+			[.cuore
+				[.{diretti\\ indiretti} 
+					{$\downarrow$frequenza (cronotopo-), $downarrow$forza (inotropo-),\\ $\downarrow$vel. condizione (dromotropo-), $\uparrow$periodo refrattario, NAV}
+				]
+			]
+			[.vasi
+				[.diretti {dilatazione o contrazione a alte dosi}
+				]
+				[.indiretti {dilatazione vasi coronarici}
+				]
+			]
+			[.polmone
+				[.diretti {broncocostrizione, $\uparrow$secrezione}
+				]
+			]
+			[.intestino
+				[.diretti {$\uparrow$motilit\`a, $\downarrow$ muscolatura sfinteri, $\uparrow$ secrezioni} 
+				]
+			]
+			[.vescica
+				[.diretti {contrazione destrusore, rilascio trigono}
+				]
+			]
+			[.{ghiandole sudoripare\\ lacrimali\\ salivali} 
+				[.diretti {$\uparrow$secrezioni}
+				]
+			]
+			[.{giunzione neuromuscolare}
+				[.indiretti {basse concentrazioni: $\uparrow$forza contrazione utile \\ se intossicazioni da curaro o miastenia grave\\ alte concentrazioni: fibrillazione fibre muscolari}
+				]
+			]
+		]
+	\end{scope}
+	\draw[drawarrow] (main.west) -| (-1.5, 0)  |- (sub.west);
+\end{tikzpicture}
+
 \subsection{Noradrenalina}
 
 \begin{tikzpicture}
@@ -72,7 +127,7 @@
 
 \begin{tikzpicture}
 	\begin{scope}
-	\tikzset{level distance=80pt,level 3/.style={level distance=150pt},
+	\tikzset{level distance=90pt,level 3/.style={level distance=150pt},
 	level 2/.style={level distance=130pt},level 4/.style={level distance=60pt}}
 	\Tree 
 	[.Sintesi 

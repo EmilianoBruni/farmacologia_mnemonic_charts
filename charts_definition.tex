@@ -1,5 +1,10 @@
 % Set for tkiz-qtree
 \tikzset{
+	drawarrow/.style={
+		draw,->, thick,
+		shorten <=0pt,
+		shorten >=2pt
+	},
 	grow'=right,level distance=100pt,sibling distance=6pt,
 	every tree node/.style={
 		rectangle,
@@ -16,9 +21,7 @@
 		top color=white, bottom color=blue!30
 	},
 	edge from parent/.append style={
-		draw,->, thick,
-		shorten <=0pt,
-		shorten >=2pt,edge from parent path={
+		drawarrow,edge from parent path={
 			(\tikzparentnode) to[out=0,in=180] (\tikzchildnode)
 		}
 	},
