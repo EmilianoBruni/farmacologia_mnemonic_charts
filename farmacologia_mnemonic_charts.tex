@@ -8,14 +8,12 @@
 \usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{units}
-\usepackage{cancel}
-\usepackage{svn-multi}          % supporto SVN
+\usepackage{cancel}         
 \usepackage{parskip}            % paragrafi senza indentazione prima riga
 \usepackage{tikz}
 \usepackage{tikz-qtree}
 \usepackage{fancyhdr}           % Header e Footer 
 %\usepackage[version=3]{mhchem}
-%\usepackage{ccicons}            % Creative Commons Icons
 % \----------------------------------------------------------------------------/
 
 % /-- title and authors -------------------------------------------------------\
@@ -62,7 +60,7 @@
 \fancyhead[LO]{\helv \leftmark}
 \fancyhead[RO]{\helv \thepage}
 \fancyfoot[ol]{\begin{tikzpicture}[scale=0.6, transform shape,baseline=2pt ]\tikzbyncsa\end{tikzpicture}\ \scriptsize\it Copyright \copyright\ 2016 \gauthor }
-\fancyfoot[or]{\scriptsize \it Revisione \svnrev\  del \svnyear -\svnmonth -\svnday\ \svnhour :\svnminute } % Date
+\fancyfoot[or]{\scriptsize \it Revisione del \today } % Date
 % \----------------------------------------------------------------------------/
 
 \usetikzlibrary{shapes,arrows,matrix,calc,automata,positioning}

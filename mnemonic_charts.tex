@@ -118,6 +118,68 @@
 	\draw[drawarrow] (main.west) -| (-1.5, 0)  |- (sub.west);
 \end{tikzpicture}
 
+\begin{tikzpicture}
+	\tikzset{level distance=130pt, level 2/.style={level distance=160pt},frontier/.style={distance from root=300pt}}
+	\Tree
+	[.{usi clinici\\ agonisti colinergici}
+		[.occhio {glaucoma con diminuzione della pressione.\\ Nelle emergenze ad angolo chiuso,\\ agonista muscarinico + inibitore colinesterasi} ]
+		[.{gastrointestinale\\ urinari} {Tutti i casi di depressione dell'attivit\`a\\ senza ostruzione} ]
+		{intossicazione da\\ farmaci antimuscarinici\\ (intossicazione da atropina)}
+		[.cuore {tachicardia parossistica sopraventricolare} ]
+		[.{giunzione neuromuscolare} {miastenia grave, post anestesia} ]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{antagonisti\\ colinergici}
+		[.antimuscarinici \node[farmaco]{atropina}; \node[farmaco]{scopolamina};
+		]
+		[.{ganglioplegico\\ antinicotinico} \node[farmaco]{tetraetilammonio (TEA)}; \node[farmaco]{esametanio (C6)};
+		]
+		[.{rigeneratori dell'AchE} \node[farmaco]{pralidossima};
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=160pt}}
+	\Tree
+	[.{anti-muscarinici\\ effetti}
+		[.SNC {effetto stimolante (-atropina +scopolamina) $\downarrow$ tremore parkinson}
+		]
+		[.occhio {$\uparrow$attività simpatica $\Rightarrow$ midriasi\\ (belladonna $\equiv$ occhi dilatati)}
+		]
+		[.cuore {tachicardia, blocco vagale, $\downarrow$PR per $\uparrow$dromotropo}
+		]
+		[.vasi incerta ]
+		[.{apparato respiratorio} {broncodilatazione, $\downarrow$secrezioni\\ (ma meglio i $\beta$-adrenergici)}
+		]
+		[.{gastrointestinale} {$\downarrow$secrezioni salivali, minori su tutto il resto} ]
+		[.{gh. sudoripare} {soppressione termoregolazione\\ (febbre da atropina)} ]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=130pt}}
+	\Tree
+	[.{anti-muscarinici\\ usi clinici} 
+		{malattia di Parkinson} 
+		{chinetosi} 
+		{occhio} 
+		{apparato respiratorio} 
+		{apparato cardiovascolare} 
+		{apparato gastrointestinale} 
+		{apparato urinario}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{rigeneratori\\ dell'AchE}
+	]
+\end{tikzpicture}
+
 \subsection{Noradrenalina}
 
 \begin{tikzpicture}
