@@ -308,7 +308,14 @@
 
 \begin{tikzpicture}
 	\Tree
-	[.noradrenalina {simpatiche postgangliari} ]
+	[.noradrenalina 
+		[.{simpatiche postgangliari} 
+			[.escluso
+				{muscolatura vasi renali ($\text D_1$)}
+				{ghiandole sudoripare (Ach)}
+			]
+		]		
+	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
@@ -476,5 +483,20 @@ Per via inalatoria $\downarrow$shunt, $\downarrow$broncocostrizione, $\downarrow
 Utile nel trattamento delle malattie neurovegetative e shock settico dove aumenta e nell'ateorscelosi e ipercolesterolemia dove diminuisce. 
 
 \subsection{Dopamina}
+
+\begin{tikzpicture}
+	\tikzset{level distance=130pt}
+	\Tree
+	[.{Recettore dopaminergico}
+		[.{$\text D_1$, $\text D_5$, eccitatorio, $\uparrow$cAMP} {cervello, muscolatura vasi rene} 
+		]
+		[.{$\text D_2$, inibitorio, apertura canali $\text K^+$} {cervello, muscolatura liscia} 
+		]
+		[.{$\text D_3$, inibitorio, apertura canali $\text K^+$} {cervello} 
+		]
+		[.{$\text D_4$, inibitorio, apertura canali $\text K^+$} {cervello, sistema cardio vascolare} 
+		]
+	]
+\end{tikzpicture}
 
 \newpage
