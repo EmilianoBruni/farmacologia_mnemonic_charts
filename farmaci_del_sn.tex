@@ -126,59 +126,108 @@
 	]
 \end{tikzpicture}
 
-\subsection{Agonisti colinergici}
+\subsubsection{Agonisti colinergici}
 
 \begin{tikzpicture}
+	\tikzset{
+		level distance=80pt,
+		level 1/.style={level distance=70pt},
+		level 2/.style={level distance=70pt},
+		frontier/.style={distance from root=400pt} 
+	}
 	\Tree
 	[.\node(main){Tipo}; 
 		[.diretti
-			[.{attivano recettori} acetilcolina muscarina nicotina ]
+			[.{attivano recettori} 
+				[.{esteri della colina} 
+					\node(ach){acetilcolina };
+					metacolina
+					carbacolo
+					\node[farmaco](beta){betanecolo};
+				]
+				[.alcaloidi
+					[.muscarinici
+						muscarina
+						\node[farmaco]{pilocarpina};
+					]
+					[.nitotinici \node[farmaco]{nicotina}; ]				
+				]
+			]
 		]
 		[.indiretti
-			[.{blocco acetilcolinesterasi} {neostigmina} {carbarile} {somar (gas nervino)} {organofosfati} ]
+			[.\node(AchEI){inibitori AchE}; 
+				\node[farmaco](neo){neostigmina};
+				\node[farmaco]{edrifonio}; 
+				[.{organofosfati} \node[farmaco]{ecotiopato}; ]
+				\node(somar){somar (gas nervino)};  
+			]
 		]
 	]	
+	\node[right=5pt of somar] (somary) {};
+	\node[above=6em of somary] (neox) {};
+	\draw[drawarrow] (neox) -- (somary) node[midway,above,sloped] {\tiny $\uparrow$durata azione};
+	\node[right=5pt of ach] (achn) {};
+	\node[right=5pt of beta] (betan) {};
+	\draw[drawarrow] (achn) -- (betan) node[midway,above,sloped] {\tiny $\uparrow$resist. idrolisi e quindi durata azione};
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\tikzset{level distance=80pt, level 3/.style={level distance=140pt}}
+	\Tree
+	[.{Inibitori AchE}
+		[.{alcool+gruppo N quaternario}
+			[.\node[farmaco]{edrofonio}; 
+				[.{legame idrogeno\\ o ionico con AchE} {idrolisi in minuti}
+				]
+			]
+		]
+		[.carbammati 
+			[.\node[farmaco]{neostigmina\\ fisostigmina}; 
+				[.{legame covalente con AchE} {idrolisi in ore}
+				]
+			]
+		]
+		[.organofosfati
+			[.somar
+				[.\node(fAchE){fosforilazione AchE}; \node(idro){idrolisi in giorni};
+				]
+			]
+			\node[farmaco](ecotiopato){ecotipato};
+		]
+	]		
+	\draw[drawarrow] (ecotiopato) to[out=0,in=180] (fAchE);
+	\node[chartnode,below=1em of fAchE] (invec) {invecchiamento\\rottura legame O-P\\ con raffozamento\\ legame con AchE}; 
+	\node[chartnode,below=1em of idro] (pral) {pralidossina pu\`o\\ scindere la\\ fosforilazione};
+	\draw[drawarrow] (pral)--(fAchE) node[midway,above,sloped] {\tiny qui si};
+	\draw[drawarrow] (pral)--(invec) node[midway,above,sloped] {\tiny qui no};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=120pt, level 2/.style={level distance=150pt}}
 	\Tree
 	[.\node(sub){Effetti}; 
 		[.occhio 
-			[.{diretti\\ indiretti} 
-				{contrazione muscolo sfintere dell'iride (miosi)\\ contrazione muscolo ciliare (accomodamento da vicino)}
-			]
+			{contrazione muscolo sfintere dell'iride (miosi)\\ contrazione muscolo ciliare (accomodamento da vicino)}
 		]
 		[.cuore
-			[.{diretti\\ indiretti} 
-				{$\downarrow$frequenza (cronotopo-), $downarrow$forza (inotropo-),\\ $\downarrow$vel. condizione (dromotropo-), $\uparrow$periodo refrattario, NAV}
-			]
+			{$\downarrow$frequenza (cronotopo-), $\downarrow$forza (inotropo-),\\ $\downarrow$vel. conduzione (dromotropo-), $\uparrow$periodo refrattario, NAV}
 		]
 		[.vasi
-			[.diretti {dilatazione o contrazione a alte dosi}
-			]
-			[.indiretti {dilatazione vasi coronarici}
-			]
+			{dilatazione a basse dosi o contrazione a alte dosi}
 		]
 		[.polmone
-			[.diretti {broncocostrizione, $\uparrow$secrezione}
-			]
+			 {broncocostrizione, $\uparrow$secrezione}
 		]
 		[.intestino
-			[.diretti {$\uparrow$motilit\`a, $\downarrow$ muscolatura sfinteri, $\uparrow$ secrezioni} 
-			]
+			{$\uparrow$motilit\`a, $\downarrow$ muscolatura sfinteri, $\uparrow$ secrezioni} 
 		]
 		[.vescica
-			[.diretti {contrazione destrusore, rilascio trigono}
-			]
+			 {contrazione destrusore, rilascio trigono}
 		]
 		[.{ghiandole sudoripare\\ lacrimali\\ salivali} 
-			[.diretti {$\uparrow$secrezioni}
-			]
+			{$\uparrow$secrezioni}
 		]
-		[.{giunzione neuromuscolare}
-			[.indiretti {basse concentrazioni: $\uparrow$forza contrazione utile \\ se intossicazioni da curaro o miastenia grave\\ alte concentrazioni: fibrillazione fibre muscolari}
-			]
+		[.{giunzione neuromuscolare\\ (indiretti)}
+			{basse concentrazioni: $\uparrow$forza contrazione utile \\ se intossicazioni da curaro o miastenia grave\\ alte concentrazioni: fibrillazione fibre muscolari}
 		]
 	]
 \end{tikzpicture}
@@ -187,13 +236,21 @@
 	\tikzset{level distance=130pt, level 2/.style={level distance=160pt},frontier/.style={distance from root=300pt}}
 	\Tree
 	[.{usi clinici\\ agonisti colinergici}
-		[.occhio {glaucoma con diminuzione della pressione.\\ Nelle emergenze ad angolo chiuso,\\ agonista muscarinico + inibitore colinesterasi} ]
-		[.{gastrointestinale\\ urinari} {Tutti i casi di depressione dell'attivit\`a\\ senza ostruzione} ]
-		{intossicazione da\\ farmaci antimuscarinici\\ (intossicazione da atropina)}
-		[.cuore {tachicardia parossistica sopraventricolare} ]
-		[.{giunzione neuromuscolare} {miastenia grave, post anestesia} ]
+		[.occhio {glaucoma con diminuzione della pressione\\ nelle emergenze ad angolo chiuso,\\ agonista muscarinico (pilocarpina)\\ + inibitore colinesterasi (ecotiopato)\\ 
+		nel glaucoma cronico ora si usano i $\beta$-bloccanti.} ]
+		[.{gastrointestinale\\ urinari} {Tutti i casi di depressione dell'attivit\`a senza ostruzione\\ neostigmina/betanecolo nelle ritenzioni urinarie e ileo\\
+		pilocarpina usata per $\uparrow$secrezioni salivari in xerostomia da\\
+		sindrome di Sjogren.} ]
+		{intossicazione da\\ farmaci antimuscarinici\\ (intossicazione da atropina)\\ fisostigmina}
+		[.cuore {tachiaritmia parossistica sopraventricolare\\ edrofonio(in disuso)\\ ora si usa l'adenosina.} ]
+		[.{giunzione neuromuscolare} 
+			[.{miastenia grave\\ edofonio/neostigmina} ]
+			[.{post anestesia\\ ??? Leggo nelle correzioni\\ NO negli inibitori AchE ma boh!! } ]
+		]
 	]
 \end{tikzpicture}
+
+\subsubsection{Antagonisti colinergici}
 
 \begin{tikzpicture}
 	\Tree
@@ -202,10 +259,12 @@
 		]
 		[.{ganglioplegico\\ antinicotinico} \node[farmaco]{tetraetilammonio (TEA)}; \node[farmaco]{esametanio (C6)};
 		]
-		[.{rigeneratori dell'AchE} \node[farmaco]{pralidossima};
+		[.{rigeneratori dell'AchE} \node[farmaco]{pralidossima\footnotemark};
 		]
 	]
 \end{tikzpicture}
+
+\footnotetext{vedi inibitori dell'AchE}
 
 \begin{tikzpicture}
 	\tikzset{level 2/.style={level distance=160pt}}

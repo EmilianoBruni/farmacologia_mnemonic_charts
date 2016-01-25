@@ -5,17 +5,23 @@
 		shorten <=0pt,
 		shorten >=2pt
 	},
-	grow'=right,level distance=100pt,sibling distance=6pt,
-	every tree node/.style={
+	chartfont/.style={
+		font=\ttfamily\normalsize\tiny,
+		text centered,
+	},
+	chartnode/.style= {
 		rectangle,
+		chartfont,
 		rounded corners,
 		draw=black, very thick,
 		minimum width=5em,
 		minimum height=1.5em,
-		text centered,
 		align=center,
 		inner sep=3pt,
-		font=\ttfamily\normalsize\tiny
+	},
+	grow'=right,level distance=100pt,sibling distance=6pt,
+	every tree node/.style={
+		chartnode
 	},
 	every level 0 node/.style={
 		top color=white, bottom color=blue!30
