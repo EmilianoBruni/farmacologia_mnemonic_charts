@@ -1,0 +1,421 @@
+\newpage\part{Flash Cards}
+
+\section{Farmaci del SNC e del SNP}
+
+\begin{tikzpicture}
+	\tikzset{level distance=90pt,frontier/.style={distance from root=370pt}} 
+	\Tree
+	[.SNC
+		[.Periferico
+			[.Sensitivo ]
+			[.Autonomo
+		 		[ .{Simpatico\\ (toraco--addominale)} {gangli pre e para--vertebrali} ]
+				[ .{Parasimpatico \\(nervi crani e sacrale)} {nell'intima degli organi} ]
+			]
+			[.Gastroenterico {plessi mioenterici (Auerbach) e\\ sottomucosi (Meissner)}
+			]
+		]
+		[.Centrale ]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=150pt}}
+	\Tree
+	[.{Neurotrasmettitori\\ SNP}
+		 [.\node(acetilcolina){acetilcolina}; {recettori colinergici} ]
+		 [.noradrenalina {recettori adrenergici} ]
+		 [.\node(serotonina){serotonina\\5-HT 5-idrossitriptamina}; {recettori serotoninergici} ]
+		 [.{monossido d'azoto (NO)} ] 
+		 [.purine ]
+	]
+	\begin{scope}[yshift=-9em]
+	\Tree
+	[.\node(snc){Neurotrasmettitori\\ SNC};
+		[.dopamina {recettori dopaminergici} ]
+		Glutammato
+		GABA
+	]
+	\end{scope}
+	\draw[drawarrow] (snc.east) to[in=180,out=40] (acetilcolina.west)
+		(snc.east) to[in=180,out=0] (serotonina.west);
+\end{tikzpicture}
+
+\subsection{Acetilcolina}
+
+\begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=150pt}}
+	\Tree
+	[.localizzazione {tutte le fibre pregangliali sia para che orto\\ nicotiniche} {parasimpatiche post gangliali (quasi tutte).\\ muscariniche} {ghiandole sudoripare (simpatico)\\ muscariniche} {giunzione neuromuscolare\\ nicotiniche} ]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=130pt}, level 3/.style={level distance=120pt}}
+	\Tree
+	[.Sintesi
+		[.colina \edge node[smallfont,yshift=5pt,xshift=5.4em]{entra nel neurone} node[smallfont,yshift=-5pt,xshift=5.4em]{tappa limitante};
+			[.{acetilCOA + colina} \edge node[smallfont,yshift=-5pt,xshift=5em]{acetiltrasferasi} node[smallfont,yshift=5pt,xshift=5em]{colina}; acetilcolina ]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=130pt}}
+	\Tree
+	[.Degradazione
+		[.acetilcolina \edge node[smallfont, yshift=-5pt,xshift=5.5em]{acetilcolinesterasi}; {acetato + colina} ]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.Liberazione 
+		[.{Ca${}^{2+}$ + VAMP/SNAPS}
+			[.{fusione vescicole con\\ membrana neuronale} esocitosi
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzstyle{cwhite}=[circle,shadedraw=yellow];
+	\shade[ball color=yellow] node (ach) {\small Ach} circle[radius=.45];
+	\draw (ach) -- +(.7,.7) +(.7,.7) arc [start angle=225, end angle=270, radius=6pt]  (.7,.7) arc [start angle=225, end angle=180, radius=6pt];
+	\draw (2,2) arc [start angle=45, end angle=0, radius=3cm];
+	\draw (2,2) arc [start angle=45, end angle=80, radius=3cm];
+	\draw (2,2) -- (1.3,1.3);
+	\filldraw (1.3,1.3) circle[radius=3pt];
+	\node at (1,.4) {\tiny VAMP};
+	\node at (1.9,1.3) {\tiny SNAP};
+	\node at (2.1,2.7) {\tiny Canale Ca${}^{2+}$};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.Effetti
+		[.{$\uparrow$permeabilit\`a ai cationi\\ Na${}^+$, K${}^+$, Ca${}^{2+}$}
+			[.depolarizzazione
+				[.{fibre post sinaptiche} PdA ]
+				[.{fibre muscolari} {generazione potenziale\\ di placca}
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=80pt},level 2/.style={level distance=140pt},level 3/.style={level distance=140pt}}
+	\Tree
+	[.{Recettore colinergico}
+		[.{muscarinico\\ (metabotropo)}
+			[.{M${}_1$ eccitatorio $\uparrow\text{IP}_3, \uparrow\text{DAG},\uparrow\text{Ca}^{2+}$} {SNC, simpatico post--gangliare,\\ cellule parietali dello stomaco}
+			]
+			[.{M${}_2$ inibitorio $\downarrow$cAMP } {cuore, muscolo liscio}
+			]
+			[.{M${}_3$ eccitatorio $\uparrow\text{IP}_3, \uparrow\text{DAG},\uparrow\text{Ca}^{2+}$} {ghiandole esocrine, muscolo liscio,\\ endotelio dei vasi}
+			]
+			[.{M${}_4$ come $\text{M}_2$} {SNC}
+			]
+			[.{M${}_5$  come $\text{M}_1$} {endotelio vasale, cervello, SNC}
+			]
+		]
+		[.{nicotinico\\ (ionotropo)}
+			[.{N${}_\text{N}$ gangliare} {para e ortosimpatico gangliare} ]
+			[.{N${}_\text{M}$ muscolare} {giunzione\\ neuromuscolare} ]
+		]
+	]
+\end{tikzpicture}
+
+\subsection{Agonisti colinergici}
+
+\begin{tikzpicture}
+	\Tree
+	[.\node(main){Tipo}; 
+		[.diretti
+			[.{attivano recettori} acetilcolina muscarina nicotina ]
+		]
+		[.indiretti
+			[.{blocco acetilcolinesterasi} {neostigmina} {carbarile} {somar (gas nervino)} {organofosfati} ]
+		]
+	]	
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=80pt, level 3/.style={level distance=140pt}}
+	\Tree
+	[.\node(sub){Effetti}; 
+		[.occhio 
+			[.{diretti\\ indiretti} 
+				{contrazione muscolo sfintere dell'iride (miosi)\\ contrazione muscolo ciliare (accomodamento da vicino)}
+			]
+		]
+		[.cuore
+			[.{diretti\\ indiretti} 
+				{$\downarrow$frequenza (cronotopo-), $downarrow$forza (inotropo-),\\ $\downarrow$vel. condizione (dromotropo-), $\uparrow$periodo refrattario, NAV}
+			]
+		]
+		[.vasi
+			[.diretti {dilatazione o contrazione a alte dosi}
+			]
+			[.indiretti {dilatazione vasi coronarici}
+			]
+		]
+		[.polmone
+			[.diretti {broncocostrizione, $\uparrow$secrezione}
+			]
+		]
+		[.intestino
+			[.diretti {$\uparrow$motilit\`a, $\downarrow$ muscolatura sfinteri, $\uparrow$ secrezioni} 
+			]
+		]
+		[.vescica
+			[.diretti {contrazione destrusore, rilascio trigono}
+			]
+		]
+		[.{ghiandole sudoripare\\ lacrimali\\ salivali} 
+			[.diretti {$\uparrow$secrezioni}
+			]
+		]
+		[.{giunzione neuromuscolare}
+			[.indiretti {basse concentrazioni: $\uparrow$forza contrazione utile \\ se intossicazioni da curaro o miastenia grave\\ alte concentrazioni: fibrillazione fibre muscolari}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=130pt, level 2/.style={level distance=160pt},frontier/.style={distance from root=300pt}}
+	\Tree
+	[.{usi clinici\\ agonisti colinergici}
+		[.occhio {glaucoma con diminuzione della pressione.\\ Nelle emergenze ad angolo chiuso,\\ agonista muscarinico + inibitore colinesterasi} ]
+		[.{gastrointestinale\\ urinari} {Tutti i casi di depressione dell'attivit\`a\\ senza ostruzione} ]
+		{intossicazione da\\ farmaci antimuscarinici\\ (intossicazione da atropina)}
+		[.cuore {tachicardia parossistica sopraventricolare} ]
+		[.{giunzione neuromuscolare} {miastenia grave, post anestesia} ]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{antagonisti\\ colinergici}
+		[.antimuscarinici \node[farmaco]{atropina}; \node[farmaco]{scopolamina};
+		]
+		[.{ganglioplegico\\ antinicotinico} \node[farmaco]{tetraetilammonio (TEA)}; \node[farmaco]{esametanio (C6)};
+		]
+		[.{rigeneratori dell'AchE} \node[farmaco]{pralidossima};
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=160pt}}
+	\Tree
+	[.{anti-muscarinici\\ effetti}
+		[.SNC {effetto stimolante (-atropina +scopolamina) $\downarrow$ tremore parkinson}
+		]
+		[.occhio {$\uparrow$attività simpatica $\Rightarrow$ midriasi\\ (belladonna $\equiv$ occhi dilatati)}
+		]
+		[.cuore {tachicardia, blocco vagale, $\downarrow$PR per $\uparrow$dromotropo}
+		]
+		[.vasi incerta ]
+		[.{apparato respiratorio} {broncodilatazione, $\downarrow$secrezioni\\ (ma meglio i $\beta$-adrenergici)}
+		]
+		[.{gastrointestinale} {$\downarrow$secrezioni salivali, minori su tutto il resto} ]
+		[.{gh. sudoripare} {soppressione termoregolazione\\ (febbre da atropina)} ]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=130pt}}
+	\Tree
+	[.{anti-muscarinici\\ usi clinici} 
+		{malattia di Parkinson} 
+		{chinetosi} 
+		{occhio} 
+		{apparato respiratorio} 
+		{apparato cardiovascolare} 
+		{apparato gastrointestinale} 
+		{apparato urinario}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{rigeneratori\\ dell'AchE}
+	]
+\end{tikzpicture}
+
+\subsection{Noradrenalina}
+
+\begin{tikzpicture}
+	\Tree
+	[.noradrenalina {simpatiche postgangliari} ]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\begin{scope}
+	\tikzset{level distance=90pt,level 3/.style={level distance=150pt},
+	level 2/.style={level distance=130pt},level 4/.style={level distance=60pt}}
+	\Tree 
+	[.Sintesi 
+		[.Tirosina  \edge node[smallfont,yshift=-5pt,xshift=5.5em]{tirosin--idrossilasi} node[smallfont,yshift=5pt,xshift=5.5em]{tappa limitante}; 
+			[.{L-Dopa} \edge node[smallfont,yshift=-5pt,xshift=6em]{DOPA decarbossilasi};
+				[.\node[farmaco]{dopamina}; \node[dummyc]{};]
+			]
+		]
+	]
+	\end{scope}
+	\begin{scope}[yshift=-3em,xshift=1em]
+	\tikzset{level distance=80pt}
+	\Tree
+	[.\node[dummyc]{}; 
+		[.\node[farmaco]{noradrenalina}; \node[farmaco]{adrenalina};]
+	]	
+	\end{scope}				
+	
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=130pt}
+	\Tree 
+	[.Degradazione
+		[.{MAO (mono-ammino ossidasi)\\ in fegato e cellule ?????} ]
+		[.{COMT (catecolo O-metiltransferasi)\\ nei neuroni} ]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree	
+	[.{Recettore adrenergico\\ (metabotropo \\ a proteine G)} 
+		[.{$\alpha$}
+			[ .{$\alpha_1\,\text{G}_{\text{q}} \uparrow\text{IP}_3, \uparrow\text{Ca}^{2+}$ (postsinaptiche muscolo liscio)} ]
+			[ .{$\alpha_2\,\text{G}_{\text{i}} \downarrow\text{cAMP}$ (presinaptiche muscolo liscio)} ]
+		]
+		[.{$\beta$}
+			[.{$\beta_1\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti,\\ iuxaglomerulare, epitelio corpi ciliari)} ]
+			[.{$\beta_2\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche muscolo liscio e cuore)} ]
+			[.{$\beta_3\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti, vescica)} ]		
+		]
+	]
+\end{tikzpicture}
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\textbf{Organo} & \textbf{Tipo} & \textbf{Recettore} & \textbf{Azione} \\ 
+\hline\hline 
+M. radiale & simpatico & $\alpha_1$ & costrizione \\ 
+\hline 
+M. circolare & parasimpatico & M${}_3$ & costrizione pupilla \\ 
+\hline 
+M. ciliare & simpatico & $\beta$ & rilasciamento \\ 
+\hline 
+M. ciliare & parasimpatico & M${}_2$ & contrazione \\ 
+\hline 
+Nodo SA & simpatico & $\beta_1\beta_2$ & accellerazione \\ 
+\hline 
+Nodo SA & parasimpatico & M${}_2$ & rallentamento \\ 
+\hline 
+Forza contrazione & simpatico & $\beta_1\beta_2$ & aumento \\ 
+\hline 
+Forza contrazione & parasimpatico & M${}_2$ & diminuzione \\ 
+\hline 
+vasi muscolari & simpatico & $\beta$ & rilasciamento \\ 
+\hline 
+muscolo gastrointestinale & simpatico & $\alpha_2\beta_2$ & rilasciamento \\ 
+\hline 
+muscolo gastrointestinale & parasimpatico & M${}_3$ & contrazione \\ 
+\hline 
+sfinteri gastrointestinali & simpatico & $\alpha_1$ & contrazione \\ 
+\hline 
+sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\ 
+\hline 
+\end{tabular} 
+
+\subsection{Serotonina}
+
+Serotonina o 5-HT o 5-idrossitriptamina
+
+\begin{tikzpicture}
+	\tikzset{level 3/.style={level distance=130pt}}
+	\Tree
+ 	[.Recettore
+ 		[.5-HT1
+ 			[.SNC {GpCR,$\downarrow$cAMP, inibizione presinaptica} ]
+ 		]
+ 		[.5-HT2
+ 			[.{muscolo liscio\\ piastrine} {$\uparrow$IP3, DAG, GpCR} ]
+ 		]
+ 		[.5-HT3
+ 			[.{SNP (nocicettori\\ neuroni enterici)} {canale ionico stimolatore} ]
+ 		]
+ 		[.5-HT4
+ 			[.{SNC,vescica\\ cuore} {$\uparrow$cAMP,GpCR,eccitazione} ]
+ 		]
+ 	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=80pt,level 3/.style={level distance=130pt},
+	level 2/.style={level distance=130pt}}
+	\Tree 
+	[.Sintesi 
+		[.Triptofano  \edge node[smallfont,yshift=5pt,xshift=5.5em]{triptofano} node[smallfont,yshift=-5pt,xshift=5.5em]{idrossilasi} ; 
+			[.{5-idrossitriptofano} \edge node[smallfont,yshift=5pt,xshift=5.5em]{amminoacido} node[smallfont,yshift=-5pt,xshift=5.5em]{decarbossilasi}; 5-HT 
+			]
+		]
+	]	
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=130pt}
+	\Tree 
+	[.Degradazione {MAO (mono-ammino ossidasi)}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=160pt}
+	\Tree
+	[.Effetti {piastrine: aggregazione} {terminazioni nervose: dolore} {SNC: eccitatorio 5-HT4,\\ inibitorio 5-HT1} {vasi: costrizione} {gastroenterico: attivazione secrezione\\ e peristalsi} ]
+\end{tikzpicture}
+
+\subsection{Neurotrasmettitori purinici}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=130pt}}
+ 	\Tree
+ 	[.{Neurotrasmettitori\\ purinici} 
+ 		[.ATP {Aumento della permeabilit\`a di membrana} ]
+ 		[.Adenosina {vasodilatatore tranne che nel rene} {inibizione dell'aggreg. piastrinica} {blocco della conduzione AV}
+ 		]
+ 	]
+\end{tikzpicture}
+
+\subsection{Monossido d'azoto (NO)}
+
+\begin{tikzpicture}
+	\Tree
+	[.Tipi
+		[.iNOS {prodotto dai macrofagi tramite IF$\gamma$}
+		]
+		[.eNOS {endotelio e piastrine}
+		]
+		[.nNOS neuroni
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=160pt}
+	\Tree
+	[.Causa {vasodilatazione} {inibizione dell'aggregazione piastrinica} {plasticit\`a sinaptica} {difesa da cellule neoplastiche, batteri, parassiti} ]
+\end{tikzpicture}
+
+Per via inalatoria $\downarrow$shunt, $\downarrow$broncocostrizione, $\downarrow$ipertensione polmonare e quindi utile anche nella cura dell'asma.
+
+Utile nel trattamento delle malattie neurovegetative e shock settico dove aumenta e nell'ateorscelosi e ipercolesterolemia dove diminuisce. 
+
+\subsection{Dopamina}
+
+\newpage
