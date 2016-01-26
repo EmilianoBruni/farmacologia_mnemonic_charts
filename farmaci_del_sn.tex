@@ -283,9 +283,17 @@
 \begin{tikzpicture}
 	\Tree
 	[.{antagonisti\\ colinergici}
-		[.antimuscarinici \node[farmaco]{atropina}; \node[farmaco]{scopolamina};
+		[.antimuscarinici 
+			[.\node[farmaco]{atropina}; {deriva da Belladonna e\\ Datura Stramonium}
+			]
+			\node[farmaco]{scopolamina};
 		]
-		[.{ganglioplegico\\ antinicotinico} \node[farmaco]{tetraetilammonio (TEA)}; \node[farmaco]{esametanio (C6)};
+		[.antinicotinici 
+			[.{bloccanti gangli\\ ganglioplegici} \node[farmaco]{trimetafano}; 
+			\node[farmaco]{tossina botulina};
+			]
+			[.{bloccanti neuromuscolari}
+			]
 		]
 		[.{rigeneratori dell'AchE} \node[farmaco]{pralidossima\footnotemark};
 		]
@@ -295,40 +303,190 @@
 \footnotetext{vedi inibitori dell'AchE}
 
 \begin{tikzpicture}
-	\tikzset{level 2/.style={level distance=160pt}}
 	\Tree
-	[.{anti-muscarinici\\ effetti}
-		[.SNC {effetto stimolante (-atropina +scopolamina) $\downarrow$ tremore parkinson}
+	[.Assorbimento
+		[.\node(am3){Ammine III${}^\circ$};
+			Transcutaneo
 		]
-		[.occhio {$\uparrow$attività simpatica $\Rightarrow$ midriasi\\ (belladonna $\equiv$ occhi dilatati)}
+		[.{Ammine IV${}^\circ$}
+			\node(intestino){intestino};
+			\node(occhio){occhio};
 		]
-		[.cuore {tachicardia, blocco vagale, $\downarrow$PR per $\uparrow$dromotropo}
+	]
+	\draw[drawarrow]
+		(am3) to[out=0, in=180] (intestino)
+		(am3) to[out=0, in=180] (occhio);
+\end{tikzpicture}
+
+\textsc{Antimuscarinici}
+
+\begin{tikzpicture}
+	\tikzset{level distance=150pt}
+	\Tree
+	[.{effetti}
+		[.{SNC ($\text M_1$)} {effetto stimolante (-atropina +scopolamina) $\downarrow$tremore Parkinson\\ Parkinson \`e causato da un $\uparrow$ attivit\`a colinergica}
 		]
-		[.vasi incerta ]
-		[.{apparato respiratorio} {broncodilatazione, $\downarrow$secrezioni\\ (ma meglio i $\beta$-adrenergici)}
+		[.{occhio ($\text M_3$)} {$\uparrow$attivit\`a simpatica $\Rightarrow$ midriasi\\ (belladonna $\equiv$ occhi dilatati\\ incapacit\`a di adattamento\\ visione da vicino)}
 		]
-		[.{gastrointestinale} {$\downarrow$secrezioni salivali, minori su tutto il resto} ]
-		[.{gh. sudoripare} {soppressione termoregolazione\\ (febbre da atropina)} ]
+		[.{cuore ($\text M_2$)} {tachicardia, blocco vagale, $\downarrow$PR per $\uparrow$dromotropo}
+		]
+		[.{vasi ($\text M_2/\text M_3$)} incerta ]
+		[.{apparato respiratorio ($\text M_3$)} {broncodilatazione, $\downarrow$secrezioni\\ (ma meglio i $\beta$-adrenergici)}
+		]
+		[.{gastrointestinale ($\text M_3$)} {$\downarrow$secrezioni salivali, minori su tutto il resto} ]
+		[.{gh. sudoripare ($\text M_3$)} {soppressione termoregolazione\\ (febbre da atropina)} ]
 	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\tikzset{level 1/.style={level distance=130pt}}
+	%\tikzset{level 1/.style={level distance=130pt}}
 	\Tree
-	[.{anti-muscarinici\\ usi clinici} 
-		{malattia di Parkinson} 
-		{chinetosi} 
-		{occhio} 
-		{apparato respiratorio} 
-		{apparato cardiovascolare} 
-		{apparato gastrointestinale} 
-		{apparato urinario}
+	[.{usi clinici} 
+		[.\node[farmaco](atropina){atropina};
+			{malattia di Parkinson}
+			{esame oftalmico}
+			{pre-operatorio\\ antilaringospasmo}
+			{sincope vagale\\ da dolore infarto}
+			{ulcera peptidica\\ in disuso}
+		]
+		[.\node[farmaco]{scopolamina};
+			{chinetosi\\ mal di mare}
+		]
+		[.\node[farmaco]{inatroprio???};
+			\node(bpco){BPCO};
+		]
+		[.\node[farmaco]{oxibutina};
+			{tenismo urinario}
+		]
+		[.\node[farmaco]{pralidossina};
+			[.{iperfunzione colinergica}
+				{da organofosfati, gas nervino\\ o intossicazione funghi}
+			]
+		]
 	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
 	\Tree
-	[.{rigeneratori\\ dell'AchE}
+	[.{Effetti avversi} {febbre da atropina} tachicardia {vasodilatazione con\\ esantema da atropina\\ testa, collo, arti, tronco} ]
+\end{tikzpicture}
+
+\textsc{Ganglioplegici}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.effetti
+		[.SNC {sedazione, tremore}
+		]
+		[.occhio {perdita accomodamento, effetto su pupilla incerto\\ per innervazione para e orto del m. sfintere}
+		]
+		[.cardiocirc {$\downarrow$pressione con ipotensione ortostatica marcata}
+		]
+		[.gasto {$\downarrow$motilit\`a}
+		]
+		[.urinario {ritardo nella minzione, problemi erezione e eiaculazione}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.{usi clinici}
+		[.\node[farmaco]{trimetafano};
+			{ipotensivo nelle anestesie}
+		]
+		[.\node[farmaco]{tossina botulinica};
+			{iniezione intravescicale\\ contro incontinenza}
+		]
+	]
+\end{tikzpicture}
+
+\textsc{Bloccanti neuromuscolari}
+
+\begin{tikzpicture}
+	\tikzset{level 3/.style={level distance=150pt}}
+	\Tree
+	[.{influenza sui muscoli}
+		[.{bloccanti neuromuscolari}
+			{per indurre paralisi\\ durante gli interventi}
+		]
+		[.spasmolitici
+			[.{per ridurre dolore\\ in varie situazioni}
+				{vedi cap. 27 sull'argomento\\ o poi se trattato\\(benzodiazepine, clonidina, antiepilettici, \\ dantrolene (anche contro ipertermia maligna),\\ tossina botulinica)}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{bloccanti\\ neuromuscolari}
+		[.{non depolarizzanti}
+			[.{impediscono l'accesso dell'Ach\\ sul recettore $\text M_M$}
+				{tubocuranina\\ (curaro)}
+				\node[farmaco]{rocuronio};
+			]
+		]
+		[.depolarizzanti
+			[.{eccesso di Ach o simile}
+				\node[farmaco]{succinilcolina\\(2 Ach legate tra loro)};
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=130pt}}
+	\Tree
+	[.Farmacocinetica
+		[.assunzione EV ]
+		[.metabolismo epatico ]
+		[.degradazione \edge node[smallfont,yshift=-5pt,xshift=5em]{AchE (plasma)} node[smallfont,yshift=5pt,xshift=5em]{BuchE (fegato)}; {acido succinico + colina}
+		]
+	]		
+\end{tikzpicture}
+
+Una mutazione del gene che codifica la pseudocolinesterasi plasmatica rende alcuni pazienti pi\`u sensibili a metabolizzare la succinilcolina.
+
+Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fatto che la dibucaina inibisce la pseudoAchE normale per l'80\% mentre l'inibizione \`e solo del 20\% in quella modificata.
+
+\begin{tikzpicture}
+	\tikzset{frontier/.style={distance from root=300pt}}
+	\Tree
+	[.funzionamento
+		[.{non depolarizzanti} {stimolo tetanico} ]
+		[.depolarizzanti
+			[.{fase 1: depolarizzazione} fascicolazione ]
+			[.{fase 2: desensibilizzazione} {stimolo tetanico} ]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{sequenza tetanica}
+		[.{da muscoli piccoli a grandi}
+			{m. occhio}
+			{m. facciali}
+			{m. arti}
+			{faringe}
+			\node(diaframma){diaframma};
+		]
+	]
+	\node[below right=10pt and 10pt of diaframma] (da) {};
+	\node[above=12em of da] (db) {};
+	\draw[drawarrow] (da) -- (db) node[midway,above,sloped] {\tiny recupero sequ. inversa};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+		\tikzset{level distance=150pt}
+	\Tree
+	[.{effetti avversi}
+		iperkalinemia
+		{dolore muscolare post operatorio\\ (depolarizzanti)}
+		{rilascio istamina e quindi ipotensione}
 	]
 \end{tikzpicture}
 
@@ -427,8 +585,6 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 \end{tabular} 
 
 \subsection{Serotonina}
-
-Serotonina o 5-HT o 5-idrossitriptamina
 
 \begin{tikzpicture}
 	\tikzset{level 3/.style={level distance=130pt}}
