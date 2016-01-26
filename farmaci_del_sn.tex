@@ -80,14 +80,22 @@
 \begin{tikzpicture}
 	\tikzstyle{cwhite}=[circle,shadedraw=yellow];
 	\shade[ball color=yellow] node (ach) {\small Ach} circle[radius=.45];
-	\draw (ach) -- +(.7,.7) +(.7,.7) arc [start angle=225, end angle=270, radius=6pt]  (.7,.7) arc [start angle=225, end angle=180, radius=6pt];
+	\draw (ach) -- +(.7,.7) node(vamp){} arc [start angle=225, end angle=270, radius=6pt]  (.7,.7) arc [start angle=225, end angle=180, radius=6pt];
 	\draw (2,2) arc [start angle=45, end angle=0, radius=3cm];
-	\draw (2,2) arc [start angle=45, end angle=80, radius=3cm];
+	\draw (2,2) 
+		arc [start angle=45, end angle=60, radius=3cm] node(a){} 
+		node[above right=2pt and 2pt of a] {\tiny Canale Ca${}^{2+}$}
+		(a) arc [start angle=140, end angle=120, radius=1cm]
+		(a) arc [start angle=140, end angle=160, radius=1cm];
+	\path (2,2) arc [start angle=45, end angle=65, radius=3cm] node(b){};
+	\draw (b) arc [start angle=-50, end angle=-30, radius=1cm]
+		(b) arc [start angle=-50, end angle=-70, radius=1cm]
+		(b) arc [start angle=65, end angle=80, radius=3cm];
 	\draw (2,2) -- (1.3,1.3);
-	\filldraw (1.3,1.3) circle[radius=3pt];
+	\filldraw (1.3,1.3) circle[radius=3pt] node(snap){};
+	\draw[->, shorten <=0pt,shorten >=2pt] (vamp)--(snap);
 	\node at (1,.4) {\tiny VAMP};
 	\node at (1.9,1.3) {\tiny SNAP};
-	\node at (2.1,2.7) {\tiny Canale Ca${}^{2+}$};
 \end{tikzpicture}
 
 \begin{tikzpicture}
@@ -110,7 +118,7 @@
 		[.{muscarinico\\ (metabotropo)}
 			[.{M${}_1$ eccitatorio $\uparrow\text{IP}_3, \uparrow\text{DAG},\uparrow\text{Ca}^{2+}$} {SNC, simpatico post--gangliare,\\ cellule parietali dello stomaco}
 			]
-			[.{M${}_2$ inibitorio $\downarrow$cAMP } {cuore, muscolo liscio}
+			[.{M${}_2$ inibitorio $\downarrow$cAMP } {cuore, endotelio dei vasi}
 			]
 			[.{M${}_3$ eccitatorio $\uparrow\text{IP}_3, \uparrow\text{DAG},\uparrow\text{Ca}^{2+}$} {ghiandole esocrine, muscolo liscio,\\ endotelio dei vasi}
 			]
@@ -129,6 +137,7 @@
 \subsubsection{Agonisti colinergici}
 
 \begin{tikzpicture}
+	\begin{scope}
 	\tikzset{
 		level distance=80pt,
 		level 1/.style={level distance=70pt},
@@ -156,74 +165,75 @@
 		]
 		[.indiretti
 			[.\node(AchEI){inibitori AchE}; 
-				\node[farmaco](neo){neostigmina};
-				\node[farmaco]{edrifonio}; 
-				[.{organofosfati} \node[farmaco]{ecotiopato}; ]
-				\node(somar){somar (gas nervino)};  
 			]
 		]
 	]	
-	\node[right=5pt of somar] (somary) {};
-	\node[above=6em of somary] (neox) {};
-	\draw[drawarrow] (neox) -- (somary) node[midway,above,sloped] {\tiny $\uparrow$durata azione};
 	\node[right=5pt of ach] (achn) {};
 	\node[right=5pt of beta] (betan) {};
 	\draw[drawarrow] (achn) -- (betan) node[midway,above,sloped] {\tiny $\uparrow$resist. idrolisi e quindi durata azione};
-\end{tikzpicture}
-
-\begin{tikzpicture}
+\end{scope}
+\begin{scope}[yshift=-14em]
 	\Tree
-	[.{Inibitori AchE}
+	[.\node(AchEIa){inibitori AchE};
+		[.carbammati 
+			[.\node[farmaco]{neostigmina\\ fisostigmina\footnotemark}; 
+				[.{legame covalente con AchE} {idrolisi in ore}
+				]
+			]
+		]
 		[.{alcool+gruppo N quaternario}
 			[.\node[farmaco]{edrofonio}; 
 				[.{legame idrogeno\\ o ionico con AchE} {idrolisi in minuti}
 				]
 			]
 		]
-		[.carbammati 
-			[.\node[farmaco]{neostigmina\\ fisostigmina}; 
-				[.{legame covalente con AchE} {idrolisi in ore}
-				]
-			]
-		]
 		[.organofosfati
-			[.somar
+			[.\node[farmaco](ecotiopato){ecotipato};
 				[.\node(fAchE){fosforilazione AchE}; \node(idro){idrolisi in giorni};
 				]
 			]
-			\node[farmaco](ecotiopato){ecotipato};
+			\node(somar){somar\\ (gas nervino)};
 		]
 	]		
-	\draw[drawarrow] (ecotiopato) to[out=0,in=180] (fAchE);
+	\draw[drawarrow] (somar) to[out=0,in=180] (fAchE);
 	\node[chartnode,below=1em of fAchE] (invec) {invecchiamento\\rottura legame O-P\\ con raffozamento\\ legame con AchE}; 
 	\node[chartnode,below=1em of idro] (pral) {pralidossina pu\`o\\ scindere la\\ fosforilazione};
 	\draw[drawarrow] (pral)--(fAchE) node[midway,above,sloped] {\tiny qui si};
 	\draw[drawarrow] (pral)--(invec) node[midway,above,sloped] {\tiny qui no};
+	\node[below right=8pt and 5pt of somar] (somary) {};
+	\node[above=9em of somary] (neox) {};
+	\draw[drawarrow] (neox) -- (somary) node[midway,above,sloped] {\tiny $\uparrow$durata azione};
+	\draw[drawarrow] (AchEI.south) to[out=-90,in=90] (AchEIa);
+\end{scope}
 \end{tikzpicture}
+
+\footnotetext{Presente nella fava del Calabar}
 
 \begin{tikzpicture}
 	\tikzset{level distance=120pt, level 2/.style={level distance=150pt}}
 	\Tree
 	[.\node(sub){Effetti}; 
-		[.occhio 
-			{contrazione muscolo sfintere dell'iride (miosi)\\ contrazione muscolo ciliare (accomodamento da vicino)}
+		[.{SNC ($\text M_1$)} {tremore, ipotermina, $\uparrow$capacità cognittive}	
 		]
-		[.cuore
+		[.{occhio ($\text M_3$)}
+			{costrizione muscolo sfintere dell'iride (miosi)\\ contrazione muscolo ciliare (accomodamento da vicino)}
+		]
+		[.{cuore ($\text M_2$)}
 			{$\downarrow$frequenza (cronotopo-), $\downarrow$forza (inotropo-),\\ $\downarrow$vel. conduzione (dromotropo-), $\uparrow$periodo refrattario, NAV}
 		]
-		[.vasi
-			{dilatazione a basse dosi o contrazione a alte dosi}
+		[.{vasi ($\text M_2$)}
+			{vasodilatazione a basse dosi\\ vasocontrazione a alte dosi}
 		]
-		[.polmone
+		[.{polmone ($\text M_3$)}
 			 {broncocostrizione, $\uparrow$secrezione}
 		]
-		[.intestino
+		[.{intestino ($\text M_3$)}
 			{$\uparrow$motilit\`a, $\downarrow$ muscolatura sfinteri, $\uparrow$ secrezioni} 
 		]
 		[.vescica
-			 {contrazione destrusore, rilascio trigono}
+			 {contrazione destrusore ($\text M_3$), rilascio trigono ($\text M_2$)}
 		]
-		[.{ghiandole sudoripare\\ lacrimali\\ salivali} 
+		[.{ghiandole esocrine ($\text M_3$)}
 			{$\uparrow$secrezioni}
 		]
 		[.{giunzione neuromuscolare\\ (indiretti)}
@@ -233,21 +243,39 @@
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\tikzset{level distance=130pt, level 2/.style={level distance=160pt},frontier/.style={distance from root=300pt}}
+	\tikzset{frontier/.style={distance from root=350pt}, level 2/.style={level distance=130pt}}
 	\Tree
-	[.{usi clinici\\ agonisti colinergici}
-		[.occhio {glaucoma con diminuzione della pressione\\ nelle emergenze ad angolo chiuso,\\ agonista muscarinico (pilocarpina)\\ + inibitore colinesterasi (ecotiopato)\\ 
-		nel glaucoma cronico ora si usano i $\beta$-bloccanti.} ]
-		[.{gastrointestinale\\ urinari} {Tutti i casi di depressione dell'attivit\`a senza ostruzione\\ neostigmina/betanecolo nelle ritenzioni urinarie e ileo\\
-		pilocarpina usata per $\uparrow$secrezioni salivari in xerostomia da\\
-		sindrome di Sjogren.} ]
-		{intossicazione da\\ farmaci antimuscarinici\\ (intossicazione da atropina)\\ fisostigmina}
-		[.cuore {tachiaritmia parossistica sopraventricolare\\ edrofonio(in disuso)\\ ora si usa l'adenosina.} ]
-		[.{giunzione neuromuscolare} 
-			[.{miastenia grave\\ edofonio/neostigmina} ]
-			[.{post anestesia\\ ??? Leggo nelle correzioni\\ NO negli inibitori AchE ma boh!! } ]
+	[.{usi clinici}
+		[.\node[farmaco](pilocarpina){pilocarpina};
+			[.{xerostomia da\\ sindrome di Sjogren} {$\uparrow$secrezioni salivali}
+			]
+		]
+		[.\node[farmaco](ecotiopato){ecotiopato};
+			[.\node(glaucoma){glaucoma};
+				{nelle emergenze ad angolo chiuso,\\ agonista muscarinico + inibitore colinesterasi. \\	nel glaucoma cronico ora si usano i $\beta$-bloccanti}
+			]
+		]
+		[.\node[farmaco](betanecolo){betanecolo};
+				\node(ritenzione){ritenzioni urinarie e ileo\\ depressione dell'attivit\`a senza ostruzione};
+		]
+		[.\node[farmaco](neostigmina){neostigmina};
+			[.\node(miastenia){miastenia grave};
+				{cura e mezzo diagnostico}
+			]
+		]
+		[.\node[farmaco](edofonio){edofonio};
+			{tachiaritmia parossistica sopraventricolare\\ in disuso, ora si usa l'adenosina.}
+			\node(post){post anestesia per revertire i\\ neurobloccanti muscolari (vedi)};
+		]
+		[.\node[farmaco](fisostigmina){fisostigmina};
+			{intossicazione da farmaci antimuscarinici\\ (intossicazione da atropina)}
 		]
 	]
+	\draw[drawarrow](pilocarpina) to[out=0, in=180] (glaucoma);
+	\draw[drawarrow](neostigmina) to[out=0, in=180] (ritenzione);
+	\draw[drawarrow](neostigmina) to[out=0, in=180] (post);
+	\draw[drawarrow](betanecolo) to[out=0, in=180] (ritenzione);
+	\draw[drawarrow](edofonio) to[out=0, in=180] (miastenia);
 \end{tikzpicture}
 
 \subsubsection{Antagonisti colinergici}
