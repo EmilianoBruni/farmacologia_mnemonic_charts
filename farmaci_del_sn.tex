@@ -81,7 +81,7 @@
 	\tikzstyle{cwhite}=[circle,shadedraw=yellow];
 	\shade[ball color=yellow] node (ach) {\small Ach} circle[radius=.45];
 	\draw (ach) -- +(.7,.7) node(vamp){} arc [start angle=225, end angle=270, radius=6pt]  (.7,.7) arc [start angle=225, end angle=180, radius=6pt];
-	\draw (2,2) arc [start angle=45, end angle=0, radius=3cm];
+	\draw (2,2) arc [start angle=45, end angle=0, radius=3cm] node[midway,above,sloped]{\tiny spazio sinaptico} ;
 	\draw (2,2) 
 		arc [start angle=45, end angle=60, radius=3cm] node(a){} 
 		node[above right=2pt and 2pt of a] {\tiny Canale Ca${}^{2+}$}
@@ -93,7 +93,9 @@
 		(b) arc [start angle=65, end angle=80, radius=3cm];
 	\draw (2,2) -- (1.3,1.3);
 	\filldraw (1.3,1.3) circle[radius=3pt] node(snap){};
-	\draw[->, shorten <=0pt,shorten >=2pt] (vamp)--(snap);
+	\draw[->, shorten <=0pt,shorten >=2pt] (vamp)--(snap) node[midway,above,circle,draw,,yshift=3pt,xshift=-8pt]{\tiny 2};
+	\draw[->, shorten <=0pt,shorten >=2pt] (ach) to[out=-20,in=225] node[midway,below,circle,draw,yshift=-5pt]{\tiny 3}  (4,1) ;
+	\draw[->, shorten <=2pt,shorten >=6pt](3,3.5) to[out=205,in=90] node[near end,above,circle,draw,yshift=15pt]{\tiny 1}  node[very near end,above,yshift=15pt,xshift=-2pt]{\tiny Ca${}^{2+}$} (ach) ;
 	\node at (1,.4) {\tiny VAMP};
 	\node at (1.9,1.3) {\tiny SNAP};
 \end{tikzpicture}
@@ -584,6 +586,137 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 \hline 
 \end{tabular} 
 
+\subsubsection{Simpaticomimetici}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.simpaticomimetici
+		[.diretta {interazione con i recettori} ]
+		[.indiretta 
+			{rilascio catecolamine immagazzinate}
+			{riduzione clearance della noradrenalina}
+			{inibizione della ricaptazione della noradrenalina}
+			{inibizione del catabolismo enzimatico via blocco MAO e COMT}
+		]
+		miste
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{frontier/.style={distance from root=350pt}}
+	\Tree
+	[.effetti
+		[.diretti
+			[.{dipendono da} 
+		 		{vie somministrazione} 
+		 		{selettivit\`a per i sottotipi recettoriali}
+		 		{espressione dei sottotipi nei tessuti}
+		 	]
+		]
+		[.indiretti {effetto proporzionale all'attivazione del simpatico}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{Eliminazione da fessura}
+		[.ricaptazione {NET (90\%)} ]
+		[.metabolismo {COMT (10\%)} ]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 3/.style={level distance=130pt}}
+	\Tree
+	[.{effetti}
+		[.{occhio}
+			[.$\alpha_1$ {contrazione muscolo pupillare\\ con dilatazione della pupilla} ]
+			[.$\beta_1$ {effetto cronotropo+, inotropo+, dromotropo+} ]
+		]
+		[.{cuore}
+			[.$\alpha_1$ {inotropo+, porta a ipertrofia} ]
+			[.$\beta_1$ {effetto cronotropo+ e inotropo+} ]
+		]
+		[.{sistema circolatorio}
+			[.$\alpha_1$ {contrazione vasi} ]
+			[.$\alpha_2$ {aggregazione piastrinica} ]
+			[.$\beta_2$ {rilasciamento vasi} ]
+		]			
+		[.{muscolo liscio}
+			[.{$\alpha_1,\alpha_2$ endogena o IV} contrazione ]
+			[.{$\alpha_2$ per os} {riduzione del tono simpatico per accumulo SNC} ]
+			[.{$\beta_2$} {rilasciamento della muscolatura} ] 
+		]
+		[.{respiratorio}
+			[.{$\beta_2$} {rilasciamento della muscolatura\\ liscia bronchiale$\Rightarrow$broncodilatazione} ] 
+		]
+		[.{gastointestinale} 
+			[.{$\alpha, \beta$} {rilasciamento muscolatura} ]
+		]
+		[.{rene}
+			[.$\beta_1$ {rilascio di renina} ]
+		]
+		[.{metabolismo}
+			[.{$\beta_2$} {promozione della iperglicemia} ]
+			[.{$\beta_3$} {lipolisi e quindi iperlipidemia} ]
+		]
+		[.{sistema immunitario}
+			[.{$\beta$} {$\uparrow$lifociti, $\uparrow$killing, $\uparrow$citochine} ]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{usi clinici}
+		[.\node[farmaco]{adrenalina};
+			{arresto cardiaco}
+			{shock anafilattico}
+			{prolungamento anestetici locali\\ per vasocostrizione}
+		]
+		[.\node[farmaco]{fenilefrina};
+			{$\downarrow$prurito}
+			{$\downarrow$congestione congiuntivale}
+		]
+		[.\node[farmaco]{ossimetazolina};
+		]
+		[.\node[farmaco]{clonidina};
+			{ipertensione nelle gestanti}
+			{disintossicazione da droghe}
+		]
+		[.\node[farmaco]{dobutamina};
+			{shock cardiogeno}
+		]
+		[.\node[farmaco]{salbutamolo};
+			{asma come broncodilatatore}
+			{inibizione parti prematuri}
+		]
+		[.\node[farmaco]{salmeterolo};
+		]
+	]
+\end{tikzpicture}
+
+\subsection{Dopamina}
+
+Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopaminergici sono recettori adrenergici
+
+\begin{tikzpicture}
+	\tikzset{level distance=130pt}
+	\Tree
+	[.{Recettore dopaminergico}
+		[.{$\text D_1$, $\text D_5$, eccitatorio, $\uparrow$cAMP} {cervello, muscolatura vasi rene} 
+		]
+		[.{$\text D_2$, inibitorio, apertura canali $\text K^+$} {cervello, muscolatura liscia} 
+		]
+		[.{$\text D_3$, inibitorio, apertura canali $\text K^+$} {cervello} 
+		]
+		[.{$\text D_4$, inibitorio, apertura canali $\text K^+$} {cervello, sistema cardio vascolare} 
+		]
+	]
+\end{tikzpicture}
+
 \subsection{Serotonina}
 
 \begin{tikzpicture}
@@ -665,22 +798,5 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 Per via inalatoria $\downarrow$shunt, $\downarrow$broncocostrizione, $\downarrow$ipertensione polmonare e quindi utile anche nella cura dell'asma.
 
 Utile nel trattamento delle malattie neurovegetative e shock settico dove aumenta e nell'ateorscelosi e ipercolesterolemia dove diminuisce. 
-
-\subsection{Dopamina}
-
-\begin{tikzpicture}
-	\tikzset{level distance=130pt}
-	\Tree
-	[.{Recettore dopaminergico}
-		[.{$\text D_1$, $\text D_5$, eccitatorio, $\uparrow$cAMP} {cervello, muscolatura vasi rene} 
-		]
-		[.{$\text D_2$, inibitorio, apertura canali $\text K^+$} {cervello, muscolatura liscia} 
-		]
-		[.{$\text D_3$, inibitorio, apertura canali $\text K^+$} {cervello} 
-		]
-		[.{$\text D_4$, inibitorio, apertura canali $\text K^+$} {cervello, sistema cardio vascolare} 
-		]
-	]
-\end{tikzpicture}
 
 \newpage
