@@ -783,6 +783,133 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 	]
 \end{tikzpicture}
 
+\begin{tikzpicture}
+	\Tree
+	[.{Effetti avversi}
+		[.{Accentuazione dell'effetto\\ farmacologico}
+			{vasocostrizione eccessiva}
+			{aritmie}
+			{infarto miocardio}
+			{edema polmonare}
+			{emorragie polmonari}
+		]
+	]
+\end{tikzpicture}
+
+\subsubsection{Inibitori dei recettori adrenergici}
+
+\begin{tikzpicture}
+	\Tree
+	[.tipo
+		[.{$\alpha$-bloccanti} 
+		]
+		[.{$\beta$-bloccanti}
+		]
+	]
+\end{tikzpicture}
+
+\textsc{$\alpha$-bloccanti}
+
+\begin{tikzpicture}
+	\tikzset{level distance=150pt}
+	\Tree
+	[.effetti
+		[.{riduzione delle resistenze periferiche\\ e tachicardia riflessa\\ ($\alpha$)} 
+			{$\downarrow$pressione} 
+			{ipotensione posturale}
+			{inversione dell'adrenalina\footnotemark}
+		]
+		[.{rilasciamento muscoli vescica, prostata\\($\alpha_1$)}
+			{ritenzione urinaria\\ da iperplasia prosatic benigna}
+		]
+	]	
+\end{tikzpicture}
+
+\footnotetext{L'attiva sia gli $alpha$ che i $\beta_2$. Se si immette un $\alpha$-bloccante questo neutralizzerà l'effetto vasocostrittore dell'adrenalina lasciando la sola attivazione dei $\beta_2$ che quindi causer\`a una vasodilatazione da cui un azione inversa a quella usuale dell'adrenalina}
+
+\begin{tikzpicture}
+	\tikzset{level distance=80pt}
+	\tikzset{level 3/.style={level distance=100pt}}
+	\tikzset{level 4/.style={level distance=120pt}}
+	\Tree
+	[.{usi clinici}
+		[.{non selettivi}
+			[.\node[farmaco]{fenossibenzamina\\ fentolamina};
+				[.{riduzione pressione soprattutto\\ in presenza di elevato tono simpatico\\ (passaggio da prono a ortopostura)} {feocromocitoma\\ pre intervento}
+				]
+			]
+		]
+		[.{$\alpha_1$}
+			[.\node[farmaco]{prazosina};
+				{antiipertensivo}
+				{ritenzione urinaria\\ da iperplasia prosatic benigna}
+			]
+			[.\node[farmaco]{labetalolo}; {blocca principalmente i $\beta$.\\ Descritto in seguito}
+			]
+		]
+		[.{$\alpha_2$} {solo sperimentali}
+		]
+	]
+\end{tikzpicture}
+
+\textsc{$\beta$-bloccanti}
+
+\begin{tikzpicture}
+	\tikzset{level distance=150pt}
+	\Tree
+	[.effetti
+		[.cuore
+			[.{inibizione sistema renina-angiotensina} 
+				{$\downarrow$pressione arteriosa} 
+			]
+			[.{inibizione recettori adrenergici cardiaci}
+				{effetto inotropo-, cronotopo-}
+				{allungamento PR}
+			]
+		]
+		[.polmone
+			[.{blocco $\beta_2$ nella muscolatura liscia bronchiale}
+				{BPCO (soprattutto se associate a cardiopatie ischemiche)}
+			]
+		]
+		[.occhio		
+			[.{riduzione della produzione di umor acqueo} {glaucoma}
+			]
+		]
+		[.{blocco dei canali Na${}^+$} {azione anestetica locale}
+		]
+	]	
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=120pt}}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.{usi clinici}
+		[.\node[farmaco]{propanololo};
+			{angina pectoris}
+			{infarto del miocardio}
+			{aritmie}
+			{insufficienza cardiaca}
+			{ipertiroidismo}
+			{tempesta tiroidea}
+		]
+		[.\node[farmaco]{metoprololo\\ atenololo};
+			{emicrania}
+			{tremore muscolare}
+			{stati d'ansia}
+		]
+		[.\node[farmaco]{labetalolo\\ carvedilolo\\(sono sia $\alpha$ che $\beta$};
+			{feocromocitoma}
+			{feoc. + scompenso + ipertensione}
+		]
+		[.\node[farmaco]{timololo}; 
+			{glaucoma}
+		]
+	]
+\end{tikzpicture}
+
+
 \subsection{Dopamina}
 
 Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopaminergici sono recettori adrenergici
