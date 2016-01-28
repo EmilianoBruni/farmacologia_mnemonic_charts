@@ -589,17 +589,27 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 \subsubsection{Simpaticomimetici}
 
 \begin{tikzpicture}
-	\tikzset{level 2/.style={level distance=150pt}}
+	\tikzset{frontier/.style={distance from root=350pt},level 2/.style={level distance=150pt}}
 	\Tree
 	[.simpaticomimetici
-		[.diretta {interazione con i recettori} ]
-		[.indiretta 
-			{rilascio catecolamine immagazzinate}
-			{riduzione clearance della noradrenalina}
-			{inibizione della ricaptazione della noradrenalina}
-			{inibizione del catabolismo enzimatico via blocco MAO e COMT}
+		[.diretta 
+			[.{interazione con i recettori} 
+				\node[farmaco]{adrenalina\\
+				felilefrina\\
+				clonidina\\
+				dobutamina\\
+				salbutamolo};
+			]
 		]
-		miste
+		[.indiretta 
+			[.{rilascio catecolamine immagazzinate} ]
+			[.{riduzione clearance della noradrenalina} ]
+			[.{inibizione della ricaptazione\\ della noradrenalina} ]
+			[.{inibizione del catabolismo\\ enzimatico via blocco MAO e COMT} ]
+		]
+		[.miste
+			\node[farmaco]{efedrina};
+		]
 	]
 \end{tikzpicture}
 
@@ -626,6 +636,44 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 		[.metabolismo {COMT (10\%)} ]
 	]
 \end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{chimica dei\\ simpaticomimetici}
+		[.catecolamine
+			{adrenalina\\
+			noradrenalina\\
+			dopamina}
+		]
+		[.{non catecolamine}
+			{fenilefrina\\ efedrina\\ anfetamina}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\setatomsep{2em}
+	\schemestart
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=-=(-OH)-(-OH)=-)}}{Catecolo}\quad
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH_2-NH_2)-=(-OH)-(-OH)=-)}}{Noradrenalina}
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH_2-NH-CH_3)-=(-OH)-(-OH)=-)}}{Adrenalina}
+	\schemestop
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\setatomsep{2em}
+	\schemestart
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH_2-NH-CH_3)-=(-OH)-=-)}}{Fenilefrina}\quad
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH([6]-CH_3)-NH-CH_3)-=-=-)}}{Efedrina}\quad
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH_2-CH([6]-CH_3)-NH2)-=-=-)}}{Anfetamina}
+	\schemestop
+\end{tikzpicture}
+
+Le catecolamine sono degradate da COMT a livello intestinale e epatico per cui l'assorbimento per os \`e praticamente nulla.
+
+L'assenza di uno o di ambedue i gruppi \chemfig{-[,.5]OH} ne aumenta la disponibilit\`a per os.
+
+La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mista dei farmaci come nell'efedrina e l'anfetamina che hanno azione diretta e indiretta e quindi dipendono anche dalla presenza del neurotrasmettitore.
 
 \begin{tikzpicture}
 	\tikzset{level 3/.style={level distance=130pt}}
@@ -669,31 +717,68 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 \end{tikzpicture}
 
 \begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=130pt},level 3/.style={level distance=130pt}}
 	\Tree
-	[.{usi clinici}
-		[.\node[farmaco]{adrenalina};
-			{arresto cardiaco}
-			{shock anafilattico}
-			{prolungamento anestetici locali\\ per vasocostrizione}
+	[.{usi clinici\\(diretti)}
+		[.\node[farmaco]{adrenalina\\($\alpha,\beta$)};
+			[.vasocostrizione
+				{prolungamento anestetici locali}
+				{shock anafilattico}
+			]
+			[.{stimolazione cardiaca}
+				{arresto cardiaco}
+			]
 		]
-		[.\node[farmaco]{fenilefrina};
+		[.\node[farmaco]{fenilefrina\\($\alpha_1$)};
 			{$\downarrow$prurito}
-			{$\downarrow$congestione congiuntivale}
+			{esame retina (midriasi)}
+			\node(congestione){$\downarrow$congestione mucose};
 		]
-		[.\node[farmaco]{ossimetazolina};
+		[.\node[farmaco](oxi){oximetazolina\\($\alpha_2$)};
 		]
-		[.\node[farmaco]{clonidina};
+		[.\node[farmaco]{clonidina\\($\alpha_2$)};
 			{ipertensione nelle gestanti}
+			{$\downarrow$vampate calore in menopausa}
 			{disintossicazione da droghe}
+			{stimolazione $\alpha_2$ vagale con vasocostrizione\footnotemark}
 		]
-		[.\node[farmaco]{dobutamina};
-			{shock cardiogeno}
+		[.\node[farmaco]{metildopa\\($\alpha_2$)};
+			{emergenze ipertensive\footnotemark}
 		]
-		[.\node[farmaco]{salbutamolo};
+		[.\node[farmaco]{dobutamina\\($\beta_1$)};
+			[.{$\uparrow$gittata cardiaca ma non tachicardia}
+				{shock cardiogeno}
+				{test farmacologico da sforzo\\ quando non si pu\`o usare\\ la cyclette}
+			]
+		]
+		[.\node[farmaco]{salbutamolo\\($\beta_2$)};
 			{asma come broncodilatatore}
-			{inibizione parti prematuri}
+			{inibizione parti prematuri\\ per relax muscolatura uterina}
 		]
-		[.\node[farmaco]{salmeterolo};
+	]
+	\draw[drawarrow](oxi) to[out=0,in=180] (congestione);
+\end{tikzpicture}
+
+\footnotetext{Per cui pu\`o dare anche un aumento della pressione e per questo non si usa nelle emergenge da ipertensione}
+\footnotetext{\`E anche un inibitore della DOPA decarbossilasi per cui $\downarrow$dopamina.}
+
+\begin{tikzpicture}
+	\tikzset{level 3/.style={level distance=150pt}}
+	\Tree
+	[.{usi clinici\\(indiretti)}
+		[.\node[farmaco]{anfetamine};
+			[.{rilascio noradrenalina\\ e dopamina} {stimolante SNC}
+			]
+		]
+		[.\node[farmaco]{tiramina};
+			[.{simile a noradrenalina} {$\uparrow$pressione in pazienti trattati\\ con inibitori delle MAO\\ che dovrebbero degradarle.\\ Prodotti dal metabolismo\\ della tirosina. Non assumere\\ cibi come formaggi,...\\ in terapia da inibitori MAO}
+			]
+		]
+		[.\node[farmaco]{cocaina};
+			[.{blocco ricaptazione noradrenalina\\ e dopamina}
+				{anestetico locale}
+				{nel SNC il blocco della ricaptazione\\ della dopamina provoca piacere}
+			]
 		]
 	]
 \end{tikzpicture}
