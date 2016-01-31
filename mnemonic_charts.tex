@@ -57,6 +57,7 @@
 \end{tikzpicture}
 
 \footnotetext{Vedere farmaci angina}
+
 \footnotetext{Vedere farmaci angina}
 
 \newpage
@@ -95,6 +96,42 @@
 \end{tikzpicture}
 
 \footnotetext{vedi farmaci anti-ipertensivi}
+
+\begin{tikzpicture}
+	\node[chartnode,anchor=west] at(0,0)(mlck){MLCK} node[chartnode,xshift=125pt] (mlckstar){MLCK${}^*$};
+	\draw[drawarrow](mlck)[yshift=10pt]--node[smallfont,yshift=6pt,midway](Ca){Ca${}^{2+}$}
+				node[chartnode,yshift=50pt,midway](CCa){Canali Ca${}^{2+}$}
+				node[smallfont,yshift=-15pt,midway](camp){cAMP}
+				node[chartnode,yshift=-60pt,midway](atp){ATP}(mlckstar);
+	\draw[drawarrow] (mlckstar) [yshift=-10pt] -- (mlck);
+	\draw[drawarrow] (CCa)-- node[midway](CCCa){} node[smallfont,xshift=5em](bloc){bloccanti canali} (Ca);
+	\draw[drawarrow] (bloc)-- node[midway, below]{$\ominus$} (CCCa);
+	\draw[drawarrow] (atp)-- node[midway](catp){} node[smallfont,xshift=5em](beta){$\beta$-bloccanti} (camp);
+	\draw[drawarrow] (beta)-- node[midway, above]{$\oplus$} (catp);
+	
+	\node[chartnode,below right=1em and 2em of mlckstar](mlc){MLC};
+	\node[chartnode,right=50pt of mlc](mlcstar){MLC${}^*$} node[right=3pt of mlcstar](+){+}
+		node[chartnode, right=3pt of +](actina){actina};
+	\node[chartnode,above=20pt of actina](contrazione){contrazione};
+	\node[chartnode,below=20pt of mlc](relax){relax};
+	\draw[drawarrow] (mlc) [yshift=10pt]-- node[midway](a){}(mlcstar);
+	\draw[drawarrow] (mlcstar) [yshift=-10pt]-- 
+		node[smallfont,midway,yshift=-6pt](cgmp){cGMP} 
+		node[chartnode,yshift=-57pt,midway](gtp){GTP}
+		(mlc);
+	\draw[drawarrow] (actina) -- (contrazione);
+	\draw[drawarrow] (mlc) -- (relax);
+	\draw[drawarrow] (mlckstar) -| (a);
+	\draw[drawarrow] (gtp)-- node[midway](cgtp){} 
+		node[smallfont,xshift=10pt](gcstar){GC${}^*$}
+		node[chartnode,xshift=100pt](gc){Guanil ciclasi} 
+		(cgmp);
+	\draw[drawarrow] (gc)-- node[midway](cgc){} node[midway, chartnode,yshift=-50pt](no){NO} (gcstar);
+	\draw[drawarrow] (no)--node[midway, right]{$\oplus$}(cgc);
+	
+	\node[smallfont,text width=12em,anchor=west] at(0,-4) {* $\equiv$ elemento attivato\\
+	MLCK $\equiv$ Miosina Catena Leggera chinasi\\ MLC $\equiv$ Miosina Catena Leggera};
+\end{tikzpicture}
 
 \newpage
 
