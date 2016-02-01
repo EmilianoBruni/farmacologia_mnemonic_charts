@@ -259,17 +259,56 @@
 \end{tikzpicture}
 
 \begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=120pt}}
+	\tikzset{frontier/.style={distance from root=350pt}}
 	\Tree
 	[.effetti
 		[.{muscolo liscio}
+			[.{arteriole + sensibili delle venule.\\ Quindi meno effetto di ipotensione ortostatica}
+				\node[farmaco]{nifedipina};
+			]
 		]
 		[.{miocardio}
+			\node[farmaco]{varapamil\\ diltiazem};
 		]
 		[.{muscolo scheletrico}
+			[.{nessun effetto\\ il Ca${}^{2+}$ \`e intracellulare} ]
 		]
 	]
 \end{tikzpicture}
 
 \textsc{$\beta$-bloccati}
+
+\begin{tikzpicture}
+	\Tree
+	[.effetti
+		{$\downarrow$frequenza cardiaca}
+		{$\downarrow$pressione arteriosa}
+		{$\downarrow$contrattilit\`a}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{effetti indesiderati}
+		{$\uparrow$volume telediastolico}
+		{$\uparrow$tempo di eiezione}
+		{insomnia}
+		{sonni spiacevoli}
+		{senso di affaticamento}
+		{disfunzione erettile}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.controindicazioni
+		asma
+		{affezioni broncospastiche}
+		{grave bradicardia}
+		{blocco atriventricolare}
+		{insufficienza ventricolare sinistra}
+	]
+\end{tikzpicture}
 
 \newpage
