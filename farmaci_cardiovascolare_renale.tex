@@ -11,8 +11,8 @@
 	\Tree
 	[.{Diuretici\\ (capitolo ah hoc)}
 		[.{Diuretici dell'ansa} \node[farmaco]{furosemide}; ]
-		[.{Inibitori del simporto\\ $\text{Na}^+\text{-Cl}^-$} \node[farmaco]{tiazidici}; ]
-		[. {Risparmiatori di $\text K^+$} \node[farmaco]{spironolattone}; ]
+		[.{Inibitori del simporto\\ \ce{Na+}-\ce{Cl-}} \node[farmaco]{tiazidici}; ]
+		[. {Risparmiatori di \ce{K+}} \node[farmaco]{spironolattone}; ]
 	]
 \end{tikzpicture}
 
@@ -41,10 +41,10 @@
 		[.{diretti}
 			[.{prevalentemente\\ arteriosi}
 				[.{Inibitori IP3} \node[farmaco]{idralazina\\ (non pi\`u usato)}; ]
-				[.{Ca${}^{2+}$ antagonisti}  \node[farmaco]{nifedipina\footnotemark\\ (anche verapamil\\ e diltiazem\\ ma su cuore)}; ]
+				[.{\ce{Ca^{2+}} antagonisti}  \node[farmaco]{nifedipina\footnotemark\\ (anche verapamil\\ e diltiazem\\ ma su cuore)}; ]
 			]
 			[.{arterovenosi} 
-				[.{rilascio NO} \node[farmaco]{nitroprussiato\footnotemark\\ nitroglicerina}; ]
+				[.{rilascio \ce{NO}} \node[farmaco]{nitroprussiato\footnotemark\\ nitroglicerina}; ]
 			]
 		]
 		[.{indiretti}
@@ -77,9 +77,9 @@
 	[.{Vasodilatatori}
 		[.Nitrati
 			[.\node[farmaco]{Isosorbide mononitrato}; {Duranta d'azione pi\`u lunga} ]
-			[.\node[farmaco]{Nitroglicerina}; {Rilascio NO, $\uparrow$cGMP, relax muscolatura lis.\\ Via sublinguale, transdermica, rapido assorbimento\\ grazie alla solubilit\`a lipidica}  ]	
+			[.\node[farmaco]{Nitroglicerina}; {Rilascio \ce{NO}, $\uparrow$cGMP, relax muscolatura lis.\\ Via sublinguale, transdermica, rapido assorbimento\\ grazie alla solubilit\`a lipidica}  ]	
 		]
-		[.{Ca${}^{2+}$ antagonisti}
+		[.{\ce{Ca^{2+}}  antagonisti}
 			[.\node[farmaco]{verapamil\\ (diidropiridine)}; {$\downarrow$conduzione NSA. $\downarrow$ RVP} ]
 			[.\node[farmaco]{diltiazem}; {$\downarrow$conduzione NSA. $\downarrow$ RVP} ]
 			[.\node[farmaco]{nifedipina}; {$\updownarrow$conduzione NSA.  Possibile tachicardia riflessa\\ minori effetti cardiaci} ]
@@ -92,7 +92,7 @@
 	\Tree
 	[.{Simpaticolitici}
 		[.{$\beta$--bloccanti}
-			[.\node[farmaco]{propranololo\footnotemark}; {$\downarrow$GC, $\downarrow$PA, $\downarrow$consumo O${}_2$ micardico} ]
+			[.\node[farmaco]{propranololo\footnotemark}; {$\downarrow$GC, $\downarrow$PA, $\downarrow$consumo \ce{O2} micardico} ]
 		]
 	]
 \end{tikzpicture}
@@ -101,8 +101,8 @@
 
 \begin{tikzpicture}
 	\node[chartnode,anchor=west] at(0,0)(mlck){MLCK} node[chartnode,xshift=125pt] (mlckstar){MLCK${}^*$};
-	\draw[drawarrow](mlck)[yshift=10pt]--node[smallfont,yshift=6pt,midway](Ca){Ca${}^{2+}$}
-				node[chartnode,yshift=50pt,midway](CCa){Canali Ca${}^{2+}$}
+	\draw[drawarrow](mlck)[yshift=10pt]--node[smallfont,yshift=6pt,midway](Ca){\ce{Ca^{2+}}}
+				node[chartnode,yshift=50pt,midway](CCa){Canali \ce{Ca^{2+}}}
 				node[smallfont,yshift=-15pt,midway](camp){cAMP}
 				node[chartnode,yshift=-60pt,midway](atp){ATP}(mlckstar);
 	\draw[drawarrow] (mlckstar) [yshift=-10pt] -- (mlck);
@@ -154,14 +154,14 @@
 		comportamentale
 		chirurgica
 		[.farmacologica
-			[.{vasodilatatori\\ NO e Ca${}^2$ antagonisti}
+			[.{vasodilatatori\\ \ce{NO} e \ce{Ca^{2+}} antagonisti}
 				{per aumentare il flusso}
 			]
 			[.antiaggreganti {per evitare i trombi}
 			]
 			[.fibrinolitici {per distruggere i\\ trombi preesistenti}
 			]
-			[.{$\beta$ bloccanti} {per ridurre il fabbisogno energetico}
+			[.{$\beta$--bloccanti} {per ridurre il fabbisogno energetico}
 			]
 			[.oppioidi {per ridurre il dolore}
 			]
@@ -174,7 +174,7 @@
 	[.terapia
 		[.stabile
 			{nitrati organici}
-			{$\beta$ bloccanti}
+			{$\beta$--bloccanti}
 			{statina}
 			{aspirina}
 		]
@@ -185,7 +185,7 @@
 		]
 		[.variante
 			{nitrati organici}
-			{Ca${}^2$ antagonisti}
+			{\ce{Ca^{2+}} antagonisti}
 		]
 	]	
 \end{tikzpicture}
@@ -274,12 +274,12 @@
 			\node[farmaco]{varapamil\\ diltiazem};
 		]
 		[.{muscolo scheletrico}
-			[.{nessun effetto\\ il Ca${}^{2+}$ \`e intracellulare} ]
+			[.{nessun effetto\\ il \ce{Ca^{2+}} \`e intracellulare} ]
 		]
 	]
 \end{tikzpicture}
 
-\subsubsection{$\beta$-bloccati}
+\subsubsection{$\beta$--bloccanti}
 
 \begin{tikzpicture}
 	\Tree
@@ -310,6 +310,16 @@
 		{grave bradicardia}
 		{blocco atriventricolare}
 		{insufficienza ventricolare sinistra}
+	]
+\end{tikzpicture}
+
+\subsubsection{Insufficienza cardiaca}
+
+\begin{tikzpicture}
+	\Tree
+	[.{I.C.}
+		[.{gittata insufficiente\\ a fornire \ce{O2}\\ a organismo}
+		]
 	]
 \end{tikzpicture}
 

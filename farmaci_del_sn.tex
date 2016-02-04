@@ -105,7 +105,7 @@
 	[.Effetti
 		[.{$\uparrow$permeabilit\`a ai cationi\\ Na${}^+$, K${}^+$, Ca${}^{2+}$}
 			[.depolarizzazione
-				[.{fibre post sinaptiche} PdA ]
+				[.{fibre post gangliari} PdA ]
 				[.{fibre muscolari} {generazione potenziale\\ di placca}
 				]
 			]
@@ -177,20 +177,20 @@
 \begin{scope}[yshift=-14em]
 	\Tree
 	[.\node(AchEIa){inibitori AchE};
-		[.carbammati 
-			[.\node[farmaco]{neostigmina\\ fisostigmina\footnotemark}; 
-				[.{legame covalente con AchE} {idrolisi in ore}
-				]
-			]
-		]
 		[.{alcool+gruppo N quaternario}
 			[.\node[farmaco]{edrofonio}; 
 				[.{legame idrogeno\\ o ionico con AchE} {idrolisi in minuti}
 				]
 			]
 		]
+		[.carbammati 
+			[.\node[farmaco]{neostigmina\\ fisostigmina\footnotemark}; 
+				[.{legame covalente con AchE} {idrolisi in ore}
+				]
+			]
+		]
 		[.organofosfati
-			[.\node[farmaco](ecotiopato){ecotipato};
+			[.\node[farmaco](ecotiopato){ecotipato\footnotemark};
 				[.\node(fAchE){fosforilazione AchE}; \node(idro){idrolisi in giorni};
 				]
 			]
@@ -210,6 +210,7 @@
 \end{tikzpicture}
 
 \footnotetext{Presente nella fava del Calabar}
+\footnotetext{Unico degli organofosfati perch\`e altamente polare e pu\`o essere preparato come soluzione acquosa. Era utilizzato per il glaucoma, ora in disuso.}
 
 \begin{tikzpicture}
 	\tikzset{level distance=120pt, level 2/.style={level distance=150pt}}
@@ -548,7 +549,7 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 		]
 		[.{$\beta$}
 			[.{$\beta_1\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti,\\ iuxaglomerulare, epitelio corpi ciliari)} ]
-			[.{$\beta_2\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche muscolo liscio e cuore)} ]
+			[.{$\beta_2\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche muscolo liscio e\\ cuore dove qualche volta sono \ce{G_i} inibitorie)} ]
 			[.{$\beta_3\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti, vescica)} ]		
 		]
 	]
@@ -681,7 +682,6 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 	[.{effetti}
 		[.{occhio}
 			[.$\alpha_1$ {contrazione muscolo pupillare\\ con dilatazione della pupilla} ]
-			[.$\beta_1$ {effetto cronotropo+, inotropo+, dromotropo+} ]
 		]
 		[.{cuore}
 			[.$\alpha_1$ {inotropo+, porta a ipertrofia} ]
