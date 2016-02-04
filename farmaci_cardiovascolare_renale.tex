@@ -313,12 +313,209 @@
 	]
 \end{tikzpicture}
 
-\subsubsection{Insufficienza cardiaca}
+\subsection{Insufficienza cardiaca}
 
 \begin{tikzpicture}
 	\Tree
 	[.{I.C.}
 		[.{gittata insufficiente\\ a fornire \ce{O2}\\ a organismo}
+			[.{i. sistolica}
+				{$\downarrow$contrattilità}
+				{$\downarrow$fraz. di eiezione}
+			]
+			[.{i. diastolica}
+				{rigidità}
+				{perdità di rilasciamento}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{scopo del\\ trattamento}
+		[.{fase stabile\\(cronica)}
+			{$\downarrow$sintomi}
+			{rallentare progressione}
+		]
+		[.{fase scompensata\\(acuta)}
+			{ricondurre il paziente\\ alla fare stabile}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.terapia
+		[.{fase cronica}
+			{antagonisti aldosterone}
+			{ACE inibitori}
+			{sartani}
+			{$\beta$--bloccanti}
+			{digitalici}
+			\node(diuretici){diuretici};
+			\node(vasodilatatori){vasodilatatori};
+		]
+		[.\node(acuta){fase acuta};
+			{$\beta$--agonisti}
+		]
+	]
+	\draw[drawarrow] (acuta) to[out=0,in=180] (diuretici);
+	\draw[drawarrow] (acuta) to[out=0,in=180] (vasodilatatori);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=80pt}
+	\Tree
+	[.\node(git){$\downarrow$gittata cardiaca};
+		[.{$\downarrow$P.A.}
+			[.{attivazione barocettori}
+				[.\node(simpatico){$\uparrow$simpatico};
+					[.{inotropo+} {rimodellamento}
+					]
+					[.{cronotopo+}
+					]
+				]
+			]
+		]
+		[.{$\downarrow$flusso renale}
+			[.{$\uparrow$renina}
+				[.{$\uparrow$angII}
+					\node(pre){$\uparrow$ pre--carico};
+					[.\node(post){$\uparrow$post--carico};
+						\node(fraz){$\downarrow$fraz. eiezione};
+					]
+				]
+			]
+		]
+	]
+	\draw[drawarrow] (simpatico) to[out=0,in=180] (post);
+	\draw[drawarrow] (simpatico) to[out=0,in=180] (pre);
+	\node[below=1em of fraz](a){};
+	\draw[drawarrow] (fraz) --  (a.north) -| (git);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=120pt}
+	\Tree
+	[.{rimodellamento causato da\\ ipertrofia per riattivazione\\ fattori di crescita}
+		[.concentrico
+			{da sovraccarico pressorio per \upa post--carico}
+		]
+		[.eccentrico
+			{da sovraccarico volume per \upa pre--carico}
+		]
+		[.compensato {se raggio della cavità ventricolare,\\ massa ventricolo e volume cavità\\ sono rispettati}
+		]
+		[.scompensato 
+			[.{se tali rapporti non sono rispettati}
+				{evolve in\\ scompenso cardiaco}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=80pt}
+	\Tree
+	[.{funzionalità\\ cardiaca}
+		[.pre--carico
+			[.{pressione riempimento\\ ventricolo sx}
+				[.{$\uparrow$I.C.}
+					[.vasodilatatori	
+						{nitrati organici}
+					]						
+				]
+			]
+		]
+		[.post--carico
+			[.{resistenze vasc.\\ sistemiche e\\ impedenza aortica}
+				[.{$\uparrow$I.C.}
+					[.{farmaci $\downarrow$tono\\ arteriolare}	
+						{???}
+					]						
+				]
+			]
+		]
+		[.contrattilità
+			[.{$\downarrow$I.C.}
+				[.{farmaci $\uparrow$inotropismo}	
+					{???}
+				]						
+			]
+		]
+		[.frequenza 
+			{$\uparrow$I.C. per compensazione}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.farmaci
+		[.\node[farmaco]{digitale/digossina\\ (inotropo+)};
+			[.{inibizione \ce{Na+}/\ce{K+} ATPasi}
+				[.{\upa\ce{Ca^2+} per\\ blocco NCX}
+					{inotropo+}
+				]
+				[.{\dwa condutt. \ce{K+}}
+					[.{\dwa durata PdA da cui\\ \upa PR, depressione\\ a cucchiaio ST}
+					]
+				]
+			]
+		]
+		[.\node[farmaco]{dobutamina\\ (agonista $\beta_1$ selett.)};
+			{\upa GC}
+			{\dwa pre--carico}
+		]
+		[.\node[farmaco]{furosemide\\ (diuretico)};
+			{\dwa P.A.}
+			{\dwa pre--carico}
+		]
+		[.\node[farmaco]{captopril\\ elanapril (ACE inibitore)};
+			{\dwa post--carico}
+		]
+		[.\node[farmaco]{losartan (antagonista AT-1)};
+			{\dwa post--carico}
+		]
+		[.\node[farmaco]{carvedilolo\\ metoprololo ($\beta$--bloccanti)};
+			{cronotopo-}
+			{\dwa rimodellamento per\\ inibizione catecolamine}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{digitale +}
+		[.\ce{K+}
+			[.iper {\dwa effetti digitale}
+			]
+			[.ipo {\upa effetti digitale}
+			]
+		]
+		[.\ce{Ca^2+}
+			[.iper {\upa effetti digitale}
+			]
+			[.ipo {\dwa effetti digitale}
+			]
+		]
+		[.\ce{Mn}
+			[.iper {\dwa effetti digitale}
+			]
+			[.ipo {\upa effetti digitale}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.{effetti avversi}
+		[.\node[farmaco]{digitale/digossina\\ (a dosi elevate)};
+			{\upa aritmie, tachicardia, extrasistole\\ torsione di punta, FV}
 		]
 	]
 \end{tikzpicture}
