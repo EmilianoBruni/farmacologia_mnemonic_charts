@@ -520,4 +520,310 @@
 	]
 \end{tikzpicture}
 
+\subsection{Aritmie Cardiache}
+
+\begin{tikzpicture}
+	\Tree
+	[.{ritmo cardiaco}
+		[.{nodo seno--atriale\\(NSA)}
+			[.{nod atrio--ventricolare\\(NAV)}
+				[.{Fasci di His}
+					\node[dummyc]{};
+				]
+			]
+		]
+	]
+	\begin{scope}[yshift=-3em,xshift=1em]
+	\Tree
+	[.\node[dummyc]{}; 
+		[.{Fibre del Purkinkje}
+			[.{apice}
+				[.{endocardio}
+					[.{base epicardica}
+					]
+				]
+			]
+		]
+	]
+	\end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 3/.style={level distance=130pt}}
+	\Tree
+	[.{fasi miocardio}
+		[.{0: ascesa\\($\sim$ -65mV)}
+			{corrente \ce{Na+} in ingresso}
+		]
+		[.{1: ripolarizzazione rapida\\($\sim$ -35mV)}
+			[.{chiusura canali \ce{Na+}}
+				{apertura canali \ce{K+} e \ce{Cl-} in ingresso}
+			]
+		]
+		[.{2: playeau\\($\sim$ ??mV)}
+			[.{correte \ce{Ca^2+} lenta in ingresso}
+				{apertura canali \ce{Ca^2+}\\ su reticolo endplasmatico\\ che rilascia ulteriore \ce{Ca^2+}\\ che si lega aa troponina}
+			]
+		]
+		[.{3: ripolarizzazione \\($\sim$ -20mV)}
+			[.{corrente \ce{K+} in uscita\\ ($I_{\rm K_R}+I_{\rm K_S}$)}
+			]
+		]
+		[.{4: diastole \\($\sim$ -??mV)}
+			[.{la pompa \ce{Na+}/\ce{K+}\\ ripristina le condizioni iniziali}
+			]
+		]
+	]
+\end{tikzpicture}
+
+Periodo refrattario tra fase 0 e ripristino del canale \ce{Na+} niattivati utile a consentire il propagarsi di un nuovo PdA.
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=130pt}}
+	\Tree
+	[.{fasi nodi}
+		[.{4: depolarizzazione spontanea} 
+			{apertura canali funny del \ce{Na+}}
+		]
+		[.{0: depolarizzazione} 
+			{apertura canali \ce{Ca^2+]} in uscita}
+		]
+		[.{1: ripolarizzazione} 
+			{apertura canali \ce{K+} e \ce{Cl-} in ingresso}
+		]
+		[.{2: plateau} 
+			{assente}
+		]
+		[.{3:} 
+			{assente}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.cause
+		[.{alterazioni nella\\ generazione dell'impulso}
+			[.{fase 3}
+				{post deplezione precoce\\(EAD)}
+			]
+			[.{fase 4}
+				{post deplezione precoce\\(DAD)}
+			]
+		]
+		[.{alterazioni nella\\ conduzione dell'impulso}
+			[.{percorso allungato}
+				{cuore dilatato}
+			]
+			[.{ridotta velocità\\ di conduzione}
+				blocchi
+				ischemie
+				iperkaliemia
+			]
+			[.{periodo refrattario\\ accorciato}
+				{risposta a farmaci}
+				{stimolazione elettrica ripetitiva}
+			]
+		]
+		[.{entrambe}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.soluzioni
+		[.{\dwa attività PMK extopici}
+			{blocco canali \ce{Na+}}
+			{blocco canali \ce{Ca^2+}}
+			{blocco simpatico\\(cronotopo-)}
+		]
+		[.{disattivazione circuiti\\ di rientro}
+			{prolungamento del\\ periodo refrattario}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=80pt}
+	\Tree
+	[.{classi farmaci\\ aritmici}
+		[.{Classe I}
+			[.{blocco canali \ce{Na+}\\ uso dipendente\footnotemark}
+				[.{\dwa pendenza corrente\\ fase 4}
+					[.IA
+						{dissociazione\\ intermedia}
+					]
+					[.IB
+						{dissociazione\\ rapida}	
+					]
+					[.IC
+						{dissociazione\\ lenta}	
+					]
+				]
+			]
+		]
+		[.{Classe II}
+			[.{$\beta$--bloccanti} 
+				{blocco \ce{Na+},\ce{K+}}
+			]
+		]
+		[.{Classe III}
+			{blocco canale \ce{K+}.\\ Sono anche lievemente IA}
+		]
+		[.{Classe IV}
+			{\ce{Ca^2+} antagonisti}
+		]
+		[.{non Vaughan Williams\\ V}
+			{iperpolarizzazione per\\ attivazione canali $\rm I_{K_L}$}
+		]
+	]
+\end{tikzpicture}
+
+\footnotetext{Ossia agiscono soprattutto sui canali in uso ossia aperti o refrattari. Questi sono maggiormente in questi stati nei tessuti aritmici e quindi si ha un maggiore effetto proprio su quei tessuti che stanno causando il problema rispetto a quelle che funzionano normalmente.}
+
+\begin{tikzpicture}
+	\Tree
+	[.farmaci
+		[.IA
+			[.\node[farmaco]{procainamide\\ amiodarone};
+				{rallentamento della\\ ripolarizzazione fase 3}
+				{prolungamento PdA}
+				{aumento periodo refrattario}
+			]
+		]
+		[.IB
+			[.\node[farmaco]{lidocaina};
+				{\dwa PdA}
+				{\upa periodo refrattario}			
+			]
+		]
+		[.IC
+			[.\node[farmaco]{flecaimide};
+				{\dwa PdA lieve}
+			]
+		]
+		[.II
+			[.\node[farmaco]{propanololo};
+				{\dwa PdA lieve}
+				{\upa periodo refrattario AV}
+			]
+		]
+		[.III
+			[.\node[farmaco]{amiodarone\\ sotalolo};
+				{come IA}
+			]
+		]
+		[.IV
+			[.\node[farmaco]{verapamil};
+				{riduzione fase plateau\\ con rallent. conduzione}
+				{\upa periodo refrattario}
+			]
+		]
+		[.V
+			[.\node[farmaco]{adenosina};
+				{rallentamento conduzione\\ a livello AV}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{modifiche ECG}
+		[.IA
+			{\upa QRS, \upa QT}
+		]
+		[.IB
+			{-}
+		]
+		[.IC
+			{\upa QRS}
+		]
+		[.II
+			{\dwa QT,cronotopo-}
+		]
+		[.III
+			{\upa QRS, \upa QT}
+		]
+		[.IV
+			{\upa PR}
+		]
+		[.V
+			{?}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=140pt}}
+	\Tree
+	[.{effetti\\ collaterali}
+		[.IA
+			{\upa gastroent., vagolitici, atropina simili,\\ inotropo-, reazioni autoimmuni}
+		]
+		[.IB
+			\node(s){stato confuzionale, vasocostrizione};
+		]
+		[.IC
+			{BAV o blocco di branca, bradicardica}
+		]
+		[.II
+			{\dwa GC, inotropo-}
+		]
+		[.III
+			{BAV o blocco di branca, bradicardica, pro--aritmici,\\ torsione di punta}
+		]
+		[.IV
+			{ipotensione, bradicardia, interazione con digossina\\ perchè verapamil spazza la digossina e quindi\\\upa conc. plasmatica libera}
+		]
+		[.V
+			{ipotensione}
+		]
+	]
+	\node[right=1em of s](par){$\left.\rule{0pt}{46pt}\right\}$};
+	\begin{scope}[xshift=27.5em,yshift=4.5em]
+		\tikzset{level distance=70pt}
+		\Tree
+		[.\node[dummyc]{};
+			{???}
+			aritmogeno
+			{iper\ce{K+} \upa cardiotossicità}
+		]
+	\end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=140pt}
+	\Tree
+	[.{usi clinici}
+		[.\node{flutter};
+			\node[farmaco](digossina){digossina (???)};
+		]
+		[.\node(tachiaritmie){tachiaritmie};
+		]
+		[.\node(fibsott){fibrillazione artiale\\ sottov. parossistica};
+			\node(ia){IA};
+		]
+		[.\node(tac){tachiaritmia sopraventr.\\ parossistica};
+			\node[farmaco](sotalolo){sotalolo (III)};
+			\node[farmaco](adenosina){adenosina (V)};
+		]
+		[.\node{aritmie post infarto};	
+			\node(II){II};
+			\node(ib){IB};
+		]
+		[.\node{aritmie da rientro};
+			\node(ic){IC};
+		]
+		[.\node{tutte le aritmie};
+			\node[farmaco](amiodarone){amiodarone (III)};
+		]
+	]
+	\draw[drawarrow] (fibsott) to[out=0,in=180] (II);
+	\draw[drawarrow] (fibsott) to[out=0,in=180] (digossina);
+	\draw[drawarrow] (tac) to[out=0,in=180] (ia);
+	\draw[drawarrow] (tachiaritmie) to[out=0,in=180] (ia);
+\end{tikzpicture}
+
 \newpage
