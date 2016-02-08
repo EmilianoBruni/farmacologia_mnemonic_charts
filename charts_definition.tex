@@ -1,3 +1,6 @@
+\tikzset{>=Stealth} % default arrows
+
+
 % Set for tkiz-qtree
 \tikzset{
 	drawarrow/.style={
@@ -45,3 +48,75 @@
 
 \def\upa{$\uparrow$}
 \def\dwa{$\downarrow$}
+\def\circleout{
+	\begin{tikzpicture}
+		\draw(0,0) circle (.3em);
+		\draw[arrows = {-Stealth[scale=0.7]}] (.2em, .2em) -- (.9em,.9em);
+	\end{tikzpicture}
+}
+\def\circlein{
+	\begin{tikzpicture}
+		\draw(0,0) circle (.3em);
+		\draw[arrows = {-Stealth[scale=0.7]}] (.9em,.9em) -- (.2em, .2em);
+	\end{tikzpicture}
+}
+
+\def\pump3#1#2#3#4#5#6{
+	\begin{tikzpicture}
+		\draw[sharp corners] (0,1.5em) circle arc[start angle=90, end angle=270, radius=1.5em];
+		\filldraw[pattern=north east lines,sharp corners] (0,1.5em) arc[start angle=90, end angle=-90, radius=1.5em] -- cycle;
+		\draw[arrows = {[scale=0.7]#1}] (-2.5em,1.5em) -- (2.5em,1.5em) ;
+		\draw[arrows = {[scale=0.7]#3}] (-2.5em,-1.5em) -- (2.5em,-1.5em);
+		\draw[arrows = {[scale=0.7]#5}] (-2.5em,0em) -- (2.5em,0em);
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,1.5em) {#2};
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,0em) {#4};
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,-1.5em) {#6};
+	\end{tikzpicture}
+}
+
+\def\pumprr#1#2{
+	\begin{tikzpicture}
+		\draw[sharp corners] (0,1.5em)  arc[start angle=90, end angle=270, radius=1.5em];
+		\filldraw[pattern=north east lines,sharp corners] (0,1.5em) arc[start angle=90, end angle=-90, radius=1.5em] -- cycle;
+		\draw[arrows = {-[scale=0.7]>}] (-2.5em,1.5em) -- (2.5em,1.5em) ;
+		\draw[arrows = {-[scale=0.7]>}] (-2.5em,-1.5em) -- (2.5em,-1.5em);
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,1.5em) {#1};
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,-1.5em) {#2};
+	\end{tikzpicture}
+}
+
+\def\pumplr#1#2{
+	\begin{tikzpicture}
+		\draw[sharp corners] (0,1.5em)  arc[start angle=90, end angle=270, radius=1.5em];
+		\filldraw[pattern=north east lines,sharp corners] (0,1.5em) arc[start angle=90, end angle=-90, radius=1.5em] -- cycle;
+		\draw[arrows = {[scale=0.7]<-}] (-2.5em,1.5em) -- (2.5em,1.5em) ;
+		\draw[arrows = {-[scale=0.7]>}] (-2.5em,-1.5em) -- (2.5em,-1.5em);
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,1.5em) {#1};
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,-1.5em) {#2};
+	\end{tikzpicture}
+}
+
+\def\apumprr#1#2{
+	\begin{tikzpicture}
+		\draw[sharp corners] (0,1.5em) arc[start angle=90, end angle=-90, radius=1.5em];
+		\filldraw[pattern=north east lines,sharp corners] (0,1.5em) arc[start angle=90, end angle=270, radius=1.5em] -- cycle;
+		\draw[arrows = {-[scale=0.7]>}] (-2.5em,1.5em) -- (2.5em,1.5em) ;
+		\draw[arrows = {-[scale=0.7]>}] (-2.5em,-1.5em) -- (2.5em,-1.5em);
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,1.5em) {#1};
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,-1.5em) {#2};
+	\end{tikzpicture}
+}
+
+\def\apumplr#1#2{
+	\begin{tikzpicture}
+		\draw[sharp corners] (0,1.5em)  arc[start angle=90, end angle=-90, radius=1.5em];
+		\filldraw[pattern=north east lines,sharp corners] (0,1.5em) arc[start angle=90, end angle=270, radius=1.5em] -- cycle;
+		\draw[arrows = {[scale=0.7]<-}] (-2.5em,1.5em) -- (2.5em,1.5em) ;
+		\draw[arrows = {-[scale=0.7]>}] (-2.5em,-1.5em) -- (2.5em,-1.5em);
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,1.5em) {#1};
+		\node[anchor=west,minimum width=0em,minimum height=0em,align=left,inner sep=0pt] at (3em,-1.5em) {#2};
+	\end{tikzpicture}
+}
+
+
+\def\pumpnak{\apumplr{\ce{K+}}{\ce{Na+}}}

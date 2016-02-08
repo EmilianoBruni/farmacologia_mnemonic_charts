@@ -826,4 +826,304 @@ Periodo refrattario tra fase 0 e ripristino del canale \ce{Na+} niattivati utile
 	\draw[drawarrow] (tachiaritmie) to[out=0,in=180] (ia);
 \end{tikzpicture}
 
+\subsection{Diuretici}
+
+\subsubsection{Tubulo prossimale}
+
+\begin{tikzpicture}
+	\tikzset{level 3/.style={level distance=120pt}}
+	\Tree
+	[.{Tubulo prossimale}
+		[.{\circleout\ce{HCO3-},\circlein\ce{H+},\circleout\ce{Cl-}\\
+			\circleout\ce{NaCl} (distale), \circleout\ce{H2O}
+			}
+			[.{\pumplr{\ce{H+}}{\ce{Na+}} ???}
+				[.{nel tubulo\\ \ce{HCO3- + H+ -> H2CO3 -> H2O + CO2}}
+					\node[dummyc]{};
+				]
+			]
+		]
+	]
+	\begin{scope}[yshift=-3em,xshift=1em]
+		\tikzset{level 1/.style={level distance=80pt}}
+		\tikzset{level 2/.style={level distance=120pt}}
+		\tikzset{level 3/.style={level distance=140pt}}
+		\Tree
+		[.\node[dummyc]{};
+			[.{\ce{H2O+CO2 ->}nella cellula}
+				[.\ce{H2O+CO2 -> H2CO3 -> HCO3- + H+}
+					[.{\apumprr{\ce{HCO3-}}{\ce{Na+}} + \pumpnak}
+					]
+				]
+			]
+		]
+	\end{scope}
+\end{tikzpicture}
+
+Nella parte terminale del tubulo gli \ce{H+} pompati fuori non trovano quasi più \ce{HCO3-} da convertire per cui $\downarrow\ce{pH}$ dell'urina che fa attivare le \pumplr{\ce{Cl-}}{\ce{base-}} che \circleout\ce{NaCl}.
+
+\begin{tikzpicture}
+	\Tree
+	[.farmaci
+		[.{inibitori del\\ anidrasi cambonica}
+			[.{impediscono \circleout\ce{NaHCO3}}
+				[.{ma $\uparrow$\ce{NaCl}\\ nel restante nefrone}
+					{$\downarrow$azione dopo qualche gg}
+				]
+			]
+		]
+		[.{diuretici osmotici\\ non assorbibili}
+			[.{$\uparrow$osmolarità urine}
+				{$\downarrow$\circleout\ce{H2O}\\ per osmosi}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.usi
+		[.\node[farmaco]{acetazolamide\\ inibitore AC};
+			{glaucoma $\downarrow$umore acqueo}
+			{alcanizzazione urine}
+			{alcalosi metabolica}
+			[.{malattia da alta quota}
+				{$\downarrow$liquido cefalorachidiano}
+				{$\downarrow$edema polmonare}
+			]
+		]
+		[.\node[farmaco]{mannitolo\\ diuretico osmotico};
+			[.{per os}
+				{diarrea}
+			]
+			[.{per IV}
+				[.diuresi
+					{$\downarrow$pressione intracranica}
+					{$\uparrow$escrezione renale di tossine}
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.tossicità
+		[.{inibitori AC}
+			{acidosi metabolica ipercloremica}
+			{calcoli renali}
+			{perdita di \ce{K+} causa\\ $\uparrow$\ce{Na+} nel tubulo}
+		]
+		[.{osmotici}
+			{disidratazione}
+			{iper\ce{K+}}
+			{ipernatriuremia}
+		]
+	]
+\end{tikzpicture}
+
+\subsubsection{Ansa di Henle (tratto discendente)}
+
+\begin{tikzpicture}
+	\Tree
+	[.{Ansa di Henle (tratto discendente)}
+		{\circleout\ce{H2O}}
+	]
+\end{tikzpicture}
+
+\subsubsection{Ansa di Henle (tratto ascendente)}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=180pt}}
+	\tikzset{level 3/.style={level distance=140pt}}
+	\Tree
+	[.{Ansa di Henle\\ (tratto ascendente)}
+		[.{\circleout\ce{NACl}, \circleout\ce{Mg^2+}, \circleout\ce{Ca^2+}}
+			[.{\pump3{->}{\ce{Na+}}{->}{\ce{K+}}{->}{\ce{2Cl-}} NKCC2, \pumpnak,
+			\apumprr{\ce{K+}}{\ce{Cl-}}} \node[dummyc]{};
+			]
+		]
+	]
+	\begin{scope}[yshift=-3em,xshift=1em]
+		\tikzset{level 2/.style={level distance=100pt}}
+		\tikzset{level 3/.style={level distance=100pt}}
+		\Tree
+		[.\node[dummyc]{};
+			[.{accumulo di \ce{K+}\\ con escrezione nel tubulo}
+				[.{urina sviluppa pot+}
+					{passaggio di ioni \ce{Mg^2+},\ce{Ca^2+}\\ via paracellulare}
+				]
+			]
+		]
+	\end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.farmaci
+		[.{diuretici dell'ansa}
+			[.{bloccano NKCC2}
+				[.{$\uparrow$ \circleout\ce{NACl}, \circleout\ce{Mg^2+}, \circleout\ce{Ca^2+}}
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.usi
+		\node[farmaco](s){furosemide};
+		\node[farmaco]{acido etacrinico};
+	]
+	\node[below right=-2.5em and 1em of s](par){$\left.\rule{0pt}{32pt}\right\}$};
+	\begin{scope}[xshift=13em,yshift=0em]
+		\tikzset{level distance=70pt}
+		\Tree
+		[.\node[dummyc]{};
+			{edema polmonare acuto}
+			{edema}
+			{ipercalcemia acuta}
+			{iperkaliemia}
+			{insuff. renale acuta}
+			{overdose di anioni\\(bromuri, fluoruri, ioduri)}
+		]
+	\end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=150pt}
+	\Tree
+	[.tossicità
+		{alcalosi metab. ipokaliemica}
+		{iperuricemia causata dal riassorbimento\\ dell'acido urico per\\ ipovolemia nel tubulo}
+	]
+\end{tikzpicture}
+
+\subsubsection{Tubulo contorto distale}
+
+\begin{tikzpicture}
+	\Tree
+	[.{tubulo contorto\\ distale}
+		[.{\circleout\ce{NaCl}\circleout\ce{Ca^2+}}
+			{\pumprr{\ce{Na+}}{\ce{Cl-}} NCC, \pumpnak}
+		]
+	]
+\end{tikzpicture}
+
+Non c'è qui l'ingresso del \ce{K+} quindi non c'è il riassorbimento del \ce{Mg^2+}. C'è invece il riassorbimento del \ce{Ca^2+} in quanto c'è un canale dedicato e regolato dall'ormone PTH. 
+
+Il \ce{Ca^2+} finisce poi nel flusso sanguigno tramite due canali {\tiny\apumplr{\ce{Na+}}{\ce{Ca^2+}}} e {\tiny\apumplr{\ce{H+}}{\ce{Ca^2+}}}
+
+\begin{tikzpicture}
+	\Tree
+	[.farmaci
+		[.tiazidici
+			[.{blocco NCC}
+				{$\uparrow$escr. \ce{NaCl},\\ $\uparrow$ riass. \ce{Ca^2+}}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.usi
+		[.\node[farmaco](a){cloratiazide};
+			{per parenterale}
+		]
+		[.\node[farmaco](b){idrocloratiazide};
+			\node(os){per os};
+		]
+		\node[farmaco](c){metodazone};
+	]
+	\draw (a) to[out=0, in=180] (os);
+	\draw (c) to[out=0, in=180] (os);
+	\node[right=9em of b](par){$\left.\rule{0pt}{42pt}\right\}$};
+	\begin{scope}[xshift=21em,yshift=0em]
+		\tikzset{level distance=70pt}
+		\Tree
+		[.\node[dummyc]{};
+			{ipertensione}
+			{scompenso cardiaco}
+			{diabete insipido nefrogico}
+		]
+	\end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.tossicità
+		{iperuricemia}
+		{iperkaliemia}
+		{iperlipidemia}
+		{ipernatriemia}
+		{reazioni allergiche}
+	]
+\end{tikzpicture}
+
+\subsubsection{Tubulo collettore}
+
+\begin{tikzpicture}
+	\Tree
+	[.{tubulo collettore}
+		[.{cellule principali}
+			{\circleout\ce{Na+},\circleout\ce{H2O},\circlein\ce{K+}}
+		]
+		[.{cellule intercalate}
+			{\circleout\ce{HCO^-3},\circleout\ce{H2O},\circlein\ce{H+}}
+		]
+	]
+\end{tikzpicture}
+
+Il sodio viene riassorbito dal tubulo, il potassio vie escreto e la pompa sodio--potassio tenta di mantenere l'equilibrio. Più \ce{Na+} viene assorbito e più \ce{K+} viene escreto. Tutto questo regolato dall'aldosterone.
+
+Ecco il motivo per cui i diuretici depauperano il corpo di potassio.
+
+In questo stesso settore, l'ADH regola l'espressione di acquaporine di tipo 2 e $\uparrow$ADH causa $\uparrow$acq2 e quindi $\uparrow\circleout\ce{H2O}$
+
+\begin{tikzpicture}
+	\Tree
+	[.farmaci
+		[.{diuretici risparmiatori\\ di \ce{K+} sui recettori\\ dei mineralcorticoidi}
+			[.{antagonisti dell'aldosterone}
+				{$\downarrow$\circleout\ce{Na+}, $\downarrow$\circlein\ce{K+}}
+			]
+		]
+		[.vaptani
+			{antagonisti ADH}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.usi
+		[.\node[farmaco]{spironolattone};
+			[.{iperaldosterone}
+				{primatio da sindrome di Conn}
+				{secondario da scompenso cardiaco}
+			]
+		]
+		[.vaptani
+			{sindrome da $\uparrow$secrezione ADH}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.tossicità
+		[.\node[farmaco]{spironolattone};
+			{iperkaliemia}
+			{ginecomastia}
+			{acidosi metabolica iperclorica}
+		]
+		[.vaptani
+			{diabete insipido}
+			{insufficienza renale}
+		]
+	]
+\end{tikzpicture}
+
 \newpage
