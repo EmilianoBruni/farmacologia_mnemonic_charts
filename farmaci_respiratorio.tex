@@ -42,7 +42,7 @@
 			]
 		]
 	]
-	\begin{scope}[yshift=-6em]
+	\begin{scope}[yshift=-4em]
 	\Tree
 	[.\node[dummyc]{};
 		[.{Mastociti legano IgE}
@@ -122,6 +122,166 @@ tutto ciò causa iperresponsività bronchiale futura.
 	\end{scope}
 \end{tikzpicture}
 
+\begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=150pt}}
+	\Tree
+	[.{broncodilatatori}
+		[.{$\beta_2$--agonisti\\(1a linea)}
+			[.{a breve durata}
+				\node[farmaco]{\index{salbutamolo}salbutamolo};
+				\node[farmaco]{\index{terbutalina}terbutalina};
+			]
+			[.{a lunga durata}
+				\node[farmaco](sal){\index{salmeterolo}salmeterolo};
+				\node[farmaco](for){\index{formoterolo}formoterolo};
+			]
+		]
+		[.{metilxantine\\(2a linea)}
+			\node[farmaco]{\index{teofillina}teofillina};
+			\node[farmaco]{\index{teobromina}teobromina	(cioccolato)};
+			{caffeina};
+		]
+		[.{antagonisti muscarinici\\ (raramente usato. Più per BPCO)}
+			\node[farmaco]{\index{ipratropio}ipratropio};
+			\node[farmaco]{\index{tiotropio}tiotropio};
+		]
+	]
+\end{tikzpicture}
 
+
+\begin{tikzpicture}
+	\Tree
+	[.{$\beta_2$--agonisti}
+		[.meccanismo
+			{stimolazione $\beta_2$ muscolo bronchiale\\ con dilatazione}
+			{inibizione del rilascio\\ dei mediatori dai mastociti}
+			{$\downarrow$essudato}
+		]
+		[.somministrazione
+			{inalazione per evitare\\ effetti sistemici}
+		]
+		[.metabolismo
+			{epatico/renale}
+		]
+		[.{effetti collaterali}
+			tachicardia
+			{tremore muscolare}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.{metilxantine}
+		[.meccanismo
+			{inibizione fosfodiesterasi IV (PDE)\\ che degrada cAMP quindi\\$\uparrow$cAMP$\Rightarrow$miorilassamento$\Rightarrow$broncodilatazione}
+		]
+		[.somministrazione
+			os
+		]
+		[.metabolismo
+			{epatico P450/renale}
+		]
+		[.{effetti collaterali}
+			tachicardia
+			{tremore muscolare}
+			insonnia
+			{$\uparrow$motilità intestinale}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{glucocorticoidi\\(GC)}
+		\node[farmaco]{\index{idrocortisone}idrocortisone\\(EV)};
+		\node[farmaco]{\index{beclometasone}beclometasone\\(aerosol)};
+		\node[farmaco]{\index{budesonide}budesonide\\(aerosol)};
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.{glucocorticoidi\\(GC)}
+		[.meccanismo
+			{$\downarrow$citochne}
+			{inibizione COX2$\Rightarrow$inibizione\\ eosinofili e basofili}
+			{inibizione leucotreni}
+			{$\downarrow$edema}
+			{$\uparrow$recettori $\beta_2$}
+		]
+		[.somministrazione
+			{aerosol/EV}
+		]
+		[.{effetti collaterali}
+			{sindrome di Cushing}
+			disfonia
+			{candidosi orofaringea\\(mughetto)}
+		]
+	]
+\end{tikzpicture}
+
+I GC vengono dati alle partorienti con figlio prematuro per velocizzare la funzione del surfactante polmonare che innalza la tensione degli alveoli e evita il collasso polmonare.
+
+\begin{tikzpicture}
+	\Tree
+	[.{inibitori di\\ rilascio dei mediatori}
+		[.\node[farmaco]{\index{cromolin}cromolin};
+			[.meccanismo
+				{inibizione del rilascio\\ di leucotreni e istamina\\ dai mastociti}
+			]
+			[.somministrazione
+				{aerosol via\\ inalatori nasali}
+			]
+			[.{indicazioni terapeutiche}
+				{allergie alimentari}
+				{riniti allergiche}
+				{congiuntiviti}
+				{asma (raro utilizzo)}
+			]
+		]
+	] 
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=130pt}}
+	\tikzset{level 2/.style={level distance=130pt}}
+	\Tree
+	[.{antagonisti dei leucotreni}
+		[.meccanismo
+			[.{bloccanti dei recettori\\ per i leucotreni}
+				\node[farmaco]{\index{zafilukast}zafilukast};
+				\node[farmaco]{\index{montelukast}montelukast};
+			]
+			[.{inibitori della lipossigenasi}
+				\node[farmaco]{\index{zileuton}zileuton};
+			]
+		]
+		[.somministrazione
+			os
+		]
+		[.{indicazioni terapeutiche}
+			{broncospasmo da antigene,\\ esercizio fisico o aspirina}
+		]
+		[.{effetti collaterali}
+			{vasculite sistemica (leucotreni)}
+			{$\uparrow$transaminasi (lipossigenasi)}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{anticorpo monoclonale\\ anti--IgE}
+		[.\node[farmaco]{\index{omalizumab}omalizumab};
+			[.somministrazione EV
+			]
+			[.difetti costoso
+			]
+		]
+	]
+\end{tikzpicture}
 
 \newpage
