@@ -1,0 +1,47 @@
+\section{Farmaci epatici}
+
+\subsection{Citocromo P450}
+
+\ce{RH + O_2 +2H^+ + 2e^- ->[monoossigenasi] ROH + H2O}
+
+\begin{tikzpicture}
+	\tikzset{level distance=130pt}
+	\Tree
+	[.\node(inibitori){inibitori};
+		[.CYP1A2
+			\node[farmaco]{\index{ciprofloxacina}ciprofloxacina};
+			\node[farmaco]{\index{tacrira}tacrira};
+		]
+		[.CYP2C9
+			\node[farmaco]{\index{fluconazolo}fluconazolo};
+		]
+		[.{CYP3A4\\(principale nella\\ detossificazione da farmaci)}
+			\node[farmaco]{\index{eritromicina}eritromicina};
+			\node[farmaco]{\index{claritromicina}claritromicina};
+			\node[farmaco]{\index{ketocomazolo}ketocomazolo};
+			{succo di pompelmo}
+		]
+	]
+	\begin{scope}[yshift=-10em]
+		\Tree
+		[.\node(metabolismo){metabolismo};
+			\node[farmaco]{\index{corticosteroidi}corticosteroidi};
+			\node[farmaco]{\index{warfarin}warfarin};
+		]
+	\end{scope}
+	\begin{scope}[yshift=-20em]
+		\Tree
+		[.\node(attivatori){attivatori};
+			barbiturici
+			\node[farmaco]{\index{carbamazepina}carbamazepina};
+		]
+	\end{scope}
+	\node[chartnode](rallenta) at (0,-5em) {rallenta};
+	\node[chartnode](accellera) at (0em,-15em) {accellera};
+	\draw[drawarrow] (attivatori) -> (accellera);
+	\draw[drawarrow] (accellera) -> (metabolismo);
+	\draw[drawarrow] (inibitori) -> (rallenta);
+	\draw[drawarrow] (rallenta) -> (metabolismo);
+\end{tikzpicture}
+
+\newpage
