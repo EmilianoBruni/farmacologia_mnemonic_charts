@@ -29,11 +29,15 @@
 		 [.{monossido d'azoto (NO)} ] 
 		 [.purine ]
 	]
-	\begin{scope}[yshift=-9em]
+	\begin{scope}[yshift=-11em]
 	\Tree
 	[.\node(snc){Neurotrasmettitori\\ SNC};
 		[.dopamina {recettori dopaminergici} ]
-		Glutammato
+		[.{aminoacidi eccitatori}
+			L--glutammato
+			aspatato
+			omocisteinato
+		]
 		GABA
 	]
 	\end{scope}
@@ -41,12 +45,41 @@
 		(snc.east) to[in=180,out=0] (serotonina.west);
 \end{tikzpicture}
 
+\begin{tikzpicture}
+	\Tree
+	[.{Siti di azione\\ farmaci del SNC}
+		[.{fibra pre--sinapica}
+			{sintesi}
+			{immagazzinamento}
+			{rilascio}
+			{ricaptazione}
+			{metabolismo}
+		]
+		[.{fessura sinaptica}
+			{recettore}
+			{degradazione}
+		]
+		[.{fibra post--sinapica}
+			{conducibilità ionica\\ del canale}
+			{segnalazione retrograda}
+		]
+	]
+\end{tikzpicture}
+
 \subsection{Acetilcolina}
 
 \begin{tikzpicture}
 	\tikzset{level 1/.style={level distance=150pt}}
 	\Tree
-	[.localizzazione {tutte le fibre pregangliali sia para che orto\\ nicotiniche} {parasimpatiche post gangliali (quasi tutte).\\ muscariniche} {ghiandole sudoripare (simpatico)\\ muscariniche} {giunzione neuromuscolare\\ nicotiniche} ]
+	[.\node(loc){localizzazione}; {tutte le fibre pregangliali sia para che orto\\ nicotiniche} {parasimpatiche post gangliali (quasi tutte).\\ muscariniche} {ghiandole sudoripare (simpatico)\\ muscariniche} {giunzione neuromuscolare\\ nicotiniche} 
+		[.SNC
+			proencefalo
+			mesencefalo
+			{tronco celebrale}
+			cervelletto
+			{interneuroni corpo striato}
+		]
+	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
@@ -101,13 +134,21 @@
 \end{tikzpicture}
 
 \begin{tikzpicture}
+	\tikzset{level distance=80pt}
 	\Tree
 	[.Effetti
-		[.{$\uparrow$permeabilit\`a ai cationi\\ Na${}^+$, K${}^+$, Ca${}^{2+}$}
-			[.depolarizzazione
-				[.{fibre post gangliari} PdA ]
-				[.{fibre muscolari} {generazione potenziale\\ di placca}
+		[.SNP
+			[.{$\uparrow$permeabilit\`a ai cationi\\ Na${}^+$, K${}^+$, Ca${}^{2+}$}
+				[.depolarizzazione
+					[.{fibre post gangliari} PdA ]
+					[.{fibre muscolari} {generazione potenziale\\ di placca}
+					]
 				]
+			]
+		]
+		[.SNC
+			[.{$\uparrow$Ach}
+				{veglia, apprendimento,\\ memoria}
 			]
 		]
 	]
@@ -126,7 +167,7 @@
 			]
 			[.{M${}_4$ come $\text{M}_2$} {SNC}
 			]
-			[.{M${}_5$  come $\text{M}_1$} {endotelio vasale, cervello, SNC}
+			[.{M${}_5$  come $\text{M}_1$} {endotelio vasale, cervello,\\ SNC (facilita rilascio glutammato e dopamina)}
 			]
 		]
 		[.{nicotinico\\ (ionotropo)}
@@ -498,12 +539,23 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 \begin{tikzpicture}
 	\Tree
 	[.noradrenalina 
-		[.{simpatiche postgangliari} 
-			[.escluso
-				{muscolatura vasi renali ($\text D_1$)}
-				{ghiandole sudoripare (Ach)}
+		[.SNP
+			[.{simpatiche postgangliari} 
+				[.escluso
+					{muscolatura vasi renali ($\text D_1$)}
+					{ghiandole sudoripare (Ach)}
+				]
+			]		
+		]
+		[.SNC
+			[.{$\alpha$ eccitatori/inibitori\\ recettoti $\beta$ inibitori}
+				[.{$\uparrow$stato veglia,\\ $\alpha_2$ causano ipotensione}
+					ponte
+					{locus ceruleus}
+					{midollo spinale}
+				]
 			]
-		]		
+		]
 	]
 \end{tikzpicture}
 
@@ -916,37 +968,92 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopaminergici sono recettori adrenergici
 
 \begin{tikzpicture}
+	\Tree
+	[.SNC
+		[.{corpo striato}
+			[.{via nigrostriale}
+				[.{dalla sostanza nera\\ al corpo striato}
+					{via deficitaria nel parkinson}
+				]
+			]
+		]
+		[.{sistema limbico}
+			[.{via mesolimbica}
+				{da mesencefalo\\ a nucleo accumbens}
+			]
+		]
+		[.{amigdala e corteccia\\ prefrontale}
+			{via della gratificazione}
+		]
+		[.{ipotalamo} 
+			[.{via tuberoinfundibolare}
+				{da ipotalamo ventrale\\ a ipofisi}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
 	\tikzset{level distance=130pt}
 	\Tree
 	[.{Recettore dopaminergico}
-		[.{$\text D_1$, $\text D_5$, eccitatorio, $\uparrow$cAMP} {cervello, muscolatura vasi rene} 
+		[.{$\text D_1$, $\text D_5$, eccitatorio, $\uparrow$cAMP} {cervello (striato e ipotalamo),\\ muscolatura vasi rene} 
 		]
-		[.{$\text D_2$, inibitorio, apertura canali $\text K^+$} {cervello, muscolatura liscia} 
+		[.{$\text D_2$, inibitorio, apertura canali $\text K^+$} { muscolatura liscia} 
 		]
-		[.{$\text D_3$, inibitorio, apertura canali $\text K^+$} {cervello} 
+		[.{$\text D_3$, inibitorio, apertura canali $\text K^+$} {cervello (sistema limbico)} 
 		]
 		[.{$\text D_4$, inibitorio, apertura canali $\text K^+$} {cervello, sistema cardio vascolare} 
 		]
 	]
 \end{tikzpicture}
 
-\subsection{Serotonina}
+\begin{tikzpicture}
+	\Tree
+	[.{$\uparrow$dopamina}
+		{effetto stereotipato}
+		{schizzofrenia}
+		{$\uparrow$vomito e nausea}
+		{$\uparrow$GH}
+	]
+\end{tikzpicture}
+
+\subsection{Serotonina (5-idrossitriptamina)}
+
+\begin{tikzpicture}
+	\Tree
+	[.SNC
+		ponte
+		{midollo allungato}
+		{nuclei del rafe}
+	]
+\end{tikzpicture}
 
 \begin{tikzpicture}
 	\tikzset{level 3/.style={level distance=130pt}}
 	\Tree
  	[.Recettore
- 		[.5-HT1
+ 		[.\ce{5-HT_1}
  			[.SNC {GpCR,$\downarrow$cAMP, inibizione presinaptica} ]
  		]
- 		[.5-HT2
- 			[.{muscolo liscio\\ piastrine} {$\uparrow$IP3, DAG, GpCR} ]
+ 		[.\ce{5-HT_2}
+ 			[.{muscolo liscio\\ piastrine, corteccia e\\ sistema limbico} {$\uparrow$IP3, DAG, GpCR} ]
  		]
- 		[.5-HT3
+ 		[.\ce{5-HT_3}
  			[.{SNP (nocicettori\\ neuroni enterici)} {canale ionico stimolatore} ]
  		]
- 		[.5-HT4
- 			[.{SNC,vescica\\ cuore} {$\uparrow$cAMP,GpCR,eccitazione} ]
+ 		[.\ce{5-HT_4}
+ 			[.{SNC,vescica\\ cuore, striato\\ e cervelletto} {$\uparrow$cAMP,GpCR,eccitazione} ]
+ 		]
+ 		[.\ce{5-HT_5}
+ 			{ippocampo}
+ 		]
+ 		[.\ce{5-HT_7}
+ 			[.{regolazione termica\\ ed endocrina}
+ 				corteccia
+ 				ippocampo
+ 				talamo
+ 			]
  		]
  	]
 \end{tikzpicture}
@@ -997,8 +1104,23 @@ Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopamine
 		]
 		[.eNOS {endotelio e piastrine}
 		]
-		[.nNOS neuroni
+		[.nNOS 
+			[.neuroni
+				cervello
+				ippocampo
+			]	
 		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{$\uparrow$\ce{nNOS}}
+		{??? di $\uparrow$\ce{Ca^2+}}
+		{favorisce eventi ischemici}
+		{neurogenerazione}
+		{parkinson}
+		{demenza senile}
 	]
 \end{tikzpicture}
 
@@ -1010,6 +1132,268 @@ Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopamine
 
 Per via inalatoria $\downarrow$shunt, $\downarrow$broncocostrizione, $\downarrow$ipertensione polmonare e quindi utile anche nella cura dell'asma.
 
-Utile nel trattamento delle malattie neurovegetative e shock settico dove aumenta e nell'ateorscelosi e ipercolesterolemia dove diminuisce. 
+Utile nel trattamento delle malattie neurovegetative e shock settico dove aumenta e nell'ateorscelosi e ipercolesterolemia dove diminuisce.
+
+\subsection{L-glutammato}
+
+Neurotrasmettitore ubiquitario eccitatorio del SNC
+
+\begin{tikzpicture}
+	\Tree
+	[.sintesi
+		[.glucosio
+			[.{ciclo di Krebs}
+				{glutammato}
+			]
+		]
+		[.neurone \edge[<->] node {};
+			[.glutammato \edge[<->] node {};
+				[.{cellule della glia\\(astrocita)} \edge[<->] node {};
+					glutammina
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.rilascio
+		[.vescicolare \edge node[smallfont,above,xshift=+4em] {\ce{Ca^2+}dip.};
+			esocitosi
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.recettori
+		[.ionotropi
+			[.ANPA
+				[.ubiquitari	
+					{trasmissione sinaptica veloce}
+				]
+			]
+			[.{KA (kainato)}
+				[.{ippocampo, cervelletto\\ e midollo spinale}
+					{trasmissione sinaptica veloce}
+				]
+			]
+			[.NMDA
+				[.ubiquitari
+					{plasticità sinaptica}
+				]
+			]
+		]
+		[.metabotropi
+			[.{\ce{G_q} ($\uparrow$\ce{IP_3},$\uparrow$DAG,$\uparrow$\ce{Ca^2+}}
+				{modulazione a\\ medio/lungo termine}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.PdA
+		[.{bassa frequenza}
+			[.AMPA
+				attivazione
+			]
+			[.NMDA
+				{bloccato da \ce{Mg^2+}}
+			]
+		]
+		[.{alta frequenza}
+			[.AMPA
+				attivazione
+			]
+			[.NMDA
+				[.{espulsione \ce{Mg^2+}} \edge node[smallfont,above,xshift=3.6em] {+glicina};
+					[.\node(ca){$\uparrow$\ce{Ca^2+}\\ Long Term Potentiation\\ plasticità sinaptica};
+					]
+				]
+			]
+			[.\ce{G_q}
+				\node(a){attivazione};
+			]
+		]
+	]
+	\draw[drawarrow] (a) to[out=0,in=180] (ca);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.utilizzo
+		[.{inefficacia causa\\ ubiquità del recettore}
+			{lesioni traumatiche}
+			epilessia
+			Alzheimer
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.farmaci
+		[.agonisti
+			[.????
+				[.{$\uparrow$AMPA}
+					{$\uparrow$memoria}
+					{$\uparrow$capacità cognittive}
+				]
+			]
+		]
+		[.antagonisti
+			[.{recettore NMDA}
+				[.\node[farmaco]{memantina};
+					{malattie neurovegetative}
+				]
+				[.\node[farmaco]{ketamina};
+					{anestetico dissociativo}
+				]
+			]
+			[.{recettore glicina in NMDA}
+				\node[farmaco]{acido chinuretico};
+			]
+			[.AMPA
+				{causano depressione generale\\ del SNC e crisi respiratorie}
+			]
+			[.metabotropo
+				{usi futuri}
+			]
+		]
+	]
+\end{tikzpicture}
+
+
+\subsection{GABA (Acido $\gamma$--amminobutirrico)}
+
+\begin{tikzpicture}
+	\Tree
+	[.GABA
+		[.{inibitorio}
+			[.{ubiquitario della\\ sostanza grigia}
+				[.{nigrostriato}
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.Sintesi
+		[.glutammato
+			GABA
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.degradazione
+		[.GABA
+			[.{astrociti}
+				{acido succinico}
+			]
+		]
+	]
+\end{tikzpicture}
+
+Enzima GABA--transaminasi (o GABA amminotransferasi). Utile informazione relativamente al valproato (farmaco antiepilettico, vedi).
+
+\begin{tikzpicture}
+	\tikzset{level 3/.style={level distance=150pt}}
+	\Tree
+	[.recettori
+		[.{\ce{GABA_a}}
+			[.{accoppiato a canale \ce{Cl-}}
+				{presinaptico: inibizione lenta}
+				{postsinaptico: inibizione veloce}
+			]
+		]
+		[.{\ce{GABA_b}}
+			[.{Accoppiato a \ce{G_i}}
+				{$\downarrow$adenilato ciclasi $\Rightarrow\uparrow$ingresso \ce{K+}}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.farmaci
+		[.{\ce{GABA_a}}
+			[.agonisti
+				benzodiazepine
+				barbiturici
+				anestetici
+			]
+		]
+		[.{\ce{GABA_b}}
+			[.agonisti
+				[.\node[farmaco]{bacoflen};
+					{miorilassante usato\\ nella terapia del dolore}
+				]
+			]
+			[.antagonisti
+				[.\node[farmaco]{saclofen};
+					{antiepilettico sperimentale}
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\subsection{GBH (Acido $\gamma$--idrossibutirrico)}
+
+Proviene dalla sintesi del GABA. $\uparrow$rilascio GH, attiva le "vie della gratificazione", da euforia e disibinizione. Droga da strada.
+
+\subsection{Melatonina}
+
+\begin{tikzpicture}
+	\Tree
+	[.Sintesi
+		[.{nella gh. pineale}
+			{acetilazione di 5-HT}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.recettori
+		[.{associati a proteine G}
+			{cervelletto}
+			{???}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.effetti
+		{$\uparrow$ sonnolenza}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.utilizzo
+		{jet lag}
+	]
+\end{tikzpicture}
+
+\subsection{Glicina}
+
+\begin{tikzpicture}
+	\Tree
+	[.recettore
+		{canale \ce{Cl-} simil \ce{GABA_a}}
+	]
+\end{tikzpicture}
+
+Nessun farmaco in uso agisce su questo recettore. Stricnina e tossina tetanica prevengono il rilascio di glicina
 
 \newpage
