@@ -16,6 +16,7 @@
 \usepackage{fancyhdr}           % Header e Footer 
 \usepackage{chemfig}
 \usepackage[version=3]{mhchem}
+\usepackage{makeidx}			% Indice
 % \----------------------------------------------------------------------------/
 
 % /-- title and authors -------------------------------------------------------\
@@ -68,6 +69,8 @@
 \numberwithin{table}{section}     % numeri delle tabelle del tipo x.y
 \numberwithin{figure}{section}    % numeri delle figure del tipo x.y
 
+\makeindex							% generate the index
+
 \begin{document}
 	\input{charts_definition.tex}
 	\input{title.tex}
@@ -75,4 +78,5 @@
 	\input{farmaci_del_sn.tex}
 	\input{farmaci_cardiovascolare_renale.tex}
 	\input{mnemonic_charts.tex}
+	\printindex
 \end{document}

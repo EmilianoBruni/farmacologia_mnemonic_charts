@@ -195,14 +195,14 @@
 					\node(ach){acetilcolina };
 					metacolina
 					carbacolo
-					\node[farmaco](beta){betanecolo};
+					\node[farmaco](beta){\index{betanecolo}};
 				]
 				[.alcaloidi
 					[.muscarinici
 						muscarina
-						\node[farmaco]{pilocarpina};
+						\node[farmaco]{\index{pilocarpina}};
 					]
-					[.nitotinici \node[farmaco]{nicotina}; ]				
+					[.nitotinici \node[farmaco]{\index{nicotina}}; ]				
 				]
 			]
 		]
@@ -219,19 +219,19 @@
 	\Tree
 	[.\node(AchEIa){inibitori AchE};
 		[.{alcool+gruppo N quaternario}
-			[.\node[farmaco]{edrofonio}; 
+			[.\node[farmaco]{\index{edrofonio}}; 
 				[.{legame idrogeno\\ o ionico con AchE} {idrolisi in minuti}
 				]
 			]
 		]
 		[.carbammati 
-			[.\node[farmaco]{neostigmina\\ fisostigmina\footnotemark}; 
+			[.\node[farmaco]{\index{neostigmina}\\ \index{fisostigmina}\footnotemark}; 
 				[.{legame covalente con AchE} {idrolisi in ore}
 				]
 			]
 		]
 		[.organofosfati
-			[.\node[farmaco](ecotiopato){ecotipato\footnotemark};
+			[.\node[farmaco](ecotiopato){\index{ecotipato}\footnotemark};
 				[.\node(fAchE){fosforilazione AchE}; \node(idro){idrolisi in giorni};
 				]
 			]
@@ -290,28 +290,28 @@
 	\tikzset{frontier/.style={distance from root=350pt}, level 2/.style={level distance=130pt}}
 	\Tree
 	[.{usi clinici}
-		[.\node[farmaco](pilocarpina){pilocarpina};
+		[.\node[farmaco](pilocarpina){\index{pilocarpina}};
 			[.{xerostomia da\\ sindrome di Sjogren} {$\uparrow$secrezioni salivali}
 			]
 		]
-		[.\node[farmaco](ecotiopato){ecotiopato};
+		[.\node[farmaco](ecotiopato){\index{ecotiopato}};
 			[.\node(glaucoma){glaucoma};
 				{nelle emergenze ad angolo chiuso,\\ agonista muscarinico + inibitore colinesterasi. \\	nel glaucoma cronico ora si usano i $\beta$-bloccanti}
 			]
 		]
-		[.\node[farmaco](betanecolo){betanecolo};
+		[.\node[farmaco](betanecolo){\index{betanecolo}};
 				\node(ritenzione){ritenzioni urinarie e ileo\\ depressione dell'attivit\`a senza ostruzione};
 		]
-		[.\node[farmaco](neostigmina){neostigmina};
+		[.\node[farmaco](neostigmina){\index{neostigmina}};
 			[.\node(miastenia){miastenia grave};
 				{cura e mezzo diagnostico}
 			]
 		]
-		[.\node[farmaco](edofonio){edofonio};
+		[.\node[farmaco](edofonio){\index{edofonio}};
 			{tachiaritmia parossistica sopraventricolare\\ in disuso, ora si usa l'adenosina.}
 			\node(post){post anestesia per revertire i\\ neurobloccanti muscolari (vedi)};
 		]
-		[.\node[farmaco](fisostigmina){fisostigmina};
+		[.\node[farmaco](fisostigmina){\index{fisostigmina}};
 			{intossicazione da farmaci antimuscarinici\\ (intossicazione da atropina)}
 		]
 	]
@@ -328,18 +328,18 @@
 	\Tree
 	[.{antagonisti\\ colinergici}
 		[.antimuscarinici 
-			[.\node[farmaco]{atropina}; {deriva da Belladonna e\\ Datura Stramonium}
+			[.\node[farmaco]{\index{atropina}}; {deriva da Belladonna e\\ Datura Stramonium}
 			]
-			\node[farmaco]{scopolamina};
+			\node[farmaco]{\index{scopolamina}};
 		]
 		[.antinicotinici 
-			[.{bloccanti gangli\\ ganglioplegici} \node[farmaco]{trimetafano}; 
-			\node[farmaco]{tossina botulina};
+			[.{bloccanti gangli\\ ganglioplegici} \node[farmaco]{\index{trimetafano}}; 
+			\node[farmaco]{\index{tossina botulina}};
 			]
 			[.{bloccanti neuromuscolari}
 			]
 		]
-		[.{rigeneratori dell'AchE} \node[farmaco]{pralidossima\footnotemark};
+		[.{rigeneratori dell'AchE} \node[farmaco]{\index{pralidossima}\footnotemark};
 		]
 	]
 \end{tikzpicture}
@@ -386,23 +386,23 @@
 	%\tikzset{level 1/.style={level distance=130pt}}
 	\Tree
 	[.{usi clinici} 
-		[.\node[farmaco](atropina){atropina};
+		[.\node[farmaco](atropina){\index{atropina}};
 			{malattia di Parkinson}
 			{esame oftalmico}
 			{pre-operatorio\\ antilaringospasmo}
 			{sincope vagale\\ da dolore infarto}
 			{ulcera peptidica\\ in disuso}
 		]
-		[.\node[farmaco]{scopolamina};
+		[.\node[farmaco]{\index{scopolamina}};
 			{chinetosi\\ mal di mare}
 		]
-		[.\node[farmaco]{inatroprio???};
+		[.\node[farmaco]{\index{tiotropio}};
 			\node(bpco){BPCO};
 		]
-		[.\node[farmaco]{oxibutina};
+		[.\node[farmaco]{\index{oxibutina}};
 			{tenismo urinario}
 		]
-		[.\node[farmaco]{pralidossina};
+		[.\node[farmaco]{\index{pralidossina}};
 			[.{iperfunzione colinergica}
 				{da organofosfati, gas nervino\\ o intossicazione funghi}
 			]
@@ -438,10 +438,10 @@
 	\tikzset{level 2/.style={level distance=150pt}}
 	\Tree
 	[.{usi clinici}
-		[.\node[farmaco]{trimetafano};
+		[.\node[farmaco]{\index{trimetafano}};
 			{ipotensivo nelle anestesie}
 		]
-		[.\node[farmaco]{tossina botulinica};
+		[.\node[farmaco]{\index{tossina botulinica}};
 			{iniezione intravescicale\\ contro incontinenza}
 		]
 	]
@@ -470,12 +470,12 @@
 		[.{non depolarizzanti}
 			[.{impediscono l'accesso dell'Ach\\ sul recettore $\text M_M$}
 				{tubocuranina\\ (curaro)}
-				\node[farmaco]{rocuronio};
+				\node[farmaco]{\index{rocuronio}};
 			]
 		]
 		[.depolarizzanti
 			[.{eccesso di Ach o simile}
-				\node[farmaco]{succinilcolina\\(2 Ach legate tra loro)};
+				\node[farmaco]{\index{succinilcolina}\\(2 Ach legate tra loro)};
 			]
 		]
 	]
@@ -567,7 +567,7 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 	[.Sintesi 
 		[.Tirosina  \edge node[smallfont,yshift=-5pt,xshift=5.5em]{tirosin--idrossilasi} node[smallfont,yshift=5pt,xshift=5.5em]{tappa limitante}; 
 			[.{L-Dopa} \edge node[smallfont,yshift=-5pt,xshift=6em]{DOPA decarbossilasi};
-				[.\node[farmaco]{dopamina}; \node[dummyc]{};]
+				[.\node[farmaco]{\index{dopamina}}; \node[dummyc]{};]
 			]
 		]
 	]
@@ -576,7 +576,7 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 	\tikzset{level distance=80pt}
 	\Tree
 	[.\node[dummyc]{}; 
-		[.\node[farmaco]{noradrenalina}; \node[farmaco]{adrenalina};]
+		[.\node[farmaco]{\index{noradrenalina}}; \node[farmaco]{\index{adrenalina}};]
 	]	
 	\end{scope}				
 	
@@ -647,11 +647,11 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 	[.simpaticomimetici
 		[.diretta 
 			[.{interazione con i recettori} 
-				\node[farmaco]{adrenalina\\
-				felilefrina\\
-				clonidina\\
-				dobutamina\\
-				salbutamolo};
+				\node[farmaco]{\index{adrenalina}\\
+				\index{felilefrina}\\
+				\index{clonidina}\\
+				\index{dobutamina}\\
+				\index{salbutamolo}};
 			]
 		]
 		[.indiretta 
@@ -661,7 +661,7 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 			[.{inibizione del catabolismo\\ enzimatico via blocco MAO e COMT} ]
 		]
 		[.miste
-			\node[farmaco]{efedrina};
+			\node[farmaco]{\index{efedrina}};
 		]
 	]
 \end{tikzpicture}
@@ -772,7 +772,7 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 	\tikzset{level 2/.style={level distance=130pt},level 3/.style={level distance=130pt}}
 	\Tree
 	[.{usi clinici\\(diretti)}
-		[.\node[farmaco]{adrenalina\\($\alpha,\beta$)};
+		[.\node[farmaco]{\index{adrenalina}\\($\alpha,\beta$)};
 			[.vasocostrizione
 				{prolungamento anestetici locali}
 				{shock anafilattico}
@@ -781,29 +781,29 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 				{arresto cardiaco}
 			]
 		]
-		[.\node[farmaco]{fenilefrina\\($\alpha_1$)};
+		[.\node[farmaco]{\index{fenilefrina}\\($\alpha_1$)};
 			{$\downarrow$prurito}
 			{esame retina (midriasi)}
 			\node(congestione){$\downarrow$congestione mucose};
 		]
-		[.\node[farmaco](oxi){oximetazolina\\($\alpha_2$)};
+		[.\node[farmaco](oxi){\index{oximetazolina}\\($\alpha_2$)};
 		]
-		[.\node[farmaco]{clonidina\\($\alpha_2$)};
+		[.\node[farmaco]{\index{clonidina}\\($\alpha_2$)};
 			{ipertensione nelle gestanti}
 			{$\downarrow$vampate calore in menopausa}
 			{disintossicazione da droghe}
 			{stimolazione $\alpha_2$ vagale con vasocostrizione\footnotemark}
 		]
-		[.\node[farmaco]{metildopa\\($\alpha_2$)};
+		[.\node[farmaco]{\index{metildopa}\\($\alpha_2$)};
 			{emergenze ipertensive\footnotemark}
 		]
-		[.\node[farmaco]{dobutamina\\($\beta_1$)};
+		[.\node[farmaco]{\index{dobutamina}\\($\beta_1$)};
 			[.{$\uparrow$gittata cardiaca ma non tachicardia}
 				{shock cardiogeno}
 				{test farmacologico da sforzo\\ quando non si pu\`o usare\\ la cyclette}
 			]
 		]
-		[.\node[farmaco]{salbutamolo\\($\beta_2$)};
+		[.\node[farmaco]{\index{salbutamolo}\\($\beta_2$)};
 			{asma come broncodilatatore}
 			{inibizione parti prematuri\\ per relax muscolatura uterina}
 		]
@@ -822,11 +822,11 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 			[.{rilascio noradrenalina\\ e dopamina} {stimolante SNC}
 			]
 		]
-		[.\node[farmaco]{tiramina};
+		[.\node[farmaco]{\index{tiramina}};
 			[.{simile a noradrenalina} {$\uparrow$pressione in pazienti trattati\\ con inibitori delle MAO\\ che dovrebbero degradarle.\\ Prodotti dal metabolismo\\ della tirosina. Non assumere\\ cibi come formaggi,...\\ in terapia da inibitori MAO}
 			]
 		]
-		[.\node[farmaco]{cocaina};
+		[.\node[farmaco]{\index{cocaina}};
 			[.{blocco ricaptazione noradrenalina\\ e dopamina}
 				{anestetico locale}
 				{nel SNC il blocco della ricaptazione\\ della dopamina provoca piacere}
@@ -886,17 +886,17 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 	\Tree
 	[.{usi clinici}
 		[.{non selettivi}
-			[.\node[farmaco]{fenossibenzamina\\ fentolamina};
+			[.\node[farmaco]{\index{fenossibenzamina}\\ \index{fentolamina}};
 				[.{riduzione pressione soprattutto\\ in presenza di elevato tono simpatico\\ (passaggio da prono a ortopostura)} {feocromocitoma\\ pre intervento}
 				]
 			]
 		]
 		[.{$\alpha_1$}
-			[.\node[farmaco]{prazosina};
+			[.\node[farmaco]{\index{prazosina}};
 				{antiipertensivo}
 				{ritenzione urinaria\\ da iperplasia prosatic benigna}
 			]
-			[.\node[farmaco]{labetalolo}; {blocca principalmente i $\beta$.\\ Descritto in seguito}
+			[.\node[farmaco]{\index{labetalolo}}; {blocca principalmente i $\beta$.\\ Descritto in seguito}
 			]
 		]
 		[.{$\alpha_2$} {solo sperimentali}
@@ -939,7 +939,7 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 	\tikzset{level 2/.style={level distance=150pt}}
 	\Tree
 	[.{usi clinici}
-		[.\node[farmaco]{propanololo};
+		[.\node[farmaco]{\index{propanololo}};
 			{angina pectoris}
 			{infarto del miocardio}
 			{aritmie}
@@ -947,16 +947,16 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 			{ipertiroidismo}
 			{tempesta tiroidea}
 		]
-		[.\node[farmaco]{metoprololo\\ atenololo};
+		[.\node[farmaco]{\index{metoprololo}\\ \index{atenololo}};
 			{emicrania}
 			{tremore muscolare}
 			{stati d'ansia}
 		]
-		[.\node[farmaco]{labetalolo\\ carvedilolo\\(sono sia $\alpha$ che $\beta$};
+		[.\node[farmaco]{\index{labetalolo}\\ \index{carvedilolo}\\(sono sia $\alpha$ che $\beta$};
 			{feocromocitoma}
 			{feoc. + scompenso + ipertensione}
 		]
-		[.\node[farmaco]{timololo}; 
+		[.\node[farmaco]{\index{timololo}}; 
 			{glaucoma}
 		]
 	]
@@ -1246,15 +1246,15 @@ Neurotrasmettitore ubiquitario eccitatorio del SNC
 		]
 		[.antagonisti
 			[.{recettore NMDA}
-				[.\node[farmaco]{memantina};
+				[.\node[farmaco]{\index{memantina}};
 					{malattie neurovegetative}
 				]
-				[.\node[farmaco]{ketamina};
+				[.\node[farmaco]{\index{ketamina}};
 					{anestetico dissociativo}
 				]
 			]
 			[.{recettore glicina in NMDA}
-				\node[farmaco]{acido chinuretico};
+				\node[farmaco]{\index{acido chinuretico}};
 			]
 			[.AMPA
 				{causano depressione generale\\ del SNC e crisi respiratorie}
@@ -1333,12 +1333,12 @@ Enzima GABA--transaminasi (o GABA amminotransferasi). Utile informazione relativ
 		]
 		[.{\ce{GABA_b}}
 			[.agonisti
-				[.\node[farmaco]{bacoflen};
+				[.\node[farmaco]{\index{bacoflen}};
 					{miorilassante usato\\ nella terapia del dolore}
 				]
 			]
 			[.antagonisti
-				[.\node[farmaco]{saclofen};
+				[.\node[farmaco]{\index{saclofen}};
 					{antiepilettico sperimentale}
 				]
 			]
