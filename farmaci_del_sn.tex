@@ -3,7 +3,7 @@
 \section{Farmaci del SNC e del SNP}
 
 \begin{tikzpicture}
-	\tikzset{level distance=90pt,frontier/.style={distance from root=370pt}} 
+	\tikzset{level distance=85pt,frontier/.style={distance from root=350pt}} 
 	\Tree
 	[.SNC
 		[.Periferico
@@ -134,40 +134,40 @@
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\tikzset{level distance=80pt}
+	\tikzset{level distance=75pt}
 	\Tree
 	[.Effetti
 		[.SNP
-			[.{$\uparrow$permeabilit\`a ai cationi\\ Na${}^+$, K${}^+$, Ca${}^{2+}$}
+			[.{$\uparrow$permeabilità\\ Na${}^+$, K${}^+$, Ca${}^{2+}$}
 				[.depolarizzazione
 					[.{fibre post gangliari} PdA ]
-					[.{fibre muscolari} {generazione potenziale\\ di placca}
+					[.{fibre muscolari} {generazione\\ potenziale\\ di placca}
 					]
 				]
 			]
 		]
 		[.SNC
 			[.{$\uparrow$Ach}
-				{veglia, apprendimento,\\ memoria}
+				{veglia,\\ apprendimento,\\ memoria}
 			]
 		]
 	]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\tikzset{level 1/.style={level distance=80pt},level 2/.style={level distance=140pt},level 3/.style={level distance=140pt}}
+	\tikzset{level 1/.style={level distance=80pt},level 2/.style={level distance=110pt},level 3/.style={level distance=140pt}}
 	\Tree
 	[.{Recettore colinergico}
 		[.{muscarinico\\ (metabotropo)}
-			[.{M${}_1$ eccitatorio $\uparrow\text{IP}_3, \uparrow\text{DAG},\uparrow\text{Ca}^{2+}$} {SNC, simpatico post--gangliare,\\ cellule parietali dello stomaco}
+			[.{M${}_1$ eccitatorio\\ $\uparrow\text{IP}_3, \uparrow\text{DAG},\uparrow\text{Ca}^{2+}$} {SNC, simpatico post--gangliare,\\ cellule parietali dello stomaco}
 			]
 			[.{M${}_2$ inibitorio $\downarrow$cAMP } {cuore, endotelio dei vasi}
 			]
-			[.{M${}_3$ eccitatorio $\uparrow\text{IP}_3, \uparrow\text{DAG},\uparrow\text{Ca}^{2+}$} {ghiandole esocrine, muscolo liscio,\\ endotelio dei vasi}
+			[.{M${}_3$ eccitatorio\\ $\uparrow\text{IP}_3, \uparrow\text{DAG},\uparrow\text{Ca}^{2+}$} {ghiandole esocrine, muscolo liscio,\\ endotelio dei vasi}
 			]
 			[.{M${}_4$ come $\text{M}_2$} {SNC}
 			]
-			[.{M${}_5$  come $\text{M}_1$} {endotelio vasale, cervello,\\ SNC (facilita rilascio glutammato e dopamina)}
+			[.{M${}_5$  come $\text{M}_1$} {endotelio vasale, cervello,\\ SNC (facilita rilascio\\ glutammato e dopamina)}
 			]
 		]
 		[.{nicotinico\\ (ionotropo)}
@@ -289,7 +289,7 @@ Nota: Mettere da qualche parte il tacrida che è un inibitore della colinesteras
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\tikzset{frontier/.style={distance from root=350pt}, level 2/.style={level distance=130pt}}
+	\tikzset{frontier/.style={distance from root=320pt}, level 2/.style={level distance=100pt}}
 	\Tree
 	[.{usi clinici}
 		[.\node[farmaco](pilocarpina){\index{pilocarpina}pilocarpina};
@@ -452,7 +452,7 @@ Nota: Mettere da qualche parte il tacrida che è un inibitore della colinesteras
 \textsc{Bloccanti neuromuscolari}
 
 \begin{tikzpicture}
-	\tikzset{level 3/.style={level distance=150pt}}
+	\tikzset{level 3/.style={level distance=130pt}}
 	\Tree
 	[.{influenza sui muscoli}
 		[.{bloccanti neuromuscolari}
@@ -460,7 +460,7 @@ Nota: Mettere da qualche parte il tacrida che è un inibitore della colinesteras
 		]
 		[.spasmolitici
 			[.{per ridurre dolore\\ in varie situazioni}
-				{vedi cap. 27 sull'argomento\\ o poi se trattato\\(benzodiazepine, clonidina, antiepilettici, \\ dantrolene (anche contro ipertermia maligna),\\ tossina botulinica)}
+				{vedi cap. 27 sull'argomento\\ o poi se trattato\\(benzodiazepine, \index{clonidina}clonidina,\\ antiepilettici, \index{dantrolene}dantrolene (anche contro\\ ipertermia maligna), \index{tossina botulinica}tossina botulinica)}
 			]
 		]
 	]
@@ -539,13 +539,16 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 \subsection{Noradrenalina}
 
 \begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=90pt}}
+	\tikzset{level 2/.style={level distance=90pt}}
+	\tikzset{level 3/.style={level distance=90pt}}
 	\Tree
 	[.noradrenalina 
 		[.SNP
 			[.{simpatiche postgangliari} 
 				[.escluso
-					{muscolatura vasi renali ($\text D_1$)}
-					{ghiandole sudoripare (Ach)}
+					{muscolatura\\ vasi renali ($\text D_1$)}
+					{ghiandole sudoripare\\ (Ach)}
 				]
 			]		
 		]
@@ -563,12 +566,12 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 
 \begin{tikzpicture}
 	\begin{scope}
-	\tikzset{level distance=90pt,level 3/.style={level distance=150pt},
+	\tikzset{level distance=90pt,level 3/.style={level distance=110pt},
 	level 2/.style={level distance=130pt},level 4/.style={level distance=60pt}}
 	\Tree 
 	[.Sintesi 
 		[.Tirosina  \edge node[smallfont,yshift=-5pt,xshift=5.5em]{tirosin--idrossilasi} node[smallfont,yshift=5pt,xshift=5.5em]{tappa limitante}; 
-			[.{L-Dopa} \edge node[smallfont,yshift=-5pt,xshift=6em]{DOPA decarbossilasi};
+			[.{L-Dopa} \edge node[smallfont,yshift=5pt,xshift=4.5em]{DOPA} node[smallfont,yshift=-5pt,xshift=4.5em]{decarbossilasi};
 				[.\node[farmaco]{\index{dopamina}dopamina}; \node[dummyc]{};]
 			]
 		]
@@ -675,11 +678,11 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 		[.diretti
 			[.{dipendono da} 
 		 		{vie somministrazione} 
-		 		{selettivit\`a per i sottotipi recettoriali}
-		 		{espressione dei sottotipi nei tessuti}
+		 		{selettivit\`a per i sottotipi\\ recettoriali}
+		 		{espressione dei sottotipi\\ nei tessuti}
 		 	]
 		]
-		[.indiretti {effetto proporzionale all'attivazione del simpatico}
+		[.indiretti {effetto proporzionale\\ all'attivazione del simpatico}
 		]
 	]
 \end{tikzpicture}

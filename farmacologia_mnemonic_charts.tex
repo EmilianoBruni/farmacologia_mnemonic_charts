@@ -1,4 +1,5 @@
-\documentclass[12pt, a4paper,oneside]{scrartcl}
+\documentclass[12pt,paper=a4,twoside=false,parskip=half]{scrartcl}
+% aggiungere draft alla classe per vedere gli overfull hbox
 
 % /-- Packages loading --------------------------------------------------------\
 \usepackage[italian]{babel}
@@ -10,7 +11,6 @@
 \usepackage{amsfonts}
 \usepackage{units}
 \usepackage{cancel}         
-\usepackage{parskip}            % paragrafi senza indentazione prima riga
 \usepackage{tikz}
 \usepackage{tikz-qtree}
 \usepackage{fancyhdr}           % Header e Footer 
@@ -46,11 +46,11 @@
 		circle,
 		inner sep=2pt,
 		outer sep=0ex,
-		very thick, fill=white] at (15pt,7.5pt) {\small\bf\textsf{cc}};
+		very thick, fill=white] at (15pt,7.5pt) {\small\bfseries\textsf{cc}};
 	\end{scope}
 	\draw[line width=1pt, white] (78pt,14pt)--(1pt,14pt)--(1pt,1pt) -- (78pt,1pt);
 	\draw[line width=1pt] (0,0) rectangle (80pt,15pt);
-	\node[white] at (55pt,7.5pt) {\scriptsize\bf\textsf{BY-NC-SA}};
+	\node[white] at (55pt,7.5pt) {\scriptsize\bfseries\textsf{BY-NC-SA}};
 }
 
 % /-- Sezione/numeropag. nell'header e date e numero di revisione nel footer --\
@@ -60,8 +60,8 @@
 \fancyhead[LO]{\helv \rightmark}
 \fancyhead[LO]{\helv \leftmark}
 \fancyhead[RO]{\helv \thepage}
-\fancyfoot[ol]{\begin{tikzpicture}[scale=0.6, transform shape,baseline=2pt ]\tikzbyncsa\end{tikzpicture}\ \scriptsize\it Copyright \copyright\ 2016 \gauthor }
-\fancyfoot[or]{\scriptsize \it Revisione del \today } % Date
+\fancyfoot[ol]{\begin{tikzpicture}[scale=0.6, transform shape,baseline=2pt ]\tikzbyncsa\end{tikzpicture}\ \scriptsize\itshape Copyright \copyright\ 2016 \gauthor }
+\fancyfoot[or]{\scriptsize\itshape Revisione del \today } % Date
 % \----------------------------------------------------------------------------/
 
 \usetikzlibrary{shapes,arrows,matrix,calc,automata,positioning,patterns}
@@ -69,7 +69,9 @@
 \numberwithin{table}{section}     % numeri delle tabelle del tipo x.y
 \numberwithin{figure}{section}    % numeri delle figure del tipo x.y
 
+
 \makeindex							% generate the index
+
 
 \begin{document}
 	\input{charts_definition.tex}
