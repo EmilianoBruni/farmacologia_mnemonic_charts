@@ -1398,4 +1398,203 @@ Proviene dalla sintesi del GABA. $\uparrow$rilascio GH, attiva le "vie della gra
 
 Nessun farmaco in uso agisce su questo recettore. Stricnina e tossina tetanica prevengono il rilascio di glicina
 
+\subsection{Farmaci sedativo/ansioliti e ipnotici}
+
+\begin{tikzpicture}
+	\Tree
+	[.{funzioni}
+		[.\node(sedazione){sedazione};
+			[.ansiolitico
+				[.tranquillante
+					\node(aum){aumentando dosaggio};
+				]
+			]
+		]
+		[.\node(ipnotico){ipnotico};
+			[.sonnolenza
+				\node(dep){depressione SN maggiore};
+			]
+		]
+	]
+	\draw[drawarrow] (aum) to[out=-145,in=-20] (ipnotico);
+	\draw[drawarrow] (dep) to[out=0,in=20] (sedazione);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=130pt}}
+	\tikzset{frontier/.style={distance from root=250pt}}
+	\Tree
+	[.{tipologie}
+		[.benzodiazepine
+			\node[farmaco]{\index{diazepam}diazepam\\ emivita $12\sim72$h\\(valium)};
+			\node[farmaco]{\index{lorazepam}lorazepam\\ emivita $2\sim6$h\\(tavor)};
+			\node[farmaco]{\index{flunitrazepam}flunitrazepam\\ emivita $8\sim24$h\\(roipnol)};
+		]
+		[.barbiturici
+			\node[farmaco]{\index{pentobarbitale}pentobarbitale};
+			\node[farmaco]{\index{fenobarbitale}fenobarbitale\\(più come antiepilettico};
+			\node[farmaco]{\index{tiopental}tiopental\\(più come anestetico generale\\ siero della verità)};
+		]
+		\node[farmaco]{\index{buspirone}buspirone};
+		[.{ipnotici\\ non benzodiazepinici}
+			\node[farmaco]{\index{zolpidem}zolpidem};
+			\node[farmaco]{\index{zaleplon}zaleplon};
+		]
+		[.antipsicotici
+			\node[farmaco]{\index{ATC}ATC\\(vedi sezione)};
+		]
+		[.antidepressivi
+			{vedi sezione}
+		]
+		[.antiepilettici
+			\node[farmaco]{\index{valproato}valproato\\(vedi sezione)};
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{bezodiazepine}
+		[.meccanismo
+			[.{recettore \ce{GABA_a}\\ nel sito BZ}
+				[.{con subunità $\alpha_1$}
+					{effetto sedazione}
+				]
+				[.{con subunità $\alpha_2$}
+					{effetto ansiolitico}
+				]
+			]
+		]
+		[.assunzione
+			os EV
+		]
+		[.metabolismo
+			[.epatico
+				[.{lunga emivita}
+					{desmetilazione con formazione\\ metabolita attivo\\ con emivita $>40$h}
+				]
+				[.{breve emivita}
+					[.{glucuronazione e\\ escrezione renale}
+					]
+				]
+			]
+		]
+		[.{effetti terapeutici}
+			{$\downarrow$ansia\\ $\downarrow$aggressicità\\ induzione sonno}
+		]
+		[.{effetti collaterali}
+			{amnesia anterograda\\ tolleranza ($\uparrow$dose)\\ dipendenza psicofisica\\ depressione sistema respiratorio }
+		]
+	]
+\end{tikzpicture}
+
+Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
+
+\begin{tikzpicture}
+	\Tree
+	[.{flumazenil}
+		[.{antagonista\\ recettore BZ}
+			[.{blocca l'azione di}
+				benzodiazepine
+				{non--benzodiazepine}
+			]
+			[.{non blocca l'azione di}
+				barbiturici
+				etanolo
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{qualità sonno}
+		{1. latenza prima inizio sonno}
+		{2. fase non--REM (NREM)}
+		{3. fase REM}
+		{4. fase NREM a onde lente}
+	]
+	\begin{scope}[xshift=14em]
+		\node(par){$\left.\rule{0pt}{46pt}\right\}$};
+		\node[text width=10em] at (2.5,0){ideale $\downarrow$1. $\uparrow$2. $\uparrow$3. $\uparrow$4. };
+	\end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{effetto farmaci\\ sul sonno}
+		[.benzodiazepine
+			{$\downarrow$1. $\uparrow$2. $\downarrow$3. $\downarrow$4. }
+		]
+		[.{non--benzodiazepine}
+			{$\downarrow$1. ininfluente sugli altri }
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.\node[farmaco]{\index{buspirone}buspirone\\(non in Italia)};
+		[.meccanismo
+			{agonista parziale \ce{5-HT_{1A}} e \ce{D_2}}
+		]
+		[.assunzione os
+		]
+		[.metabolismo epatico
+		]
+		[.{effetti terapeutici}
+			{ansiolitico\\ no sedazione\\ no dipendenza\\ no ansia da interruzione\\
+			necessario settimane prima\\ che inizino gli effetti
+			}
+		]
+		[.{effetti collaterali}
+			{nausea\\ vertigini\\ irrequietezza}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.barbiturici
+		[.meccanismo
+			{recettore \ce{GABA_a} in sito differente da BZ}
+		]
+		[.assunzione {os,EV}
+		]
+		[.metabolismo epatico
+		]
+		[.{effetti terapeutici}
+			{depressione non selettiva del SNC\\ attualmente usati come\\
+			antiepilettici e anestetici
+			}
+		]
+		[.{effetti collaterali}
+			{alta tolleranza\\ alta dipendenza\\ induttori P450\\ depressione cardiopolmonare}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=130pt}}
+	\Tree
+	[.{ipnotici non--benzodiazepinici}
+		[.meccanismo
+			[.{recettore \ce{GABA_a}\\ con sole unità $\alpha_1$}
+				{sedazione ma non ansiolitico}
+			]
+		]
+		[.assunzione {os}
+		]
+		[.metabolismo epatico
+		]
+		[.{effetti terapeutici}
+			{trattamento insonnia\\ no tolleranza\\ no dipendenza
+			}
+		]
+		[.{effetti collaterali}
+			{interferenza con alcol\\ depressione SNC ad alte dosi}
+		]
+	]
+\end{tikzpicture}
+
 \newpage
