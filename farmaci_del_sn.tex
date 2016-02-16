@@ -1597,4 +1597,198 @@ Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
 	]
 \end{tikzpicture}
 
+\subsection{Farmacti antiepilettici}
+
+\begin{tikzpicture}
+	\tikzset{frontier/.style={distance from root=400pt}}
+	\Tree
+	[.{epilessie}
+		[.parziali
+			[.{inizio locus\\ encefalico specifico}
+				[.{resta specifico}
+					{semplice}
+				]
+				[.{si diffonde}
+					{complesso}
+				]
+			]
+			[.{evolve in grande male}
+				{secondarie}
+			]
+		]
+		[.generalizzate
+			{tonico--cloniche\\(grande male)}
+			toniche
+			{(mio)cloniche}
+			{atoniche\\(perdita tono posturale)}
+		]
+		{spasmi infantili\\(sindrome epilettica)}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=150pt}
+	\Tree
+	[.{farmaci}
+		[.\node[farmaco](fenitoina){\index{fenitoina}fenitoina};
+			\node(parziali){parziali};
+		]
+		[.\node[farmaco](carba){\index{carbamazepina}carbamazepina};
+			\node(tc){tonico--cloniche};
+		]
+		[.\node[farmaco](val){\index{valproato}valproato};
+			\node(assenze){assenze};
+		]
+		[.\node(benzo){benzodiazepine};
+			\node(miocloniche){miocloniche};
+		]
+		[.\node[farmaco]{\index{etosuccimide}etosuccimide};
+			\node(atoniche){atoniche};
+		]
+		[.\node[farmaco]{\index{corticotropina}corticotropina};
+			\node(spasmi){spasmi infantili};
+		]
+		[.\node[farmaco]{\index{diazepam}diazepam\\ benzodiazepina + \\ fosfenitoina};
+			{emergenze epilettiche}
+		]
+		[.\node[farmaco]{\index{acetazolamide}acetazolamide\\(diuretico inibizione\\ anidrasi carbonica)}; tutti
+		]
+	]
+	\draw[drawarrow] (fenitoina) to[out=0,in=180] (tc);
+	\draw[drawarrow] (carba) to[out=0,in=180] (parziali);
+	\draw[drawarrow] (val) to[out=0,in=180] (tc);
+	\draw[drawarrow] (val) to[out=0,in=180] (miocloniche);
+	\draw[drawarrow] (val) to[out=0,in=180] (atoniche);
+	\draw[drawarrow] (benzo) to[out=0,in=180] (atoniche);
+	\draw[drawarrow] (benzo) to[out=0,in=180] (spasmi);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\tikzset{level 3/.style={level distance=80pt}}
+	\tikzset{level 4/.style={level distance=80pt}}
+	\Tree
+	[.\node[farmaco]{\index{fenitoina}fenitoina\\(più antico)};
+		[.meccanismo
+			[.{inibizione canali \ce{Na+}}
+				[.{+$\uparrow$freq. scarica}
+					{+$\uparrow$blocco}
+				]
+			]
+		]
+		[.assunzione {os, EV solo fosfenitoina}
+		]
+		[.metabolismo {epatico dose--dipendente fino a un limite\\ oltre il quale piccoli $\uparrow$dosi\\ producono grandi $\uparrow$conc. ematica}
+		]
+		[.{effetti terapeutici}
+			{parziali e tonico--cloniche.\\ Non assenze che può causare
+			}
+		]
+		[.{effetti collaterali}
+			{induttore P450}
+			{trasp. da albumina ma\\ \index{valproato}valproato e \index{sulfonamide}sulfonamide\\ hanno maggiore affinità e\\ quindi causano $\uparrow$conc. farmaco libero}
+			{vertigini, cefalee, nistagmo}
+			{possibile effetto teratogeno}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.\node[farmaco]{\index{{carbamazepina}}carbamazepina};
+		[.meccanismo
+			{come fenitoina + blocco \ce{Ca^2+}}
+		]
+		[.assunzione {os}
+		]
+		[.metabolismo ???
+		]
+		[.{effetti terapeutici}
+			{tutti tranne assenze}
+		]
+		[.{effetti collaterali}
+			[.{induttore P450}
+				{accellera il\\ metabolismo della fenitoina}
+			]
+			[.{epossido}
+				sonnolenza
+				{ritenzione idrica}
+				epatotossicità
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.\node[farmaco]{\index{{valproato}}valproato};
+		[.meccanismo
+			[.{come fenitoina + inibizione\\ di due enzimi che inattivano\\ il GABA}
+				{$\uparrow$GABA}
+			]
+		]
+		[.assunzione {os}
+		]
+		[.metabolismo ???
+		]
+		[.{effetti terapeutici}
+			{tonico--cloniche e assenze}
+			{bassa tossicità}
+			{no azione sedativa}
+		]
+		[.{effetti collaterali}
+			{rari casi assottigliamento capelli}
+			{rari casi teratogenicità\\ con spina bifida}
+			{spiazza fenitoina\\ dalle proteine plasmatiche}
+			[.{inibisce il metabolismo di}
+				\node[farmaco]{\index{fentobarbital}fentobarbital};
+				\node[farmaco]{\index{fenitoina}fenitoina};
+				\node[farmaco]{\index{carbamazepina}carbamazepina};
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.\node[farmaco]{\index{etosuccimide}etosuccimide};
+		[.meccanismo
+			[.{inibizione dei canali \ce{Ca^2+}\\ a bassa soglia}
+				{responsabili delle correnti\\ corticali ritmiche\\ nelle assenze}
+			]
+		]
+		[.assunzione {os}
+		]
+		[.metabolismo epatico
+		]
+		[.{effetti terapeutici}
+			assenze
+		]
+		[.{effetti collaterali}
+			{nausea\\ letargie\\ crisi tonico--cloniche}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{altri farmaci recenti}
+		[.\node[farmaco]{\index{vigabatrin}vigabatrin};
+			[.{si lega irreversibilmente\\ a GABA--amministranferasi}
+				{$\uparrow$GABA nel cervello}
+			]
+		]
+		[.\node[farmaco]{\index{lamotrigina}lamotrigina};
+			{blocco \ce{Na+} per assenze}
+		]
+		[.\node[farmaco]{\index{felbamato}felbamato};
+			{blocco uso--dipendente NMDA.\\ Si usa solo nelle epilessie\\ intrattabili a causa\\
+			dei suoi effetti collaterali\\ (anemia aplastica e epatite)}
+		]
+	]
+\end{tikzpicture}
+
+
 \newpage
