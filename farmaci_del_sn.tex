@@ -1793,5 +1793,189 @@ Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
 	]
 \end{tikzpicture}
 
+\subsection{Malattia di Alzheimer (AD)}
+
+\begin{tikzpicture}
+	\Tree
+	[.{AD}
+		[.idiopatica
+			{demenza per--senile}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{patogenesi}
+		[.\node(a){perdita di neuroni\\ colinergici};
+			ippocampo
+			{corteccia frontale}
+			{nuclei della base}
+		]
+		[.\node(b){presenza placche\\ amiloidi};
+			[.{depositi intracellulari\\ di $\beta$--amiloidi (A$\beta$)}
+				apoptosi
+			]
+		]
+	]
+	\draw[drawarrow] (b)--(a) node[midway, below, sloped,smallfont] {causa};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{frontier/.style={distance from root=200pt}}
+	\Tree
+	[.{farmaci}
+		[.{inibitori della\\ colinesterasi}
+			\node[farmaco]{\index{tacrina}tacrina};
+			\node[farmaco]{\index{rivastigmina}rivastigmina};
+		]
+		\node[farmaco]{\index{diidroergotamina}diidroergotamina};
+		[.{antagonisti recettore\\ NMDA}
+			\node[farmaco]{\index{mementina}mementina};
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{inibitori della\\ colinesterasi}
+		[.meccanismo
+			{$\uparrow$trasmissione colinergica}
+		]
+		[.assorbimento os
+		]
+		[.metabolismo epatico
+		]
+		[.{usi clinici}
+			{piccolo miglioramento\\ funzionalità}
+			{no effetti su progressione\\ malattia}
+		]
+		[.{effetti collaterali}
+			{nausea\\ crampi addominali\\ apatotossicità (tacrina)}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{antagonisti recettore\\ NMDA}
+		[.meccanismo
+			{\dwa eccitossicità da glutammato}
+		]
+		[.assorbimento os
+		]
+		[.metabolismo epatico
+		]
+		[.{usi clinici}
+			{migliore memoria}
+		]
+		[.{effetti collaterali}
+			{diarrea\\ insonnia\\ incontinenza}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{eccitossicità glutammato}
+		[.{\upa glutammato}
+			[.{\upa stimolaziona AMPA\\ con sblocco NMDA}
+				[.{liberazione \ce{Ca^2+}}
+					\node[dummyc]{};
+				]
+			]
+		]
+	]
+	\begin{scope}[yshift=-3em,xshift=3em]
+	\Tree
+	[.\node[dummyc]{};
+		[.{\upa rilascio glutammato}
+			[.{attivazione proteasi\\ \index{calpaina}calpaina e lipasi}
+				{produzione di \ce{NO}\\ nel cervello}
+				{rilascio acido arachidonico}
+			]
+		]
+	]
+	\end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.\node[farmaco]{\index{diidroergotamina}diidroergotamina};
+		[.meccanismo
+			{vasodilatazione celebrale}
+		]
+		[.assorbimento {os,EV}		
+		]
+		[.metabolismo epatico
+		]
+		[.{usi clinici}
+			{trattamento generale della demenza\\ efficacia limitata}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{altri farmaci}
+		[.{FANS}
+			\node[farmaco]{\index{ibuprofene}ibuprofene};
+			\node[farmaco]{\index{indometacina}indometacina};
+		]
+		[.{agenti chelanti}
+			{A$\beta$ include \ce{Cu},\ce{Zn}}
+		]
+		{immunizzazione contro le A$\beta$}
+	]
+\end{tikzpicture}
+
+Anche impianto di cellule ingegnerizzate per produrre il fattore di crescita dei neuroni (fattore neurotrofico derivato dal cervello \index{BDNF}BDNF).
+
+\subsection{Malattia di Parkinson (PD)}
+
+\begin{tikzpicture}
+	\Tree
+	[.{xx}
+		[.meccanismo
+		]
+		[.assorbimento
+		]
+		[.metabolismo
+		]
+		[.{usi clinici}
+		]
+		[.{effetti collaterali}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	%\draw[step=.5,very thin,yellow] (-2,0) grid (6,3);
+	\node at (-2,.5) {Normale};
+	\node(a) at (0,1) {};
+	\node(b) at (2,0) {};
+	\node(c) at (3,0) {};
+	\node(d) at (5,0) {};
+	\fill[Burlywood1] (-1,1.5) rectangle (1,-.5);
+	\node[smallfont] at (0,1.75) {substantia nigra};
+	\fill[LemonChiffon3] (1.5,1.5) rectangle (5.5,-.5);
+	\node[smallfont] at (3.5,1.75) {corpo striato};
+	\draw[neurone,red] (a.center) -| (c) node[near start,above,smallfont,black] {dopamina};
+	\draw[neurone,green] (b.center) -- (c) node[midway,below,smallfont,black] {Ach.};
+	\draw[neurone] (c.center) -- (d) node[at end,below,smallfont,black] {GABA};
+	\begin{scope}[yshift=-6em]
+		\node at (-2,.5) {Parkinson};
+		\node(a) at (0,1) {};
+		\node(b) at (2,0) {};
+		\node(c) at (3,0) {};
+		\node(d) at (5,0) {};
+		\fill[Burlywood1] (-1,1.5) rectangle (1,-.5);
+		\fill[LemonChiffon3] (1.5,1.5) rectangle (5.5,-.5);
+		\draw[neurone,red, dashed] (a.center) -| (c);
+		\draw[neurone,green] (b.center) -- (c);
+		\draw[neurone] (c.center) -- (d);
+		\end{scope}
+\end{tikzpicture}
+
 
 \newpage
