@@ -1935,16 +1935,13 @@ Anche impianto di cellule ingegnerizzate per produrre il fattore di crescita dei
 
 \begin{tikzpicture}
 	\Tree
-	[.{xx}
-		[.meccanismo
-		]
-		[.assorbimento
-		]
-		[.metabolismo
-		]
-		[.{usi clinici}
-		]
-		[.{effetti collaterali}
+	[.{PD}
+		[.{malattia neurodegenerativa\\ cronica}
+			[.{via extrapiramidale}
+				[.{\dwa DOPA}, 
+					{\upa azione Ach,\\ noradrenalina,\\ 5-HT e GABA}
+				]
+			]
 		]
 	]
 \end{tikzpicture}
@@ -1977,5 +1974,204 @@ Anche impianto di cellule ingegnerizzate per produrre il fattore di crescita dei
 		\end{scope}
 \end{tikzpicture}
 
+\begin{tikzpicture}
+	\Tree
+	[.{patogenesi}
+		[.farmacologica
+			[.{farmaci \dwa dopamina}
+				\node[farmaco]{\index{reserpina}reserpina};
+			]
+			[.{farmaci bloccano\\ recettori dopaminergici}
+				\node[farmaco]{\index{clorpromazina}clorpromazina\\ (antipsicotico)};
+			]
+		]
+		[.{eventi neurotossici}
+			{erbicidi, tossine ambientali...}
+		]
+		[.{cause genetiche}
+			[.{corpi di Lewy}
+				[.{accumulo di $\alpha$--sinvdeina\\ che precipita}
+					{accumulo di\\ dopamina alterata}
+				]
+			]
+			{alterazioni di\\ una parkina}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{sintomi}
+		{tremore a riposo (Ach.)}
+		{rigidità muscolare}
+		{ipocinesia con difficoltà a\\ iniziare movimento (\dwa DOPA)}
+		{andatura strisciante}
+		{demenza senile}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{frontier/.style={distance from root=200pt}}
+	\Tree
+	[.{farmaci}
+		[.{inibitore selettivo\\ delle MAO}
+			\node[farmaco]{\index{selegilina}selegilina};
+		]
+		[.{agonisti dei \ce{D_2}}
+			\node[farmaco]{\index{bromocriptina}bromocriptina};
+			\node[farmaco]{\index{pergolo}pergolo};
+		]
+		\node[farmaco]{\index{levodopa}levodopa (L-DOPA) + \index{carbidopa}carbidopa};
+		\node[farmaco]{\index{amantadina}amantadina\\(antivirale)};
+		[.{antagonisti dell'Ach.}
+			\node[farmaco]{\index{atropina}atropina};
+			\node[farmaco]{\index{scopolamina}scopolamina};
+		]
+	]
+\end{tikzpicture}
+
+La dopamina come farmaco per os o parenterale non attraversa la barriera emato--encefalica (BEE).
+
+\begin{tikzpicture}
+	\Tree
+	[.{L-dopa}
+		\edge node[smallfont,yshift=1.2em,xshift=3.5em]{nel sangue};
+		[.decarbossilata
+			[.{dopamina nel sangue}
+				{non attraversa BEE}
+			]
+		]
+		\edge node[smallfont,yshift=-1em,xshift=4em]{1\%};
+		[.{attraversa BEE}
+			[.decarbossilata
+				{dopamina nel cervello}
+			]
+		]				
+	]
+\end{tikzpicture}
+
+ma carbidopa inibisce la decarbossilasi e non attraversa la BEE quindi non inibisce la decarbossilasi nel cervello per cui
+
+\begin{tikzpicture}
+	\Tree
+	[.{L-dopa}
+		\edge node[smallfont,yshift=-.5em,xshift=4.3em]{10\%};
+		[.{attraversa BEE}
+			[.decarbossilata
+				{dopamina nel cervello}
+			]
+		]				
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.\node[farmaco]{\index{levodopa}levodopa (L-DOPA) +\\ \index{carbidopa}carbidopa};
+		[.meccanismo
+			{\upa dopamina nel cervello}
+		]
+		[.assorbimento
+			os
+		]
+		[.metabolismo
+			{inattivazione intestinale e renale}
+		]
+		[.{usi clinici}
+			{migliore rigidità e ipocinesia\\ nel 20\% spariscono tutti i sintomi\\ effetto\dwa nel tempo}
+		]
+		[.{effetti collaterali}
+			{coree}
+			{fluttuazioni dello\\ stato patologico\\ effetto on-off}
+			[.{nelle prime settimane}
+				{nausee, vomito, tachicardia}
+				{sindrome simil--schizzofreniche}
+				{sospensione periodiche\\ (drug holidays)\\ aiuta a ridurre\\ gli effetti collaterali\\ ma non gli on-off}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.\ce{MAOI_b}
+		[.meccanismo
+			[.{inibizione MAO}
+				{\upa dopamina}
+				{\dwa on-off}
+			]
+		]
+		[.assorbimento
+			{os}
+		]
+		[.{usi clinici}
+			{migliora effetto levodopa}
+		]
+		[.{effetti collaterali}
+			{insonnia, discinesie}
+			{NON usare con altri MAO!!!\\ rischio ipertensione elevata}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{Agonisti dei \ce{D_2}}
+		[.meccanismo
+			{\upa stimolazione \ce{D_2}}
+		]
+		[.assorbimento
+			{os}
+		]
+		[.metabolismo
+			{epatico}
+		]
+		[.{usi clinici}
+			{effetto duraturo. Per pazienti che\\ non tollerano L--dopa o che\\ sono diventati refrattari}
+		]
+		[.{effetti collaterali}
+			{nausea, anoressia\\ ipotensione, confusione, allucinazioni}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.\node[farmaco]{\index{amantadina}amantadina};
+		[.meccanismo
+			{\upa sintesi e rilascio dopamina}
+			{\dwa ricaptazione dopamina}
+		]
+		[.assorbimento
+			{os}
+		]
+		[.{usi clinici}
+			{migliora bradicinesia e\\ rigidità ma si diventa\\ velocemente refrattari}
+		]
+		[.{effetti collaterali}
+			{simili a L--dopa + ritenzione\\ urinaria, edema periferico}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{antagonisti dell'Ach.}
+		[.meccanismo
+			{\dwa effetti colinergici	}
+		]
+		[.assorbimento
+			{os, EV}
+		]
+		[.metabolismo
+			{idrolisi}
+		]
+		[.{usi clinici}
+			{migliorano la rigidità ed\\ il tremore ma non hanno effetti su\\ ipo e bradicinesia}
+		]
+		[.{effetti collaterali}
+			{discinesie, sonnolenza\\ stato confusionale}
+		]
+	]
+\end{tikzpicture}
 
 \newpage
