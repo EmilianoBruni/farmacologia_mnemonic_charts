@@ -908,8 +908,231 @@ I farmaci anti--psicotici impiegano settimane per l'effetto, segno che vi sia un
 	]
 \end{tikzpicture}
 
-I farmaci atipici danno meno effetti collaterali motori perchè bloccano selettivamente la via mesolimbica (della gratificazione) invede del nigro--striat. Impegnati quindi se i sintomi extrapiramidali dei tipici fossero problematici.
+I farmaci atipici danno meno effetti collaterali motori perchè bloccano selettivamente la via mesolimbica (della gratificazione) invede del nigro--striato. Impegnati quindi se i sintomi extrapiramidali dei tipici fossero problematici.
+
+\subsection{Farmaci antidepressivi}
+
+\begin{tikzpicture}
+	\Tree
+	[.{depressione}
+		[.{disturbo dell'umore}
+			[.{sintomi emozionali}
+				{malessere, apatia, pessimismo}
+				{bassa autostima}
+				{incapacità a prendere decisioni}
+				{idee di autolesionismo o\\ suicide}
+			]
+			[.{sintomi biologici}
+				{ritardi nel pensiero o\\ nell'azione}
+				{perdita di libibo}
+				insonnia
+				{perdita di appetito}
+			]
+		]
+	]
+\end{tikzpicture}
 
 
+\begin{tikzpicture}
+	\tikzset{level distance=90pt}
+	\Tree
+	[.{depressione}
+		[.unipolare
+			{variazioni di umore\\ sempre nello stesso verso}
+		]
+		[.{bipolare\\(sindrome maniaco\\ depressiva)}
+			[.\node(d){depressione};
+				[.\node(m){mania};
+					\node(es){esuberanza};
+				]
+			]
+		]
+	]
+	\node[below of=es,chartnode](e){entusiasmo};
+	\node[below of=m,chartnode](im){impazienza};
+	\node[below of=d,chartnode](c){collera};
+	\draw[drawarrow] (es) -- (e) (e)--(im) (im)--(c) (c)--(d);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{teorie\\ fisiopatologiche}
+		[.{teoria monoaminergica}
+			[.\node[farmaco]{\index{noradrenalina}noradrenalina\\\index{serotonina}serotonina};
+				[.\dwa depressione ]
+				[.\upa {elevazione dell'umore} ]
+			]
+		]
+		[.{teoria neutrofica}
+			[.{perdita di neuroni e\\ di glia in ippocampo e\\ corteccia pre--frontale}
+				[.depressione
+					{\index{BDNF}BDNF porta a\\ elevazione dell'umore}
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{teoria monaminergica}
+		[.{\index{noradrenalina}noradrenalina, \index{serotonina}serotonina\\ innervano neuroni ipotalamici\\ che controllano\\ $\ominus$ l'ipofisi}
+			[.{\upa CRH}
+				[.{\upa ADCH}
+					{\upa cortisolo\\(ormone dello stress)}
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\tikzset{frontier/.style={distance from root=400pt}}
+	\Tree
+	[.{farmaci}
+		[.{inibitori\\ della ricaptazione}
+			[.{della serotonina\\ blocco recettore SERT}
+				[.SSRI
+					\node[farmaco]{\index{fluoxetina}fluoxetina\\(prozac)};
+				]
+			]
+			[.{della serotonina e\\ noradrenalina\\ blocco recettore NET}
+				[.SNRI
+					\node[farmaco]{\index{venlafaxina}venlafaxina};
+				]
+				[.{ATC\\(antidepressivi triciclici)}
+					\node[farmaco]{\index{amitriptilina}amitriptilina};
+					\node[farmaco]{\index{imipramina}imipramina};
+				]
+			]
+		]
+		[.{inibitori\\ delle monoamminossidasi\\(IMAO)}
+			\node[farmaco]{\index{fenelzina}fenelzina\\(ritirato in Italia)};
+			\node[farmaco]{\index{moclobemide}moclobemide};
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{SSRI}
+		[.meccanismo
+			{\upa serotonina per\\ inibizione della ricaptazione}
+		]
+		[.assorbimento
+			{os}
+		]
+		[.metabolismo
+			{epatico con interazione con\\ ATC, CYP2D6}
+		]
+		[.{usi clinici}
+			{depressione, ansia, \\ panico,\\ disordine ossessivo--compulsivo}
+		]
+		[.{effetti collaterali}
+			{nausea, vomito, insonnia,\\ sindrome serotoninergica (tremore\\ collasso cardiocirc., ipertermia)}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{ATC}
+		[.meccanismo
+			{\upa serotonina per\\ inibizione della ricaptazione}
+			{noradrenalina per competizione\\ con i siti di legame}
+		]
+		[.assorbimento
+			{os}
+		]
+		[.metabolismo
+			{epatico con grande volume\\ di distribuzione e lento\\ metabolismo e quindi\\ stretta finestra terapeutica}
+		]
+		[.{usi clinici}
+			{panico, antidepressivo, \\ analgesico nella cura\\ del dolore neuropatico}
+		]
+		[.{effetti collaterali}
+			{atropina--like,\\ ipotensione posturale,aritmie\\ depressione respiratoria\\ con alcol}
+			{ATC + IMAO MAI per rischio ipertensione acuta}
+		]
+	]
+\end{tikzpicture}
+
+Il 10\% dei caucasici ha una mutazione del gene della CYP2D6 con effetti collaterali agli ATC molto più pesanti
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.{IMAO}
+		[.meccanismo
+			[.{vecchi farmaci\\(fenelzina)}
+				{inibizione irreversibile\\ dell'enzima MAO.\\ }
+			]
+			[.{nuovi farmaci\\(moclobemide)}
+				{inibizione reversibile\\ dell'enzima MAO.\\ }
+			]
+		]
+		[.{usi clinici}
+			{\upa conc. plasm. 5-HT, \ce{Na+} e dopamina\\ Euforia e eccitazione}
+		]
+		[.{effetti collaterali}
+			{ipotensione caratteristica per\\ dwa rilascio noradrenalina.}
+			{downreg. recettori $\beta$--adrenergici e 5-HT}
+			{cheese reaction con crisi ipertensiva acuta\\ perchè \index{tiramina}tiramina contenuta nei\\ formaggi non viene degradata\ dalle MAO inibite}
+			{ATC + IMAO MAI per rischio ipertensione acuta}
+		]
+	]
+\end{tikzpicture}
+
+Di solito quindi la terapia è ATC + SSRI.
+
+\begin{tikzpicture}
+	\Tree
+	[.{stabilizzazione\\ dell'umore}
+		\node[farmaco]{\index{litio}litio};
+		[.antiepilettici
+			\node[farmaco]{\index{carbamazepina}carbamazepina};
+			\node[farmaco]{\index{valproato}valproato};
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=130pt}}
+	\tikzset{level 3/.style={level distance=130pt}}
+	\Tree
+	[.{Litio}
+		[.meccanismo
+			[.{$\ominus$ inositolo monofosfato}
+				{depressione cirtuiti iperattivi}
+			]
+			[.{$\ominus$ gliglogenosinetasi chinasi (GSK-3)}
+				{attivazione enzimi apoptotici}
+			]
+			{\dwa cAMP}
+		]
+		[.assorbimento
+			{os sotto forma di carbonato}
+		]
+		[.metabolismo
+			[.{renale lenta\\ 1$\sim$2 settimane}	
+				{stretta finestra terapeutica\\ pericolo sovradosaggio}
+			]
+		]
+		[.{usi clinici}
+			{profilassi e trattamento di\\ depressione uni e bipolare}
+		]
+		[.{effetti collaterali}
+			[.{+ diuretici}
+				{\dwa \ce{Na+}}
+			]
+			{nausea, vomito, diarrea}
+			[.{ritensione di \ce{Na+} e\\ \upa aldosterone}
+				{danni tubulari}
+			]
+			ipertiroidismo
+			{\upa peso corporeo e edema}
+		]
+	]
+\end{tikzpicture}
 
 \newpage
