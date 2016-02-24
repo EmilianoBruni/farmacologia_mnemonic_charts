@@ -110,32 +110,6 @@ Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
 
 \begin{tikzpicture}
 	\Tree
-	[.{qualità sonno}
-		{1. latenza prima inizio sonno}
-		{2. fase non--REM (NREM)}
-		{3. fase REM}
-		{4. fase NREM a onde lente}
-	]
-	\begin{scope}[xshift=14em]
-		\node(par){$\left.\rule{0pt}{46pt}\right\}$};
-		\node[text width=10em] at (2.5,0){ideale $\downarrow$1. $\uparrow$2. $\uparrow$3. $\uparrow$4. };
-	\end{scope}
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\Tree
-	[.{effetto farmaci\\ sul sonno}
-		[.benzodiazepine
-			{$\downarrow$1. $\uparrow$2. $\downarrow$3. $\downarrow$4. }
-		]
-		[.{non--benzodiazepine}
-			{$\downarrow$1. ininfluente sugli altri }
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\Tree
 	[.\node[farmaco]{\index{buspirone}buspirone\\(non in Italia)};
 		[.meccanismo
 			{agonista parziale \ce{5-HT_{1A}} e \ce{D_2}}
@@ -159,7 +133,7 @@ Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
 	\Tree
 	[.barbiturici
 		[.meccanismo
-			{recettore \ce{GABA_a} in sito differente da BZ}
+			{recettore \ce{GABA_a}\\ in sito differente da BZ}
 		]
 		[.assunzione {os,EV}
 		]
@@ -199,7 +173,33 @@ Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
 	]
 \end{tikzpicture}
 
-\subsection{Farmacti antiepilettici}
+\begin{tikzpicture}
+	\Tree
+	[.{qualità sonno}
+		{1. latenza prima inizio sonno}
+		{2. fase non--REM (NREM)}
+		{3. fase REM}
+		{4. fase NREM a onde lente}
+	]
+	\begin{scope}[xshift=14em]
+		\node(par){$\left.\rule{0pt}{46pt}\right\}$};
+		\node[text width=10em] at (2.5,0){ideale $\downarrow$1. $\uparrow$2. $\uparrow$3. $\uparrow$4. };
+	\end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{effetto farmaci\\ sul sonno}
+		[.benzodiazepine
+			{$\downarrow$1. $\uparrow$2. $\downarrow$3. $\downarrow$4. }
+		]
+		[.{non--benzodiazepine}
+			{$\downarrow$1. ininfluente sugli altri }
+		]
+	]
+\end{tikzpicture}
+
+\subsection{Farmaci antiepilettici}
 
 \begin{tikzpicture}
 	\tikzset{frontier/.style={distance from root=400pt}}
