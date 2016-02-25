@@ -1,0 +1,205 @@
+\section{Farmaci dell'emostasi}
+
+\begin{tikzpicture}
+	\tikzset{frontier/.style={distance from root=300pt}} 
+	\Tree 
+		[ .Emostasi 
+			[ .anticoagulanti 
+				[ .\node[farmaco]{\index{eparina}eparina};
+					{frazionata o LMWH o\\ a basso peso molecolare}
+					{non frazionata o HMWM\\(meno usata causa eff. coll.}
+				]
+				[ .{inibitori della trombina} 
+					\node[farmaco]{\index{lepirudina}lepirudina\\ \index{argatroban}argatroban}; 
+				]
+				[ .orali \node[farmaco]{\index{warfarin}warfarin};  ]
+			]
+			[ .antiaggreganti 
+				[ .FANS ]
+				[ .{inibitori \\ della fosfodiesterasi} 
+					\node[farmaco]{\index{dipiridamolo}dipiridamolo\\ \index{cilostazolo}cilostazolo };
+				]
+				[ .{antagonisti recettori ADP} 
+					\node[farmaco]{\index{ticlopidina}ticlopidina\\ \index{clopidogrel}clopidogrel }; 
+				]
+				[ .{inibitori recettore\\ Gp IIb/IIIA} 
+					\node[farmaco]{\index{abciximab}abciximab\\ \index{tirofiban}tirofiban\\ \index{eptifibatide}eptifibatide}; 				
+				]
+			]
+			[ .trombolitici 
+				[.{Attivatori tissutali\\ del plasminogeno (tPA)}
+					\node[farmaco]{\index{urochinasi}urochinasi\\ \index{streptochinasi}streptochinasi }; 
+				]
+			]
+		]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+		\Tree
+		[.\node[farmaco]{\index{eparina}eparina};
+			[.meccanismo
+				[.{HMWH}
+					{si lega a AT3 con \\\upa cinetica del\\ fattore Xa e trombina}
+					{causa \upa aPTT per cui\\ continuo monitoraggio}
+				]
+				[.LMWH
+					{si lega a AT3 con \\\upa cinetica del solo\\ fattore Xa quindi\\ no monitoraggio}
+				]
+			]
+			[.assorbimento
+				{sottocutaneo}
+				{no intramuscolo ove\\ causa ematomi}
+			]
+			[.metabolismo
+				{renale}
+			]
+			[.{usi clinici}
+				{anticoagulante immediato\\(pochi sec. per agire)}
+			]
+			[.{effetti collaterali}
+				{emorragia, trombocitenia,\\ osteoporosi in uso cronico}
+				{antidoto: \index{protamina solfato}protamina solfato}
+			]
+		]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{inibitori diretti\\ della trombina}
+		[.meccanismo
+			{si legano al sito\\ attivo della trombina}
+		]
+		[.assorbimento
+			{parenterale}
+		]
+		[.{usi clinici}
+			{azione anticoagulante}
+			{monitoraggio aPTT}
+		]
+		[.{effetti collaterali}
+			{emorragia}
+			{formazione anticorpi}
+		]
+	]
+\end{tikzpicture}
+
+\section{Farmaci antianemici}
+
+\begin{tikzpicture}
+	\Tree
+	[.{anemia}
+		[.microcitiche
+			{carenza Fe}
+			talassemia
+			emoglobinopatie
+		]
+		[.normocitiche
+			aplasie
+			{anemie emolitiche}
+			emorragie
+		]
+		[.macrocitiche
+			{carenza \ce{B_12}}
+			{carenza folati}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{farmaci}
+		[.ferro
+			\node[farmaco]{\index{solfato ferroso}solfato ferroso};
+			\node[farmaco]{\index{ferro destrano}ferro destrano};
+		]
+		[.\ce{B_12}
+			\node[farmaco]{\index{cianocobalamina}cianocobalamina};
+		]
+		{acido folico}
+		[.{fattori di crescita\\ eritrocitari}
+			\node[farmaco]{\index{eritropoietina}eritropoietina};
+			\node[farmaco]{\index{darbepoetina $\alpha$}darbopoeietina $\alpha$};
+		]
+		[.{fattori megacariocitari}
+			\node[farmaco]{\index{oprelvekin}oprelvekin\\(IL-11 ricombinante)};
+		]
+	]
+\end{tikzpicture}
+
+Chelanti del ferro (\index{desferrioxamina}desferrioxamina) nel caso di intossicazione dal ferro.
+
+\begin{tikzpicture}
+	\Tree
+	[.{\ce{B_12}}
+		[.meccanismo
+			{sopperisce alla carenza}
+		]
+		[.assorbimento
+			[.{se causa da malassorbimento\\(a. perniciosa, carenza\\ fattore intrinseco)}
+				{parenterale}
+			]
+			[.{altrimenti}
+				os
+			]
+		]
+		[.metabolismo
+			{epatico}
+		]
+		[.{usi clinici}
+			{carenza \ce{B_12} si da anche\\ acido folico ma solo\\ \ce{B_12} sopperisce\\ agli effetti neurologici }
+		]
+		[.{effetti collaterali}
+			{diarrea, policitemia\\ insuff. cardiaca, shock anafilattico}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{folati}
+		[.meccanismo
+			{come \ce{B_12}}
+		]
+		[.assorbimento
+			{os}
+		]
+		[.metabolismo
+			{epatico}
+		]
+		[.{usi clinici}
+			{\ce{B_12} ma nessun sintomo\\ neurologico}
+		]
+		[.{effetti collaterali}
+			{\ce{B_12}}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{fattori stimolanti\\ eritropoiesi}
+		[.meccanismo
+			{stimola eritropoiesi che\\ rigenerano gli eritrocito}
+		]
+		[.assorbimento
+			{EV}
+			{sottocutaneo}
+		]
+		[.metabolismo
+			{epatico}
+		]
+		[.{usi clinici}
+			{anemie da insuff. renale che\\ causa \dwa EPO sierica}
+			{chemioterapici}
+			{trapianti midollo osseo}
+		]
+		[.{effetti collaterali}
+			ipertensione
+			iperviscosità
+			prurito
+			convulsioni
+		]
+	]
+\end{tikzpicture}
+
+\newpage
