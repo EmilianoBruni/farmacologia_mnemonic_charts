@@ -4,16 +4,16 @@
 
 \begin{tikzpicture}
 	\Tree
-	[.{funzioni}
+	[.{scopo}
 		[.\node(sedazione){sedazione};
-			[.ansiolitico
+			[.ansiolitico (\dwa stato ansia)
 				[.tranquillante
 					\node(aum){aumentando dosaggio};
 				]
 			]
 		]
 		[.\node(ipnotico){ipnotico};
-			[.sonnolenza
+			[.sonnolenza (\upa sonno)
 				\node(dep){depressione SN maggiore};
 			]
 		]
@@ -23,21 +23,38 @@
 \end{tikzpicture}
 
 \begin{tikzpicture}
+	\Tree
+	[.{relazione \\ dose/risposta}
+		[.sedazione
+			[.ipnotico
+				[.anestesia
+					[.{depressione centri\\ respiro}
+						[.coma
+							morte
+						]
+					]
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
 	\tikzset{level 1/.style={level distance=130pt}}
 	\tikzset{frontier/.style={distance from root=250pt}}
 	\Tree
 	[.{tipologie}
 		[.benzodiazepine
-			\node[farmaco]{\index{diazepam}diazepam\\ emivita $12\sim72$h\\(valium)};
-			\node[farmaco]{\index{lorazepam}lorazepam\\ emivita $2\sim6$h\\(tavor)};
-			\node[farmaco]{\index{flunitrazepam}flunitrazepam\\ emivita $8\sim24$h\\(roipnol)};
+			\node[farmaco]{\index{diazepam}diazepam\\ emivita $12\sim72$h\\(valium - ansiol.)};
+			\node[farmaco]{\index{lorazepam}lorazepam\\ emivita $2\sim6$h\\(tavor - ansiol.)};
+			\node[farmaco]{\index{flunitrazepam}flunitrazepam\\ emivita $8\sim24$h\\(roipnol - ansiol./ipnot.)};
 		]
 		[.barbiturici
-			\node[farmaco]{\index{pentobarbital}pentobarbital};
-			\node[farmaco]{\index{fenobarbital}fenobarbital\\(più come antiepilettico};
-			\node[farmaco]{\index{tiopental}tiopental\\(più come anestetico generale\\ siero della verità)};
+			\node[farmaco]{\index{pentobarbital}pentobarbital\\(ipnotico)};
+			\node[farmaco]{\index{fenobarbital}fenobarbital\\(più come antiepilettico)\\(ipnotico)};
+			\node[farmaco]{\index{tiopental}tiopental\\(più come anestetico generale\\ siero della verità)\\(ipnotico)};
 		]
-		\node[farmaco]{\index{buspirone}buspirone};
+		\node[farmaco]{\index{buspirone}buspirone\\ (ansiol.)};
 		[.{ipnotici\\ non benzodiazepinici}
 			\node[farmaco]{\index{zolpidem}zolpidem};
 			\node[farmaco]{\index{zaleplon}zaleplon};
@@ -46,10 +63,10 @@
 			\node[farmaco]{\index{ATC}ATC\\(vedi sezione)};
 		]
 		[.antidepressivi
-			{vedi sezione}
+			{i più recenti SSRI e SNRI\\ (vedi sezione)}
 		]
 		[.antiepilettici
-			\node[farmaco]{\index{valproato}valproato\\(vedi sezione)};
+			\node[farmaco]{\index{valproato}valproato\\(vedi sezione)\\(ansiol.)};
 		]
 	]
 \end{tikzpicture}
@@ -59,11 +76,11 @@
 	[.{bezodiazepine}
 		[.meccanismo
 			[.{recettore \ce{GABA_a}\\ nel sito BZ}
-				[.{con subunità $\alpha_1$}
+				[.{isoforma\\ con subunità $\alpha_1$}
 					{effetto sedazione}
 				]
 				[.{con subunità $\alpha_2$}
-					{effetto ansiolitico}
+					{isoforma\\ effetto ansiolitico}
 				]
 			]
 		]
@@ -85,12 +102,14 @@
 			{$\downarrow$ansia\\ $\downarrow$aggressicità\\ induzione sonno}
 		]
 		[.{effetti collaterali}
-			{amnesia anterograda\\ tolleranza ($\uparrow$dose)\\ dipendenza psicofisica\\ depressione sistema respiratorio }
+			{amnesia anterograda\footnotemark\\ tolleranza ($\uparrow$dose)\\ dipendenza psicofisica\\ depressione sistema respiratorio }
 		]
 	]
 \end{tikzpicture}
 
-Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
+\footnotetext{Incapacità a ricordare azioni avvenute durante l'azione del farmaco. Roipnol, la droga dello stupro.}
+
+Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil, anche lui una benzodiazepina ma con azione antagonista su BZ.
 
 \begin{tikzpicture}
 	\Tree
@@ -119,9 +138,12 @@ Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
 		[.metabolismo epatico
 		]
 		[.{effetti terapeutici}
-			{ansiolitico\\ no sedazione\\ no dipendenza\\ no ansia da interruzione\\
-			necessario settimane prima\\ che inizino gli effetti
-			}
+			[.vantaggi
+				{ansiolitico\\ no sedazione\\ no dipendenza\\ no ansia da interruzione}
+			]
+			[.svantaggi
+				{necessario settimane prima\\ che inizino gli effetti}
+			]
 		]
 		[.{effetti collaterali}
 			{nausea\\ vertigini\\ irrequietezza}
@@ -199,6 +221,379 @@ Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
 	]
 \end{tikzpicture}
 
+Tutti questi farmaci si legano al \ce{GABA_A} tranne il buspirone che agisce come agonista parziale per \ce{5-HT_{1A}} e \ce{D_2}.
+
+\ce{GABA_B} attivato da agenti spasmolitici come baclofene.
+
+Tutti \upa inibizione GABAergica \upa permeabilità al \ce{Cl-} del canale \ce{GABA_A} tramie interazione allosterica con GABA.
+
+Le benzodiazepine \upa frequenza apertura del canale.
+I barbiturici \upa durata apertura del canale.
+I barbiturici sono anche GABA--mimetici quindi funzionano teoricamente anche senza GABA.
+
+\subsection{Farmaci anti--psicotici}
+
+\begin{tikzpicture}
+	\Tree
+	[.{schizzofrenia}
+		{persistenza di alterazioni del pensiero,\\ del comportamente e delle affettività}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{sintomi}
+		[.{positivi\\(caratt. psicol. aggiuntive)}
+			delirio
+			allucinazioni
+			{pensieri disorganizzati}
+			aggressività
+		]
+		[.{negativi\\(caratt. psicol. perse)}
+			{isolamento sociale}
+			apatia
+			{mancanza di iniziativa}
+			{insensibilità emotiva}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=80pt}
+	\Tree
+	[.{fisiopatologia}
+		[.positivi
+			[.{inibizione GABAesrgica\\ \ce{D_2} mediata}
+				inibizione
+			]
+		]
+		[.negativi
+			[.{\dwa n. di recettori \ce{D_1}}
+				[.{iperattività GABA}
+					[.{inibizione\\ glutammatergica}
+						{ipostimolazione del\\ recettore NMDA}
+					]
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{teorie fisiopatologiche}
+		[.{teoria dopaminergica}
+			[.{spiega sintomi positivi}
+				{\upa stimolazione \ce{D_2}/\ce{D_4}\\ oppure \upa stim. \ce{D_2}, \dwa stim. \ce{D_4}}
+			]
+		]
+		[.{teoria glutammatergica}
+			[.{bassi livelli\\ di glutammato}
+				[.{spiega sintomi negativi}
+					{\dwa stimolazione NMDA}
+				]
+			]
+		]
+		[.{teoria serotoninergica}
+			[.{sintomi negativi}
+				{antagonisti serotoninergici\\ sono anti--psicotici}
+			]
+			[.{sinitomi positivi}
+				{LSD (antagonista 5-HT) fa\\ venire i sintomi positivi}
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{frontier/.style={distance from root=300pt}}
+	\Tree
+	[.{farmaci}
+		[.tipici
+			[.fenotiazidici
+				\node[farmaco]{\index{clorpromazina}clorpromazina};
+			]
+			[.butirrofenonico
+				\node[farmaco]{\index{aloperidolo}aloperidolo\\ (serenase)};
+			]
+		]
+		[.atipici
+			\node[farmaco]{\index{clozapina}clozapina\\(dibenzodiazepina)};
+			\node[farmaco]{\index{olanzapina}olanzapina};
+		]
+	]
+\end{tikzpicture}
+
+I farmaci anti--psicotici impiegano settimane per l'effetto, segno che vi sia un effetto secondario tipo incremento dei recettori \ce{D_2} a livello limbico.
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.{tipici}
+		[.meccanismo
+			{blocco recettori \ce{D_1}/\ce{D_2}}
+		]
+		[.assorbimento
+			{os, intramuscolo}
+		]
+		[.metabolismo
+			{epatico via cit. P450\\ isoforme CYP2D6, CYP1A2/A4\\ escrezione renale}
+		]
+		[.{usi clinici}
+			{schizzofrenia: \dwa sintomi positivi\\ i più recenti anche \dwa sintomi negativi\\ anti--emetici}
+		]
+		[.{effetti collaterali}
+			{extrapiramidali con distonia acuta\\ nelle prime settimane reversibili.\\ Discinesia tardiva con movimento\\ involontario di volto e lingua\\ causati da \upa n. \ce{D_2}}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{atipici}
+		[.meccanismo
+			{blocco \ce{D_2}, blocco $\alpha$--adrenergico\\ blocco 5--HT e \ce{D_4}\\ blocco recettori muscarinici}
+		]
+		[.assorbimento
+			{intrauscolo}
+		]
+		[.metabolismo
+			{epatico}
+		]
+		[.{effetti collaterali}
+			{secchezza fauci,\\ stipsi,\\ ritenzione idrica,\\ ipotensione posturale\\ leucopenia}
+		]
+	]
+\end{tikzpicture}
+
+I farmaci atipici danno meno effetti collaterali motori perchè bloccano selettivamente la via mesolimbica (della gratificazione) invede del nigro--striato. Impegnati quindi se i sintomi extrapiramidali dei tipici fossero problematici.
+
+\subsection{Farmaci antidepressivi}
+
+\begin{tikzpicture}
+	\Tree
+	[.{depressione}
+		[.{disturbo dell'umore}
+			[.{sintomi emozionali}
+				{malessere, apatia, pessimismo}
+				{bassa autostima}
+				{incapacità a prendere decisioni}
+				{idee di autolesionismo o\\ suicide}
+			]
+			[.{sintomi biologici}
+				{ritardi nel pensiero o\\ nell'azione}
+				{perdita di libibo}
+				insonnia
+				{perdita di appetito}
+			]
+		]
+	]
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+	\tikzset{level distance=90pt}
+	\Tree
+	[.{depressione}
+		[.unipolare
+			{variazioni di umore\\ sempre nello stesso verso}
+		]
+		[.{bipolare\\(sindrome maniaco\\ depressiva)}
+			[.\node(d){depressione};
+				[.\node(m){mania};
+					\node(es){esuberanza};
+				]
+			]
+		]
+	]
+	\node[below of=es,chartnode](e){entusiasmo};
+	\node[below of=m,chartnode](im){impazienza};
+	\node[below of=d,chartnode](c){collera};
+	\draw[drawarrow] (es) -- (e) (e)--(im) (im)--(c) (c)--(d);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{teorie\\ fisiopatologiche}
+		[.{teoria monoaminergica}
+			[.\node[farmaco]{\index{noradrenalina}noradrenalina\\\index{serotonina}serotonina};
+				[.\dwa depressione ]
+				[.\upa {elevazione dell'umore} ]
+			]
+		]
+		[.{teoria neutrofica}
+			[.{perdita di neuroni e\\ di glia in ippocampo e\\ corteccia pre--frontale}
+				[.depressione
+					{\index{BDNF}BDNF porta a\\ elevazione dell'umore}
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{teoria monaminergica}
+		[.{\index{noradrenalina}noradrenalina, \index{serotonina}serotonina\\ innervano neuroni ipotalamici\\ che controllano\\ $\ominus$ l'ipofisi}
+			[.{\upa CRH}
+				[.{\upa ADCH}
+					{\upa cortisolo\\(ormone dello stress)}
+				]
+			]
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\tikzset{frontier/.style={distance from root=400pt}}
+	\Tree
+	[.{farmaci}
+		[.{inibitori\\ della ricaptazione}
+			[.{della serotonina\\ blocco recettore SERT}
+				[.SSRI
+					\node[farmaco]{\index{fluoxetina}fluoxetina\\(prozac)};
+				]
+			]
+			[.{della serotonina e\\ noradrenalina\\ blocco recettore NET}
+				[.SNRI
+					\node[farmaco]{\index{venlafaxina}venlafaxina};
+				]
+				[.{ATC\\(antidepressivi triciclici)}
+					\node[farmaco]{\index{amitriptilina}amitriptilina};
+					\node[farmaco]{\index{imipramina}imipramina};
+				]
+			]
+		]
+		[.{inibitori\\ delle monoamminossidasi\\(IMAO)}
+			\node[farmaco]{\index{fenelzina}fenelzina\\(ritirato in Italia)};
+			\node[farmaco]{\index{moclobemide}moclobemide};
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{SSRI}
+		[.meccanismo
+			{\upa serotonina per\\ inibizione della ricaptazione}
+		]
+		[.assorbimento
+			{os}
+		]
+		[.metabolismo
+			{epatico con interazione con\\ ATC, CYP2D6}
+		]
+		[.{usi clinici}
+			{depressione, ansia, \\ panico,\\ disordine ossessivo--compulsivo}
+		]
+		[.{effetti collaterali}
+			{nausea, vomito, insonnia,\\ sindrome serotoninergica (tremore\\ collasso cardiocirc., ipertermia)}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{ATC}
+		[.meccanismo
+			{\upa serotonina per\\ inibizione della ricaptazione}
+			{noradrenalina per competizione\\ con i siti di legame}
+		]
+		[.assorbimento
+			{os}
+		]
+		[.metabolismo
+			{epatico con grande volume\\ di distribuzione e lento\\ metabolismo e quindi\\ stretta finestra terapeutica}
+		]
+		[.{usi clinici}
+			{panico, antidepressivo, \\ analgesico nella cura\\ del dolore neuropatico}
+		]
+		[.{effetti collaterali}
+			{atropina--like,\\ ipotensione posturale,aritmie\\ depressione respiratoria\\ con alcol}
+			{ATC + IMAO MAI per rischio ipertensione acuta}
+		]
+	]
+\end{tikzpicture}
+
+Il 10\% dei caucasici ha una mutazione del gene della CYP2D6 con effetti collaterali agli ATC molto più pesanti
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.{IMAO}
+		[.meccanismo
+			[.{vecchi farmaci\\(fenelzina)}
+				{inibizione irreversibile\\ dell'enzima MAO.\\ }
+			]
+			[.{nuovi farmaci\\(moclobemide)}
+				{inibizione reversibile\\ dell'enzima MAO.\\ }
+			]
+		]
+		[.{usi clinici}
+			{\upa conc. plasm. 5-HT, \ce{Na+} e dopamina\\ Euforia e eccitazione}
+		]
+		[.{effetti collaterali}
+			{ipotensione caratteristica per\\ dwa rilascio noradrenalina.}
+			{downreg. recettori $\beta$--adrenergici e 5-HT}
+			{cheese reaction con crisi ipertensiva acuta\\ perchè \index{tiramina}tiramina contenuta nei\\ formaggi non viene degradata\ dalle MAO inibite}
+			{ATC + IMAO MAI per rischio ipertensione acuta}
+		]
+	]
+\end{tikzpicture}
+
+Di solito quindi la terapia è ATC + SSRI.
+
+\begin{tikzpicture}
+	\Tree
+	[.{stabilizzazione\\ dell'umore}
+		\node[farmaco]{\index{litio}litio};
+		[.antiepilettici
+			\node[farmaco]{\index{carbamazepina}carbamazepina};
+			\node[farmaco]{\index{valproato}valproato};
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=130pt}}
+	\tikzset{level 3/.style={level distance=130pt}}
+	\Tree
+	[.{Litio}
+		[.meccanismo
+			[.{$\ominus$ inositolo monofosfato}
+				{depressione cirtuiti iperattivi}
+			]
+			[.{$\ominus$ gliglogenosinetasi chinasi (GSK-3)}
+				{attivazione enzimi apoptotici}
+			]
+			{\dwa cAMP}
+		]
+		[.assorbimento
+			{os sotto forma di carbonato}
+		]
+		[.metabolismo
+			[.{renale lenta\\ 1$\sim$2 settimane}	
+				{stretta finestra terapeutica\\ pericolo sovradosaggio}
+			]
+		]
+		[.{usi clinici}
+			{profilassi e trattamento di\\ depressione uni e bipolare}
+		]
+		[.{effetti collaterali}
+			[.{+ diuretici}
+				{\dwa \ce{Na+}}
+			]
+			{nausea, vomito, diarrea}
+			[.{ritensione di \ce{Na+} e\\ \upa aldosterone}
+				{danni tubulari}
+			]
+			ipertiroidismo
+			{\upa peso corporeo e edema}
+		]
+	]
+\end{tikzpicture}
+
+
 \subsection{Farmaci antiepilettici}
 
 \begin{tikzpicture}
@@ -223,6 +618,7 @@ Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
 			toniche
 			{(mio)cloniche}
 			{atoniche\\(perdita tono posturale)}
+			{assenze\\(piccolo male)}
 		]
 		{spasmi infantili\\(sindrome epilettica)}
 	]
@@ -250,7 +646,7 @@ Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
 		[.\node[farmaco]{\index{corticotropina}corticotropina};
 			\node(spasmi){spasmi infantili};
 		]
-		[.\node[farmaco]{\index{diazepam}diazepam\\ benzodiazepina + \\ fosfenitoina};
+		[.\node[farmaco]{\index{diazepam}diazepam\\ benzodiazepina + \\ fosfenitoina (simil\\ fenitoina ma IV o IM)};
 			{emergenze epilettiche}
 		]
 		[.\node[farmaco]{\index{acetazolamide}acetazolamide\\(diuretico inibizione\\ anidrasi carbonica)}; tutti
@@ -310,7 +706,7 @@ Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil
 		]
 		[.{effetti collaterali}
 			[.{induttore P450}
-				{accellera il\\ metabolismo della fenitoina}
+				{accellera il\\ metabolismo della\\ fenitoina e warfarin}
 			]
 			[.{epossido}
 				sonnolenza
@@ -769,368 +1165,6 @@ ma carbidopa inibisce la decarbossilasi e non attraversa la BEE quindi non inibi
 		]
 		[.{effetti collaterali}
 			{discinesie, sonnolenza\\ stato confusionale}
-		]
-	]
-\end{tikzpicture}
-
-\subsection{Farmaci anti--psicotici}
-
-\begin{tikzpicture}
-	\Tree
-	[.{schizzofrenia}
-		{persistenza di alterazioni del pensiero,\\ del comportamente e delle affettività}
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\Tree
-	[.{sintomi}
-		[.{positivi\\(caratt. psicol. aggiuntive)}
-			delirio
-			allucinazioni
-			{pensieri disorganizzati}
-			aggressività
-		]
-		[.{negativi\\(caratt. psicol. perse)}
-			{isolamento sociale}
-			apatia
-			{mancanza di iniziativa}
-			{insensibilità emotiva}
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\tikzset{level distance=80pt}
-	\Tree
-	[.{fisiopatologia}
-		[.positivi
-			[.{inibizione GABAesrgica\\ \ce{D_2} mediata}
-				inibizione
-			]
-		]
-		[.negativi
-			[.{\dwa n. di recettori \ce{D_1}}
-				[.{iperattività GABA}
-					[.{inibizione\\ glutammatergica}
-						{ipostimolazione del\\ recettore NMDA}
-					]
-				]
-			]
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\Tree
-	[.{teorie fisiopatologiche}
-		[.{teoria dopaminergica}
-			[.{spiega sintomi positivi}
-				{\upa stimolazione \ce{D_2}/\ce{D_4}\\ oppure \upa stim. \ce{D_2}, \dwa stim. \ce{D_4}}
-			]
-		]
-		[.{teoria glutammatergica}
-			[.{bassi livelli\\ di glutammato}
-				[.{spiega sintomi negativi}
-					{\dwa stimolazione NMDA}
-				]
-			]
-		]
-		[.{teoria serotoninergica}
-			[.{sintomi negativi}
-				{antagonisti serotoninergici\\ sono anti--psicotici}
-			]
-			[.{sinitomi positivi}
-				{LSD (antagonista 5-HT) fa\\ venire i sintomi positivi}
-			]
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\tikzset{frontier/.style={distance from root=300pt}}
-	\Tree
-	[.{farmaci}
-		[.tipici
-			[.fenotiazidici
-				\node[farmaco]{\index{clorpromazina}clorpromazina};
-			]
-			[.butirrofenonico
-				\node[farmaco]{\index{aloperidolo}aloperidolo\\ (serenase)};
-			]
-		]
-		[.atipici
-			\node[farmaco]{\index{clozapina}clozapina\\(dibenzodiazepina)};
-			\node[farmaco]{\index{olanzapina}olanzapina};
-		]
-	]
-\end{tikzpicture}
-
-I farmaci anti--psicotici impiegano settimane per l'effetto, segno che vi sia un effetto secondario tipo incremento dei recettori \ce{D_2} a livello limbico.
-
-\begin{tikzpicture}
-	\tikzset{level 2/.style={level distance=150pt}}
-	\Tree
-	[.{tipici}
-		[.meccanismo
-			{blocco recettori \ce{D_1}/\ce{D_2}}
-		]
-		[.assorbimento
-			{os, intramuscolo}
-		]
-		[.metabolismo
-			{epatico via cit. P450\\ isoforme CYP2D6, CYP1A2/A4\\ escrezione renale}
-		]
-		[.{usi clinici}
-			{schizzofrenia: \dwa sintomi positivi\\ i più recenti anche \dwa sintomi negativi\\ anti--emetici}
-		]
-		[.{effetti collaterali}
-			{extrapiramidali con distonia acuta\\ nelle prime settimane reversibili.\\ Discinesia tardiva con movimento\\ involontario di volto e lingua\\ causati da \upa n. \ce{D_2}}
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\Tree
-	[.{atipici}
-		[.meccanismo
-			{blocco \ce{D_2}, blocco $\alpha$--adrenergico\\ blocco 5--HT e \ce{D_4}\\ blocco recettori muscarinici}
-		]
-		[.assorbimento
-			{intrauscolo}
-		]
-		[.metabolismo
-			{epatico}
-		]
-		[.{effetti collaterali}
-			{secchezza fauci,\\ stipsi,\\ ritenzione idrica,\\ ipotensione posturale\\ leucopenia}
-		]
-	]
-\end{tikzpicture}
-
-I farmaci atipici danno meno effetti collaterali motori perchè bloccano selettivamente la via mesolimbica (della gratificazione) invede del nigro--striato. Impegnati quindi se i sintomi extrapiramidali dei tipici fossero problematici.
-
-\subsection{Farmaci antidepressivi}
-
-\begin{tikzpicture}
-	\Tree
-	[.{depressione}
-		[.{disturbo dell'umore}
-			[.{sintomi emozionali}
-				{malessere, apatia, pessimismo}
-				{bassa autostima}
-				{incapacità a prendere decisioni}
-				{idee di autolesionismo o\\ suicide}
-			]
-			[.{sintomi biologici}
-				{ritardi nel pensiero o\\ nell'azione}
-				{perdita di libibo}
-				insonnia
-				{perdita di appetito}
-			]
-		]
-	]
-\end{tikzpicture}
-
-
-\begin{tikzpicture}
-	\tikzset{level distance=90pt}
-	\Tree
-	[.{depressione}
-		[.unipolare
-			{variazioni di umore\\ sempre nello stesso verso}
-		]
-		[.{bipolare\\(sindrome maniaco\\ depressiva)}
-			[.\node(d){depressione};
-				[.\node(m){mania};
-					\node(es){esuberanza};
-				]
-			]
-		]
-	]
-	\node[below of=es,chartnode](e){entusiasmo};
-	\node[below of=m,chartnode](im){impazienza};
-	\node[below of=d,chartnode](c){collera};
-	\draw[drawarrow] (es) -- (e) (e)--(im) (im)--(c) (c)--(d);
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\Tree
-	[.{teorie\\ fisiopatologiche}
-		[.{teoria monoaminergica}
-			[.\node[farmaco]{\index{noradrenalina}noradrenalina\\\index{serotonina}serotonina};
-				[.\dwa depressione ]
-				[.\upa {elevazione dell'umore} ]
-			]
-		]
-		[.{teoria neutrofica}
-			[.{perdita di neuroni e\\ di glia in ippocampo e\\ corteccia pre--frontale}
-				[.depressione
-					{\index{BDNF}BDNF porta a\\ elevazione dell'umore}
-				]
-			]
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\Tree
-	[.{teoria monaminergica}
-		[.{\index{noradrenalina}noradrenalina, \index{serotonina}serotonina\\ innervano neuroni ipotalamici\\ che controllano\\ $\ominus$ l'ipofisi}
-			[.{\upa CRH}
-				[.{\upa ADCH}
-					{\upa cortisolo\\(ormone dello stress)}
-				]
-			]
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-\tikzset{frontier/.style={distance from root=400pt}}
-	\Tree
-	[.{farmaci}
-		[.{inibitori\\ della ricaptazione}
-			[.{della serotonina\\ blocco recettore SERT}
-				[.SSRI
-					\node[farmaco]{\index{fluoxetina}fluoxetina\\(prozac)};
-				]
-			]
-			[.{della serotonina e\\ noradrenalina\\ blocco recettore NET}
-				[.SNRI
-					\node[farmaco]{\index{venlafaxina}venlafaxina};
-				]
-				[.{ATC\\(antidepressivi triciclici)}
-					\node[farmaco]{\index{amitriptilina}amitriptilina};
-					\node[farmaco]{\index{imipramina}imipramina};
-				]
-			]
-		]
-		[.{inibitori\\ delle monoamminossidasi\\(IMAO)}
-			\node[farmaco]{\index{fenelzina}fenelzina\\(ritirato in Italia)};
-			\node[farmaco]{\index{moclobemide}moclobemide};
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\Tree
-	[.{SSRI}
-		[.meccanismo
-			{\upa serotonina per\\ inibizione della ricaptazione}
-		]
-		[.assorbimento
-			{os}
-		]
-		[.metabolismo
-			{epatico con interazione con\\ ATC, CYP2D6}
-		]
-		[.{usi clinici}
-			{depressione, ansia, \\ panico,\\ disordine ossessivo--compulsivo}
-		]
-		[.{effetti collaterali}
-			{nausea, vomito, insonnia,\\ sindrome serotoninergica (tremore\\ collasso cardiocirc., ipertermia)}
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\Tree
-	[.{ATC}
-		[.meccanismo
-			{\upa serotonina per\\ inibizione della ricaptazione}
-			{noradrenalina per competizione\\ con i siti di legame}
-		]
-		[.assorbimento
-			{os}
-		]
-		[.metabolismo
-			{epatico con grande volume\\ di distribuzione e lento\\ metabolismo e quindi\\ stretta finestra terapeutica}
-		]
-		[.{usi clinici}
-			{panico, antidepressivo, \\ analgesico nella cura\\ del dolore neuropatico}
-		]
-		[.{effetti collaterali}
-			{atropina--like,\\ ipotensione posturale,aritmie\\ depressione respiratoria\\ con alcol}
-			{ATC + IMAO MAI per rischio ipertensione acuta}
-		]
-	]
-\end{tikzpicture}
-
-Il 10\% dei caucasici ha una mutazione del gene della CYP2D6 con effetti collaterali agli ATC molto più pesanti
-
-\begin{tikzpicture}
-	\tikzset{level 2/.style={level distance=150pt}}
-	\Tree
-	[.{IMAO}
-		[.meccanismo
-			[.{vecchi farmaci\\(fenelzina)}
-				{inibizione irreversibile\\ dell'enzima MAO.\\ }
-			]
-			[.{nuovi farmaci\\(moclobemide)}
-				{inibizione reversibile\\ dell'enzima MAO.\\ }
-			]
-		]
-		[.{usi clinici}
-			{\upa conc. plasm. 5-HT, \ce{Na+} e dopamina\\ Euforia e eccitazione}
-		]
-		[.{effetti collaterali}
-			{ipotensione caratteristica per\\ dwa rilascio noradrenalina.}
-			{downreg. recettori $\beta$--adrenergici e 5-HT}
-			{cheese reaction con crisi ipertensiva acuta\\ perchè \index{tiramina}tiramina contenuta nei\\ formaggi non viene degradata\ dalle MAO inibite}
-			{ATC + IMAO MAI per rischio ipertensione acuta}
-		]
-	]
-\end{tikzpicture}
-
-Di solito quindi la terapia è ATC + SSRI.
-
-\begin{tikzpicture}
-	\Tree
-	[.{stabilizzazione\\ dell'umore}
-		\node[farmaco]{\index{litio}litio};
-		[.antiepilettici
-			\node[farmaco]{\index{carbamazepina}carbamazepina};
-			\node[farmaco]{\index{valproato}valproato};
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\tikzset{level 2/.style={level distance=130pt}}
-	\tikzset{level 3/.style={level distance=130pt}}
-	\Tree
-	[.{Litio}
-		[.meccanismo
-			[.{$\ominus$ inositolo monofosfato}
-				{depressione cirtuiti iperattivi}
-			]
-			[.{$\ominus$ gliglogenosinetasi chinasi (GSK-3)}
-				{attivazione enzimi apoptotici}
-			]
-			{\dwa cAMP}
-		]
-		[.assorbimento
-			{os sotto forma di carbonato}
-		]
-		[.metabolismo
-			[.{renale lenta\\ 1$\sim$2 settimane}	
-				{stretta finestra terapeutica\\ pericolo sovradosaggio}
-			]
-		]
-		[.{usi clinici}
-			{profilassi e trattamento di\\ depressione uni e bipolare}
-		]
-		[.{effetti collaterali}
-			[.{+ diuretici}
-				{\dwa \ce{Na+}}
-			]
-			{nausea, vomito, diarrea}
-			[.{ritensione di \ce{Na+} e\\ \upa aldosterone}
-				{danni tubulari}
-			]
-			ipertiroidismo
-			{\upa peso corporeo e edema}
 		]
 	]
 \end{tikzpicture}
