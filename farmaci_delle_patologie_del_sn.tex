@@ -6,14 +6,14 @@
 	\Tree
 	[.{scopo}
 		[.\node(sedazione){sedazione};
-			[.ansiolitico (\dwa stato ansia)
+			[.{ansiolitico\\ (\dwa stato ansia)}
 				[.tranquillante
 					\node(aum){aumentando dosaggio};
 				]
 			]
 		]
 		[.\node(ipnotico){ipnotico};
-			[.sonnolenza (\upa sonno)
+			[.{sonnolenza\\ (\upa sonno)}
 				\node(dep){depressione SN maggiore};
 			]
 		]
@@ -28,15 +28,20 @@
 		[.sedazione
 			[.ipnotico
 				[.anestesia
-					[.{depressione centri\\ respiro}
-						[.coma
-							morte
-						]
-					]
 				]
 			]
 		]
 	]
+	\begin{scope}[yshift=-3em,xshift=3em]
+	\Tree
+	[.\node[dummyc]{};
+		[.{depressione centri\\ respiro}
+			[.coma
+				morte
+			]
+		]
+	]
+	\end{scope}
 \end{tikzpicture}
 
 \begin{tikzpicture}
@@ -284,7 +289,7 @@ I barbiturici sono anche GABA--mimetici quindi funzionano teoricamente anche sen
 	[.{teorie fisiopatologiche}
 		[.{teoria dopaminergica}
 			[.{spiega sintomi positivi}
-				{\upa stimolazione \ce{D_2}/\ce{D_4}\\ oppure \upa stim. \ce{D_2}, \dwa stim. \ce{D_4}}
+				{\upa stimolazione \ce{D_2}/\ce{D_4}\\ oppure \upa stim. \ce{D_2}, \dwa stim. \ce{D_4}\\ pazienti schizzofrenici hanno \\\upa densità \ce{D_2} e \upa dopamina}
 			]
 		]
 		[.{teoria glutammatergica}
@@ -299,11 +304,20 @@ I barbiturici sono anche GABA--mimetici quindi funzionano teoricamente anche sen
 				{antagonisti serotoninergici\\ sono anti--psicotici}
 			]
 			[.{sinitomi positivi}
-				{LSD (antagonista 5-HT) fa\\ venire i sintomi positivi}
+				{LSD (agonista 5-HT) fa\\ venire i sintomi positivi}
 			]
 		]
 	]
 \end{tikzpicture}
+
+\begin{definizione}{EPS} 
+Effetti collaterali extrapiramidali
+\end{definizione}
+ 
+
+\begin{definizione}{Agente neurolettico}
+alta incidenza di EPS a dosi efficaci
+\end{definizione}
 
 \begin{tikzpicture}
 	\tikzset{frontier/.style={distance from root=300pt}}
@@ -311,7 +325,7 @@ I barbiturici sono anche GABA--mimetici quindi funzionano teoricamente anche sen
 	[.{farmaci}
 		[.tipici
 			[.fenotiazidici
-				\node[farmaco]{\index{clorpromazina}clorpromazina};
+				\node[farmaco]{\index{clorpromazina}clorpromazina\\ agente neurolettico};
 			]
 			[.butirrofenonico
 				\node[farmaco]{\index{aloperidolo}aloperidolo\\ (serenase)};
@@ -325,6 +339,8 @@ I barbiturici sono anche GABA--mimetici quindi funzionano teoricamente anche sen
 \end{tikzpicture}
 
 I farmaci anti--psicotici impiegano settimane per l'effetto, segno che vi sia un effetto secondario tipo incremento dei recettori \ce{D_2} a livello limbico.
+
+Tutti hanno effetti a lunga durata (mesi) dopo l'ultima somministrazione. Solo \index{clozapina}clozapina non va mai sospesa bruscamente sie per le recidive rapide sia per effetti sfavorevoli quali miocarditi e agranulocitosi.
 
 \begin{tikzpicture}
 	\tikzset{level 2/.style={level distance=150pt}}
@@ -343,7 +359,7 @@ I farmaci anti--psicotici impiegano settimane per l'effetto, segno che vi sia un
 			{schizzofrenia: \dwa sintomi positivi\\ i più recenti anche \dwa sintomi negativi\\ anti--emetici}
 		]
 		[.{effetti collaterali}
-			{extrapiramidali con distonia acuta\\ nelle prime settimane reversibili.\\ Discinesia tardiva con movimento\\ involontario di volto e lingua\\ causati da \upa n. \ce{D_2}}
+			{EPS con distonia acuta\\ nelle prime settimane reversibili.\\ Discinesia tardiva con movimento\\ involontario di volto e lingua\\ causati da \upa n. \ce{D_2}}
 		]
 	]
 \end{tikzpicture}
@@ -361,16 +377,17 @@ I farmaci anti--psicotici impiegano settimane per l'effetto, segno che vi sia un
 			{epatico}
 		]
 		[.{effetti collaterali}
-			{secchezza fauci,\\ stipsi,\\ ritenzione idrica,\\ ipotensione posturale\\ leucopenia}
+			{aumento di peso,\\ secchezza fauci,\\ stipsi,\\ ritenzione idrica,\\ ipotensione posturale\\ leucopenia}
 		]
 	]
 \end{tikzpicture}
 
-I farmaci atipici danno meno effetti collaterali motori perchè bloccano selettivamente la via mesolimbica (della gratificazione) invede del nigro--striato. Impegnati quindi se i sintomi extrapiramidali dei tipici fossero problematici.
+I farmaci atipici danno meno effetti collaterali motori perchè bloccano selettivamente la via mesolimbica (della gratificazione) invece del nigro--striato. Impegnati quindi se i sintomi extrapiramidali dei tipici fossero problematici.
 
 \subsection{Farmaci antidepressivi}
 
 \begin{tikzpicture}
+	\tikzset{frontier/.style={distance from root=330pt}}
 	\Tree
 	[.{depressione}
 		[.{disturbo dell'umore}
@@ -386,6 +403,15 @@ I farmaci atipici danno meno effetti collaterali motori perchè bloccano seletti
 				insonnia
 				{perdita di appetito}
 			]
+		]
+		[.{ma usati anche per}
+			{attacchi panico}
+			{disturbo d'ansia generalizzato}
+			{disturbo post--traumatico da stress}
+			{disturbo ossessivo compulsivo}
+			{trattamento dolore neuropatico}
+			{fibromialgia}
+			{sindrome disforica pre--metruale}
 		]
 	]
 \end{tikzpicture}
@@ -412,16 +438,21 @@ I farmaci atipici danno meno effetti collaterali motori perchè bloccano seletti
 	\draw[drawarrow] (es) -- (e) (e)--(im) (im)--(c) (c)--(d);
 \end{tikzpicture}
 
+\begin{definizione}{BDNF}
+Brain--derivated neurotrophic factor: fattore di crescita nervoso
+\end{definizione}
+
+
 \begin{tikzpicture}
 	\Tree
 	[.{teorie\\ fisiopatologiche}
-		[.{teoria monoaminergica}
-			[.\node[farmaco]{\index{noradrenalina}noradrenalina\\\index{serotonina}serotonina};
-				[.\dwa depressione ]
-				[.\upa {elevazione dell'umore} ]
+		[.{teoria monoaminergica\\ (vecchia)}
+			[.\node[farmaco]{\dwa\index{noradrenalina}noradrenalina\\\dwa\index{serotonina}serotonina\dwa\index{dopamina}dopamina};
+				[.\upa depressione ]
+				[.\dwa {elevazione dell'umore} ]
 			]
 		]
-		[.{teoria neutrofica}
+		[.{teoria neutrofica\\ (più accreditata)}
 			[.{perdita di neuroni e\\ di glia in ippocampo e\\ corteccia pre--frontale}
 				[.depressione
 					{\index{BDNF}BDNF porta a\\ elevazione dell'umore}
@@ -481,13 +512,16 @@ I farmaci atipici danno meno effetti collaterali motori perchè bloccano seletti
 			{os}
 		]
 		[.metabolismo
-			{epatico con interazione con\\ ATC, CYP2D6}
+			[.{passa per \index{norfluoxetina}norfluoxetina,\\ composto attivo con\\ emivita 3x fluoxetina}
+				{epatico con interazione con\\ ATC, CYP2D6}
+			]
 		]
 		[.{usi clinici}
 			{depressione, ansia, \\ panico,\\ disordine ossessivo--compulsivo}
 		]
 		[.{effetti collaterali}
 			{nausea, vomito, insonnia,\\ sindrome serotoninergica (tremore\\ collasso cardiocirc., ipertermia)}
+			{4 settimane di interruzione\\ prima di usaun un IMAO}
 		]
 	]
 \end{tikzpicture}
@@ -510,7 +544,7 @@ I farmaci atipici danno meno effetti collaterali motori perchè bloccano seletti
 		]
 		[.{effetti collaterali}
 			{atropina--like,\\ ipotensione posturale,aritmie\\ depressione respiratoria\\ con alcol}
-			{ATC + IMAO MAI per rischio ipertensione acuta}
+			{ATC + IMAO MAI per rischio\\ ipertensione acuta}
 		]
 	]
 \end{tikzpicture}
@@ -580,6 +614,7 @@ Di solito quindi la terapia è ATC + SSRI.
 			{profilassi e trattamento di\\ depressione uni e bipolare}
 		]
 		[.{effetti collaterali}
+			{tremore (si riduce \\con \index{propranololo}propranololo)}			
 			[.{+ diuretici}
 				{\dwa \ce{Na+}}
 			]
@@ -587,11 +622,15 @@ Di solito quindi la terapia è ATC + SSRI.
 			[.{ritensione di \ce{Na+} e\\ \upa aldosterone}
 				{danni tubulari}
 			]
-			ipertiroidismo
+			{\dwa funzione tiroidea\\ e ipertiroidismo}
 			{\upa peso corporeo e edema}
 		]
 	]
 \end{tikzpicture}
+
+Carbamazepina: $\ominus$ IP
+
+Valproato: $\ominus$ IP + $\ominus$ GSK-3
 
 
 \subsection{Farmaci antiepilettici}
@@ -613,6 +652,7 @@ Di solito quindi la terapia è ATC + SSRI.
 				{secondarie}
 			]
 		]
+		{spasmi infantili\\(sindrome epilettica)}
 		[.generalizzate
 			{tonico--cloniche\\(grande male)}
 			toniche
@@ -620,7 +660,6 @@ Di solito quindi la terapia è ATC + SSRI.
 			{atoniche\\(perdita tono posturale)}
 			{assenze\\(piccolo male)}
 		]
-		{spasmi infantili\\(sindrome epilettica)}
 	]
 \end{tikzpicture}
 

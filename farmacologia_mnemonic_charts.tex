@@ -19,6 +19,7 @@
 \usepackage[version=3]{mhchem}
 \usepackage{makeidx}			% Indice
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\usepackage[tikz]{bclogo}		% box simpatici
 % \----------------------------------------------------------------------------/
 
 % /-- title and authors -------------------------------------------------------\
@@ -70,6 +71,10 @@
 \numberwithin{equation}{section}  % numeri delle equazioni del tipo x.y
 \numberwithin{table}{section}     % numeri delle tabelle del tipo x.y
 \numberwithin{figure}{section}    % numeri delle figure del tipo x.y
+
+% ambiente per le nuove definizioni
+\newenvironment{definizione}[1]{\begin{bclogo}[ arrondi =0.1, logo=\bccrayon, ombre=true, couleurBarre=gray]{\small #1}}{\end{bclogo}}
+
 
 
 \makeindex							% generate the index
