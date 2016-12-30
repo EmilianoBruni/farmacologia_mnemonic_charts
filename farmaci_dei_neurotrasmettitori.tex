@@ -19,6 +19,8 @@
 	]
 \end{tikzpicture}
 
+Adrenaline è un ormone. Noradrenalina è un neurotrasmettitore
+
 \begin{tikzpicture}
 	\tikzset{level 1/.style={level distance=150pt}}
 	\Tree
@@ -284,7 +286,7 @@ Per il recettore nicotinico, c'è bisogno di due molecole di agonista per attiva
 
 Glaucoma: colinergici + $\beta$--bloccanti
 
-Atropina (antagonista colinergico): visite oculistiche 
+Atropina (antagonista colinergico): visite oculistiche, \dwa secrezione lacrimale
 
 \subsubsection{Agonisti colinergici}
 
@@ -301,17 +303,19 @@ Atropina (antagonista colinergico): visite oculistiche
 		[.diretti
 			[.{attivano recettori} 
 				[.{esteri della colina} 
-					\node(ach){acetilcolina };
-					metacolina
-					carbacolo
-					\node[farmaco](beta){\index{betanecolo}betanecolo};
+					[. {muscarinici\\ nicoticini\\ \amminaq}
+						\node(ach){acetilcolina };
+						metacolina
+						carbacolo
+						\node[farmaco](beta){\index{betanecolo}betanecolo};
+					]
 				]
 				[.alcaloidi
 					[.muscarinici
-						muscarina
-						\node[farmaco]{\index{pilocarpina}pilocarpina};
+						{muscarina \amminaq\\(fungo)}
+						\node[farmaco]{\index{pilocarpina}pilocarpina \amminat};
 					]
-					[.nitotinici \node[farmaco]{\index{nicotina}nicotina}; ]				
+					[.nitotinici \node[farmaco]{\index{nicotina}nicotina \amminat}; ]				
 				]
 			]
 		]
@@ -327,20 +331,20 @@ Atropina (antagonista colinergico): visite oculistiche
 \begin{scope}[yshift=-14em]
 	\Tree
 	[.\node(AchEIa){inibitori AchE};
-		[.{alcool+gruppo N quaternario}
+		[.{alcool + \amminaq }
 			[.\node[farmaco]{\index{edrofonio}edrofonio}; 
 				[.{legame idrogeno\\ o ionico con AchE} {idrolisi in minuti}
 				]
 			]
 		]
 		[.carbammati 
-			[.\node[farmaco]{\index{neostigmina}neostigmina\\ \index{fisostigmina}fisostigmina\footnotemark}; 
+			[.\node[farmaco]{\index{neostigmina}neostigmina \amminaq\\ \index{fisostigmina}fisostigmina\footnotemark\amminat}; 
 				[.{legame covalente con AchE} {idrolisi in ore}
 				]
 			]
 		]
 		[.organofosfati
-			[.\node[farmaco](ecotiopato){\index{ecotiopato}ecotiopato\footnotemark};
+			[.\node[farmaco](ecotiopato){\index{ecotiopato}ecotiopato\footnotemark\amminaq};
 				[.\node(fAchE){fosforilazione AchE}; \node(idro){idrolisi in giorni};
 				]
 			]
@@ -361,23 +365,25 @@ Atropina (antagonista colinergico): visite oculistiche
 
 Nota: Mettere da qualche parte il tacrida (si usa nell'Alzheimer) che è un inibitore della colinesterasi che poi si ritrova come inibitori del citocromo P450.
 
+Gli \amminaq hanno scarso assorbimento
+
 \footnotetext{Presente nella fava del Calabar}
-\footnotetext{Unico degli organofosfati perch\`e altamente polare e pu\`o essere preparato come soluzione acquosa. Era utilizzato per il glaucoma, ora in disuso.}
+\footnotetext{Unico degli organofosfati ad essere un ammina quateraria e quindi altamente polare e pu\`o essere preparato come soluzione acquosa. Era utilizzato per il glaucoma, ora in disuso.}
 
 \begin{tikzpicture}
 	\tikzset{level distance=120pt, level 2/.style={level distance=150pt}}
 	\Tree
 	[.\node(sub){Effetti}; 
-		[.{SNC ($\text M_1$)} {tremore, ipotermina, $\uparrow$capacità cognittive}	
+		[.{SNC ($\text M_1$)} {tremore, ipotermina, $\uparrow$capacità cognittive (a)}	
 		]
 		[.{occhio ($\text M_3$)}
-			{costrizione muscolo sfintere dell'iride (miosi)\\ contrazione muscolo ciliare (accomodamento da vicino)}
+			{costrizione muscolo circolare (miosi)\\ contrazione muscolo ciliare (accomodamento da vicino)\\ facilitazione nel deflusso dell'umor acqueo}
 		]
 		[.{cuore ($\text M_2$)}
-			{$\downarrow$frequenza (cronotopo-), $\downarrow$forza (inotropo-),\\ $\downarrow$vel. conduzione (dromotropo-), $\uparrow$periodo refrattario, NAV}
+			{\upa\ce{I_k} $\downarrow$frequenza (cronotopo-), \dwa\ce{I_{Ca}} $\downarrow$forza (inotropo-),\\ \dwa\ce{I_f} $\downarrow$vel. conduzione (dromotropo-), $\uparrow$periodo refrattario, NAV}
 		]
 		[.{vasi ($\text M_2$)}
-			{vasodilatazione a basse dosi\\ vasocontrazione a alte dosi}
+			{vasodilatazione a basse dosi\\ vasocontrazione a alte dosi (b)}
 		]
 		[.{polmone ($\text M_3$)}
 			 {broncocostrizione, $\uparrow$secrezione}
@@ -397,6 +403,10 @@ Nota: Mettere da qualche parte il tacrida (si usa nell'Alzheimer) che è un inib
 	]
 \end{tikzpicture}
 
+(a) Via modulazione del rilascio di noradrenalina e dopamina. Ad alte concentrazioni, emesi, coma, morte.
+
+(b) Se l'endotelio vasale è intatto, l'Ach stimola la produzione di \ce{NO} che attiva la guanidilciclasi con \upa \ce{cGMP} e conseguente vasodilatazione. Se l'endotelio non è intatto o dose dipendente, prevale l'effetto sui recettori \ce{M_3} della muscolatura vasale con \upa\ce{IP_3} e rilascio di \ce{Ca^{2+}} con conseguente vasocostrizione. La \index{pilocarpina}pilocarpina fa eccezione perchè se somministrata IV causa ipertensione (dopo breve ipotensione) per eccitazione degli \ce{M_1} presenti sulle fibre postgangliari muscolari.
+
 \begin{tikzpicture}
 	\tikzset{frontier/.style={distance from root=320pt}, level 2/.style={level distance=100pt}}
 	\Tree
@@ -414,7 +424,7 @@ Nota: Mettere da qualche parte il tacrida (si usa nell'Alzheimer) che è un inib
 				\node(ritenzione){ritenzioni urinarie e ileo\\ depressione dell'attivit\`a senza ostruzione};
 		]
 		[.\node[farmaco](neostigmina){\index{neostigmina}neostigmina};
-			[.\node(miastenia){miastenia grave};
+			[.\node(miastenia){miastenia grave (a)};
 				{cura e mezzo diagnostico}
 			]
 		]
@@ -432,6 +442,8 @@ Nota: Mettere da qualche parte il tacrida (si usa nell'Alzheimer) che è un inib
 	\draw[drawarrow](betanecolo) to[out=0, in=180] (ritenzione);
 	\draw[drawarrow](edrofonio) to[out=0, in=180] (miastenia);
 \end{tikzpicture}
+
+(a) Miastenia grave: malattia autoimmune della giunzione neuromuscolare con degradazione dei recettori, lisi della membrana post giunzionale, interferenza del legame Ach--recettore. La paralisi conseguente è simile, come effetto (ma non come durata), alla paralisi indotta da \index{tubocuranina}tubocuranina e bloccanti neuromuscolari simili.
 
 \subsubsection{Antagonisti colinergici}
 
