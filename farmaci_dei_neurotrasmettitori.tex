@@ -736,6 +736,49 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 
 \subsection{Noradrenalina}
 
+\begin{description}
+\item[Monoammine] contengono un gruppo ammino connesso a un anello aromatico da 2 catene carboniche (vedi formula di struttura della noradrenalina nel prosieguo
+\item[Catecolamine] sono monoammine con anello fenolico di tipo catecolo (vedi formula di struttura del catecolo nel prosieguo)
+\end{description}
+
+\begin{tikzpicture}
+	\Tree
+	[.{chimica dei\\ simpaticomimetici}
+		[.catecolamine
+			{adrenalina\\
+			noradrenalina\\
+			dopamina}
+		]
+		[.{non catecolamine}
+			{fenilefrina\\ efedrina\\ anfetamina}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\setatomsep{2em}
+	\schemestart
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=-=(-OH)-(-OH)=-)}}{Catecolo}\quad
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH_2-NH_2)-=(-OH)-(-OH)=-)}}{Noradrenalina}
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH_2-NH-CH_3)-=(-OH)-(-OH)=-)}}{Adrenalina}
+	\schemestop
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\setatomsep{2em}
+	\schemestart
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH_2-NH-CH_3)-=(-OH)-=-)}}{Fenilefrina}\quad
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH([6]-CH_3)-NH-CH_3)-=-=-)}}{Efedrina}\quad
+	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH_2-CH([6]-CH_3)-NH2)-=-=-)}}{Anfetamina}
+	\schemestop
+\end{tikzpicture}
+
+Le catecolamine sono degradate da COMT a livello intestinale e epatico per cui l'assorbimento per os \`e praticamente nulla.
+
+L'assenza di uno o di ambedue i gruppi \chemfig{-[,.5]OH} ne aumenta la disponibilit\`a per os.
+
+La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mista dei farmaci come nell'efedrina e l'anfetamina che hanno azione diretta e indiretta e quindi dipendono anche dalla presenza del neurotrasmettitore.
+
 \begin{tikzpicture}
 	\tikzset{level 1/.style={level distance=90pt}}
 	\tikzset{level 2/.style={level distance=90pt}}
@@ -785,6 +828,29 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 	
 \end{tikzpicture}
 
+La tappa limitante è inibita dalla metirosina, un analogo della tirosina.
+
+Il processo si interrompe alla dopamina nei neuroni dopaminergici.
+
+Il processo si interrompe alla noradrenalina nei neuroni del simpatico.
+
+Il processo giunge a produrre adrenalina nel surrene e nel cervello.
+
+\begin{tikzpicture}
+	\tikzset{level 3/.style={level distance=150pt} }
+	\Tree
+	[.{Eliminazione da fessura}
+		[.ricaptazione 
+			[.{NET (90\%)\\ (trasportatore della\\ noradrenalina} 
+				{riporta la noradrenalina dalla\\ fessura sinaptica nel citoplasma.\\ Inibita da antidepressivi\\ triciclici e cocaina.}
+			]
+		]
+		[.metabolismo/degradazione {COMT/MAO (10\%)} ]
+	]
+\end{tikzpicture}
+
+Il NET ricapta avidamente efedrina e anfetaminache trasportati avidamente da VMAT dentro le vescicole spiazzano la noradrenalina.
+
 \begin{tikzpicture}
 	\tikzset{level distance=130pt}
 	\Tree 
@@ -795,57 +861,107 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\tikzset{level 2/.style={level distance=150pt}}
-	\Tree	
-	[.{Recettore adrenergico\\ (metabotropo \\ a proteine G)} 
-		[.{$\alpha$}
-			[ .{$\alpha_1\,\text{G}_{\text{q}} \uparrow\text{IP}_3, \uparrow\text{Ca}^{2+}$ (postsinaptiche muscolo liscio)} ]
-			[ .{$\alpha_2\,\text{G}_{\text{i}} \downarrow\text{cAMP}$ (presinaptiche muscolo liscio)} ]
+\begin{scope}
+	\Tree
+		[.liberiazione {simile acetilcolina}
 		]
-		[.{$\beta$}
-			[.{$\beta_1\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (cuore, adipociti,\\ iuxaglomerulare, epitelio corpi ciliari)} ]
-			[.{$\beta_2\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche muscolo liscio e\\ cuore dove qualche volta sono \ce{G_i} inibitorie)} ]
-			[.{$\beta_3\,\text{G}_{\text{s}} \uparrow\text{cAMP}$ (postsinaptiche cuore, adipociti, vescica)} ]		
+\end{scope}
+\begin{scope}[xshift=12cm,scale=0.3]
+	\tikzstyle{arrow}=[latex-,draw=black,line width=1.500]
+	\tikzstyle{arrow1}=[-latex,draw=black,line width=1.500]
+	\tikzstyle{none}=[inner sep=0pt]
+		\node [style=none] (0) at (-7, -2) {};
+		\node [style=none] (1) at (-7, 1) {};
+		\node [style=none] (2) at (-3, -2) {};
+		\node [style=none] (3) at (-3, 1) {};
+		\node [style=none] (4) at (2.5, 0.75) {};
+		\node [style=none] (5) at (-12, 1) {};
+		\node [style=none] (6) at (-14, -1) {};
+		\node [style=none] (7) at (4, -3.5) {};
+		\node [style=none] (8) at (-10.75, -2.5) {\tiny VMAT: trasportatore vescicolare delle monoammine};
+		\node [style=none] (9) at (-5, 0.25) {};
+		\node [style=none] (10) at (-5, -1.5) {};
+		\node [style=none] (11) at (-5, 0.25) {};
+		\node [style=none] (12) at (-3.250001, 5) {};
+		\node [style=none] (13) at (-3.250001, -6.75) {};
+		\node [style=none] (14) at (-1, 3.25) {\tiny \bf Vescicola};
+		\node [style=none] (15) at (-10.5, 1.75) {\tiny $H^+$};
+		\node [style=none] (16) at (-12, -1.5) {\tiny Noradrenalina};
+		\draw [bend left, looseness=1.00] (0.center) to (2.center);
+		\draw [bend right, looseness=1.25] (1.center) to (3.center);
+		\draw [style=arrow, bend right=15, looseness=1.00] (5.center) to (4.center);
+		\draw [style=arrow1, in=157, out=7, looseness=1.00] (6.center) to (7.center);
+		\draw [bend left=15, looseness=0.75] (9.center) to (12.center);
+		\draw [bend right=15, looseness=1.00] (10.center) to (13.center);
+
+\end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=130pt}}
+	\tikzset{level 3/.style={level distance=130pt}}
+	\Tree	
+	[.{Proteine G}
+		[.{\ce{G_s}}
+			[.{stimolatorio dell'adenil--ciclasi}
+				{\upa cAMP}
+			]
+		]
+		[.{\ce{G_i},\ce{G_0}}
+			[.{inibitoria dell'adenil--ciclasi}
+				{\dwa cAMP}
+			]
+		]
+		[.{\ce{G_q},\ce{G_{11}}}
+			[.{accoppia i recettori $\alpha$ alla fosfolipasi C}
+				{\upa\ce{IP_3}, \upa\ce{Ca^{2+}}, \upa DAG}
+			]
 		]
 	]
 \end{tikzpicture}
 
-\begin{tabular}{|c|c|c|c|}
-\hline 
-\textbf{Organo} & \textbf{Tipo} & \textbf{Recettore} & \textbf{Azione} \\ 
-\hline\hline 
-M. radiale & simpatico & $\alpha_1$ & costrizione \\ 
-\hline 
-M. circolare & parasimpatico & M${}_3$ & costrizione pupilla \\ 
-\hline 
-M. ciliare & simpatico & $\beta$ & rilasciamento \\ 
-\hline 
-M. ciliare & parasimpatico & M${}_2$ & contrazione \\ 
-\hline 
-Nodo SA & simpatico & $\beta_1\beta_2$ & accellerazione \\ 
-\hline 
-Nodo SA & parasimpatico & M${}_2$ & rallentamento \\ 
-\hline 
-Forza contrazione & simpatico & $\beta_1\beta_2$ & aumento \\ 
-\hline 
-Forza contrazione & parasimpatico & M${}_2$ & diminuzione \\ 
-\hline 
-vasi muscolari & simpatico & $\beta$ & rilasciamento \\ 
-\hline 
-muscolo gastrointestinale & simpatico & $\alpha_2\beta_2$ & rilasciamento \\ 
-\hline 
-muscolo gastrointestinale & parasimpatico & M${}_3$ & contrazione \\ 
-\hline 
-sfinteri gastrointestinali & simpatico & $\alpha_1$ & contrazione \\ 
-\hline 
-sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\ 
-\hline 
-\end{tabular} 
+\begin{tikzpicture}
+	\tikzset{level distance=80pt}
+	\tikzset{level 4/.style={level distance=120pt}}
+	\Tree	
+	[.{Recettore adrenergico\\ (metabotropo \\ a proteine G)} 
+		[.{$\alpha$}
+			[.{$\alpha_1$}
+				[.{\ce{G_q}}
+				 	{postsinaptiche muscolo liscio,\\ occhio, sfinteri, gastrointestinale,\\ cellule effettrici post--sinaptiche} 
+				 ]
+			]
+			[.{$\alpha_2$}
+				[.\ce{G_i}
+					{presinaptiche muscolo liscio,\\ muscoli intestinali, adipociti}
+				]	
+			]
+		]
+		[.{$\beta$}
+			[.{$\beta_1$}
+				[.\ce{G_s}
+					{cuore, adipociti,\\ iuxaglomerulare con rilascio renina,\\ epitelio corpi ciliari}
+				]	
+			]
+			[.{$\beta_2$}
+				[.\ce{G_s}
+					{postsinaptiche muscolo liscio e\\ cuore dove qualche volta sono \ce{G_i} inibitorie}
+				]	
+			]
+			[.{$\beta_3$}
+				[.\ce{G_s}
+					{postsinaptiche cuore, adipociti, vescica}
+				]	
+			]	
+		]
+	]
+\end{tikzpicture}
+
 
 \subsubsection{Simpaticomimetici}
 
 \begin{tikzpicture}
-	\tikzset{frontier/.style={distance from root=350pt},level 2/.style={level distance=150pt}}
+	\tikzset{frontier/.style={distance from root=350pt},level 2/.style={level distance=130pt}}
 	\Tree
 	[.simpaticomimetici
 		[.diretta 
@@ -855,7 +971,8 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 				\index{clonidina}clonidina\\
 				\index{dobutamina}dobutamina\\
 				\index{salbutamolo}salbutamolo\\
-				\index{oximetazolina}oximetazolina};
+				\index{oximetazolina}oximetazolina\\
+				\index{midrodina}midrodina};
 			]
 		]
 		[.indiretta 
@@ -863,7 +980,10 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 				\node[farmaco]{\index{tiramina}tiramina};			
 			]
 			[.{riduzione clearance della noradrenalina} ]
-			[.{inibizione della ricaptazione\\ della noradrenalina} ]
+			[.{inibizione della ricaptazione\\ della noradrenalina} 
+				\node[farmaco]{\index{cocaina}cocaina};
+				{antidepressivi riciclici}			
+			]
 			[.{inibizione del catabolismo\\ enzimatico via blocco MAO e COMT} ]
 		]
 		[.miste
@@ -888,51 +1008,7 @@ sfinteri gastrointestinali & parasimpatico & M${}_3$ & rilasciamento \\
 	]
 \end{tikzpicture}
 
-\begin{tikzpicture}
-	\Tree
-	[.{Eliminazione da fessura}
-		[.ricaptazione {NET (90\%)} ]
-		[.metabolismo {COMT (10\%)} ]
-	]
-\end{tikzpicture}
 
-\begin{tikzpicture}
-	\Tree
-	[.{chimica dei\\ simpaticomimetici}
-		[.catecolamine
-			{adrenalina\\
-			noradrenalina\\
-			dopamina}
-		]
-		[.{non catecolamine}
-			{fenilefrina\\ efedrina\\ anfetamina}
-		]
-	]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\setatomsep{2em}
-	\schemestart
-	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=-=(-OH)-(-OH)=-)}}{Catecolo}\quad
-	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH_2-NH_2)-=(-OH)-(-OH)=-)}}{Noradrenalina}
-	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH_2-NH-CH_3)-=(-OH)-(-OH)=-)}}{Adrenalina}
-	\schemestop
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\setatomsep{2em}
-	\schemestart
-	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH_2-NH-CH_3)-=(-OH)-=-)}}{Fenilefrina}\quad
-	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH([6]-OH)-CH([6]-CH_3)-NH-CH_3)-=-=-)}}{Efedrina}\quad
-	\chemname{\chemfig[][scale=0.8]{[:30]*6(-=(-CH_2-CH([6]-CH_3)-NH2)-=-=-)}}{Anfetamina}
-	\schemestop
-\end{tikzpicture}
-
-Le catecolamine sono degradate da COMT a livello intestinale e epatico per cui l'assorbimento per os \`e praticamente nulla.
-
-L'assenza di uno o di ambedue i gruppi \chemfig{-[,.5]OH} ne aumenta la disponibilit\`a per os.
-
-La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mista dei farmaci come nell'efedrina e l'anfetamina che hanno azione diretta e indiretta e quindi dipendono anche dalla presenza del neurotrasmettitore.
 
 \begin{tikzpicture}
 	\tikzset{level 3/.style={level distance=130pt}}
@@ -974,6 +1050,21 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 	]
 \end{tikzpicture}
 
+Nell'ipotensione acuta con pericolo di perfusione a cervello e coronarie si possono usare gli $\alpha$--agonisti che causano vasocostrizione (\index{fenilefedrina}fenilefedrina $\alpha_1$--agonista).
+
+Idem nel caso di shock soprattutto cardiogeno dove agenti inotropi come la \index{dobutamina}dobutamina possono aumentare la gittata con vasocostrizione periferica ridotta di modo da ottimizzare la perfusione.
+
+La \index{dobutamina}dobutamina viene anche usata nei test cardiologici da stress farmacologico.
+
+Nel caso di ipotensione ortostatica cronica si possono usare un $\alpha$--agonista (\index{midodrina}midodrina $\alpha_1$) per migliorare il riflesso di vaosocostrizione periferico.
+
+Cocaina, adrenalina e altri $\alpha$--agonisti possono essere usati localmente con anestetici locali per ridurre l'area di anestesia grazie ai loro effetti vasocostrittori. Occhio al rischio necrosi in alcuni distretti capillari (cocaina---naso).
+
+I decongestionanti nasali solo $\alpha$--agonisti
+
+Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
+
+
 \begin{tikzpicture}
 	\tikzset{level 2/.style={level distance=130pt},level 3/.style={level distance=130pt}}
 	\Tree
@@ -991,6 +1082,8 @@ La metilazione sul primo carbonio a sx del gruppo ammino, comporta un'azione mis
 			{$\downarrow$prurito}
 			{esame retina (midriasi)}
 			\node(congestione){$\downarrow$congestione mucose};
+			{ipotensione con\\ ipoperfusione cerebrale\\ e/o coronarica}
+			shock
 		]
 		[.\node[farmaco](oxi){\index{oximetazolina}oximetazolina\\($\alpha_2$)};
 		]
