@@ -19,28 +19,31 @@
 	]
 \end{tikzpicture}
 
-Adrenaline è un ormone. Noradrenalina è un neurotrasmettitore
+L'adrenalina è un ormone. Noradrenalina è un neurotrasmettitore
 
 \begin{tikzpicture}
 	\tikzset{level 1/.style={level distance=150pt}}
 	\Tree
 	[.{Neurotrasmettitori\\ SNP}
 		 [.\node(acetilcolina){acetilcolina}; {recettori colinergici} ]
-		 [.noradrenalina {recettori adrenergici} ]
-		 [.\node(serotonina){serotonina\\5-HT 5-idrossitriptamina}; {recettori serotoninergici} ]
+		 [.{noradrenalina\\ (monoammina)} {recettori adrenergici} ]
+		 [.\node(serotonina){serotonina\\5-HT 5-idrossitriptamina\\ (monoammina)}; {recettori serotoninergici} ]
 		 [.{monossido d'azoto (NO)} ] 
 		 [.purine ]
 	]
 	\begin{scope}[yshift=-11em]
 	\Tree
 	[.\node(snc){Neurotrasmettitori\\ SNC};
-		[.dopamina {recettori dopaminergici} ]
+		[.{dopamina\\ (monoammina)} {recettori dopaminergici} ]
 		[.{aminoacidi eccitatori}
 			L--glutammato
 			aspatato
 			omocisteinato
 		]
-		GABA
+		[.{aminoacidi inibitori}
+			GABA
+			glicina
+		]
 	]
 	\end{scope}
 	\draw[drawarrow] (snc.east) to[in=180,out=40] (acetilcolina.west)
@@ -447,24 +450,32 @@ Gli \amminaq hanno scarso assorbimento
 
 \subsubsection{Antagonisti colinergici}
 
+Sono principalmente antagonisti reversibili. Solo atropina e pochi altri sono agonisti parziali.
+
 \begin{tikzpicture}
 	\Tree
 	[.{antagonisti\\ colinergici}
 		[.antimuscarinici 
-			[.\node[farmaco]{\index{atropina}atropina}; {deriva da Belladonna e\\ Datura Stramonium}
+			[.\node[farmaco]{\index{atropina}atropina\\ \amminat}; {deriva da Belladonna e\\ Datura Stramonium\\ sono alcaloidi esteri\\ dell'acido tropico}
 			]
 			\node[farmaco]{\index{scopolamina}scopolamina};
-			\node[farmaco]{\index{tiotropio}tiotropio};
+			\node[farmaco]{\index{tiotropio}tiotropio\\ \amminaq};
 			\node[farmaco]{\index{oxibutina}oxibutina};
 		]
 		[.antinicotinici 
-			[.{bloccanti gangli\\ ganglioplegici} \node[farmaco]{\index{trimetafano}trimetafano}; 
-			\node[farmaco]{\index{tossina botulinica}tossina botulinica};
+			[.{bloccanti gangli\\ ganglioplegici} 
+				\node[farmaco]{\index{tetrametilammonio}tetrametilammonio (TEA)\\ il primo gaglioplegico\\ \amminaq};
+				\node[farmaco]{\index{esametonio}esametonio (C6)\\ il primo anti--ipertensivo\\ \amminaq};
+				\node[farmaco]{\index{trimetafano}trimetafano\\ \amminaq}; 
+				\node[farmaco]{\index{mecamilamina}mecamilamina\\ \amminat}; 
+				\node[farmaco]{\index{tossina botulinica}tossina botulinica};
 			]
-			[.{bloccanti neuromuscolari}
+			[.{bloccanti neuromuscolari} {vedi dopo}
 			]
 		]
-		[.{rigeneratori dell'AchE} \node[farmaco]{\index{pralidossima}pralidossima\footnotemark};
+		[.{rigeneratori dell'AchE} 
+			\node[farmaco]{\index{pralidossima}pralidossima\footnotemark\\ \amminaq};
+			\node[farmaco]{\index{diacetilmonossima}diacetilmonossima\\ \amminat (penetra il SNC)};
 		]
 	]
 \end{tikzpicture}
@@ -474,12 +485,14 @@ Gli \amminaq hanno scarso assorbimento
 \begin{tikzpicture}
 	\Tree
 	[.Assorbimento
-		[.\node(am3){Ammine III${}^\circ$};
+		[.\node(am3){Ammine III${}^\circ$ (\amminat)};
+			{effetti sul SNC}
 			Transcutaneo
 		]
-		[.{Ammine IV${}^\circ$}
+		[.{Ammine IV${}^\circ$ (\amminaq)}
 			\node(intestino){intestino};
 			\node(occhio){occhio};
+			{effetti più periferici}
 		]
 	]
 	\draw[drawarrow]
@@ -487,13 +500,15 @@ Gli \amminaq hanno scarso assorbimento
 		(am3) to[out=0, in=180] (occhio);
 \end{tikzpicture}
 
+
+
 \textsc{Antimuscarinici}
 
 \begin{tikzpicture}
 	\tikzset{level distance=150pt}
 	\Tree
 	[.{effetti}
-		[.{SNC ($\text M_1$)} {effetto stimolante (-atropina +scopolamina) $\downarrow$tremore Parkinson\\ Parkinson \`e causato da un $\uparrow$ attivit\`a colinergica}
+		[.{SNC ($\text M_1$)} {effetto sedativo e sonnolenza (-atropina +scopolamina)\\ \dwa tremore Parkinson\\ che \`e causato da un\\ \upa attivit\`a colinergica} {\dwa chinetosi (scopolamina) che coinvole la trasmissione muscarinica}
 		]
 		[.{occhio ($\text M_3$)} {$\uparrow$attivit\`a simpatica $\Rightarrow$ midriasi\\ (belladonna $\equiv$ occhi dilatati\\ incapacit\`a di adattamento\\ visione da vicino)}
 		]
@@ -502,8 +517,11 @@ Gli \amminaq hanno scarso assorbimento
 		[.{vasi ($\text M_2/\text M_3$)} incerta ]
 		[.{apparato respiratorio ($\text M_3$)} {broncodilatazione, $\downarrow$secrezioni\\ (ma meglio i $\beta$-adrenergici)}
 		]
-		[.{gastrointestinale ($\text M_3$)} {$\downarrow$secrezioni salivali, minori su tutto il resto} ]
+		[.{gastrointestinale ($\text M_3$)} {$\downarrow$secrezioni salivali, minori su tutto il resto\\ (per attivazione SNE)} ]
 		[.{gh. sudoripare ($\text M_3$)} {soppressione termoregolazione\\ (febbre da atropina)} ]
+		[.urogenitale
+			{rilasciamento della muscolatura liscia della\\ parete vescicale con \dwa svuotamento vescicale}
+		]	
 	]
 \end{tikzpicture}
 
@@ -513,44 +531,52 @@ Gli \amminaq hanno scarso assorbimento
 	[.{usi clinici} 
 		[.\node[farmaco](atropina){\index{atropina}atropina};
 			{malattia di Parkinson}
-			{esame oftalmico}
-			{pre-operatorio\\ antilaringospasmo}
-			{sincope vagale\\ da dolore infarto}
+			{esame oftalmico\\ (a)}
+			{pre-operatorio\\ antilaringospasmo\\ in disuso}
+			{sincope vagale\\ da dolore infarto\\ causato dall'angina}
 			{ulcera peptidica\\ in disuso}
 		]
 		[.\node[farmaco]{\index{scopolamina}scopolamina};
-			{chinetosi\\ mal di mare}
+			{chinetosi\\ mal di mare\\ effetti sfarolevoli\\ sedazione e \\ secchezza fauci}
 		]
 		[.\node[farmaco]{\index{tiotropio}tiotropio};
-			\node(bpco){BPCO};
+			\node(bpco){BPCO\\ via aerosol};
 		]
 		[.\node[farmaco]{\index{oxibutina}oxibutina};
 			{tenismo urinario}
 		]
 		[.\node[farmaco]{\index{pralidossima}pralidossima};
-			[.{iperfunzione colinergica}
-				{da organofosfati, gas nervino\\ o intossicazione funghi}
+			[.{iperfunzione colinergica\\ 
+				da organofosfati, gas nervino\\ o intossicazione funghi}
 			]
 		]
 	]
 \end{tikzpicture}
+
+(a) Ma meglio $\alpha$--adrenergico a meno che non si voglia anche la paralisi del muscolo ciliare
 
 \begin{tikzpicture}
 	\Tree
 	[.{Effetti avversi} {febbre da atropina} tachicardia {vasodilatazione con\\ esantema da atropina\\ testa, collo, arti, tronco} ]
 \end{tikzpicture}
 
+La febbre da atropina è molto pericolosa nei bambini con casi mortali con dosi anche di soli 2mg. Il famoso detto secco come un osso, cieco come un pipistrello, rosso come una rapa, matto come un cappellaio.
+
 \textsc{Ganglioplegici}
+
+Blocco dell'Ach in maniera competitiva sui recettori dei gangli autonomi sia para che orto.
 
 \begin{tikzpicture}
 	\tikzset{level 2/.style={level distance=150pt}}
 	\Tree
 	[.effetti
-		[.SNC {sedazione, tremore}
+		[.SNC {\index{mecamilamina}mecamilamina con sedazione, tremore}
 		]
 		[.occhio {perdita accomodamento, effetto su pupilla incerto\\ per innervazione para e orto del m. sfintere}
 		]
 		[.cardiocirc {$\downarrow$pressione con ipotensione ortostatica marcata}
+		]
+		[.vasi {\dwa tono arteriolare e venoso}
 		]
 		[.gastro {$\downarrow$motilit\`a}
 		]
@@ -564,7 +590,7 @@ Gli \amminaq hanno scarso assorbimento
 	\Tree
 	[.{usi clinici}
 		[.\node[farmaco]{\index{trimetafano}trimetafano};
-			{ipotensivo nelle anestesie}
+			{ipotensivo nelle anestesie\\ nelle emergenze ipertensive\\ e nei casi di AAA}
 		]
 		[.\node[farmaco]{\index{tossina botulinica}tossina botulinica};
 			{iniezione intravescicale\\ contro incontinenza}
@@ -574,15 +600,23 @@ Gli \amminaq hanno scarso assorbimento
 
 \textsc{Bloccanti neuromuscolari}
 
+Il blocco della giunzione neuromuscolare può avvenire per blocco depolarizzante o non depolarizzante. La stessa Ach può causare un blocco.
+
+L'utilità di tali farmaci era che, in passato, per avere un effetto miorilassante era necessario  indurre un'anestesia profonda con depressione cardiorespiratoria. Ora si può eseguire un adeguato rilassamento muscolare senza una anestesia profonda.
+
+Servono due molecole di Ach per aprire il canale \ce{Na^+}.
+
+Sono tutti \amminaq quindi non attivi per os.
+
 \begin{tikzpicture}
 	\tikzset{level 3/.style={level distance=130pt}}
 	\Tree
 	[.{influenza sui muscoli}
 		[.{bloccanti neuromuscolari}
-			{per indurre paralisi\\ durante gli interventi}
+			{per indurre paralisi\\ durante gli interventi\\ e nelle ICU}
 		]
-		[.spasmolitici
-			[.{per ridurre dolore\\ in varie situazioni}
+		[.{spasmolitici}
+			[.{per ridurre dolore\\ negli spasmi muscolari}
 				{vedi cap. 27 sull'argomento\\ o poi se trattato\\(benzodiazepine, \index{clonidina}clonidina,\\ antiepilettici, \index{dantrolene}dantrolene (anche contro\\ ipertermia maligna), \index{tossina botulinica}tossina botulinica)}
 			]
 		]
@@ -594,8 +628,13 @@ Gli \amminaq hanno scarso assorbimento
 	[.{bloccanti\\ neuromuscolari}
 		[.{non depolarizzanti}
 			[.{impediscono l'accesso dell'Ach\\ sul recettore $\text M_M$}
-				{tubocuranina\\ (curaro)}
-				\node[farmaco]{\index{rocuronio}rocuronio};
+				[.isochinoli
+					{\index{tubocuranina}tubocuranina\\ (curaro)\\non usato in clinica}
+					\node[farmaco]{\index{cisatracurio}cisatracurio};
+				]
+				[.steroidei
+					\node[farmaco]{\index{rocuronio}rocuronio};
+				]
 			]
 		]
 		[.depolarizzanti
@@ -650,14 +689,50 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 \end{tikzpicture}
 
 \begin{tikzpicture}
-		\tikzset{level distance=150pt}
+	\tikzset{level distance=150pt}
 	\Tree
 	[.{effetti avversi}
-		iperkalinemia
+		{aritmie (succinilcolina + alofano come anestetico)}
+		{iperkalinemia in pazienti con ustioni}
 		{dolore muscolare post operatorio\\ (depolarizzanti)}
 		{rilascio istamina e quindi ipotensione}
 	]
 \end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.antidoto 
+		[.{inibitori della colinesterasi}
+			\node[farmaco]{\index{neostigmina}neostigmina};
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=200pt}
+	\Tree
+	[.usi
+		{rilassamento muscolatura per intervento chirurgico}
+		{intubazione tracheale}
+		{trattamento delle convulsioni}
+		{controllo esterno della ventilazione in pazienti con insufficienza respiratoria}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.spasmolitici
+		\node[farmaco]{\index{diazepam}diazepam\\ (benzodiazepina)};
+		\node[farmaco]{\index{baclofene}baclofene\\ (GABA mimetico)};
+		\node[farmaco]{\index{tizanidina}tizanidina\\ (analogo \index{clonidina}clonidina};
+		[.\node[farmaco]{\index{dantolene}dantolene};
+			{usato nell'ipertermia maligna (a)}
+		]
+		\node[farmaco]{\index{tossina botulinica}tossina botulinica};
+	]
+\end{tikzpicture}
+
+(a) il dantolene interferisce con la liberazione di calcio dal reticolo sarcoplasmatico bloccando il recettore per la rianidina che apre un canale del reticolo sarcolemmatico che lascia uscire il \ce{Ca^{2+}}.
 
 \subsection{Noradrenalina}
 
