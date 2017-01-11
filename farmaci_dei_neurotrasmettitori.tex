@@ -1,6 +1,6 @@
-\newpage\part{Flash Cards}
+\newpage\chapter{Farmaci del SNC e del SNP}
 
-\section{Farmaci del SNC e del SNP}
+\section{I neurotrasmettitori del SNC e del SNP}
 
 \begin{tikzpicture}
 	\tikzset{level distance=85pt,frontier/.style={distance from root=350pt}} 
@@ -97,7 +97,7 @@ L'adrenalina è un ormone. Noradrenalina è un neurotrasmettitore
 \end{tikzpicture}
 
 
-\subsection{Acetilcolina}
+\section{Acetilcolina}
 
 \begin{tikzpicture}
 	\tikzset{level 1/.style={level distance=150pt}}
@@ -227,6 +227,8 @@ Tossina botulinica altera alcuni amminoacidi di vAMP e sNAP impedendo il rilasci
 	]
 \end{tikzpicture}
 
+\subsection{Recettore colinergico}
+
 \begin{tikzpicture}
 	\tikzset{level 1/.style={level distance=100pt},level 2/.style={level distance=110pt},level 3/.style={level distance=140pt}}
 	\Tree
@@ -291,7 +293,7 @@ Glaucoma: colinergici + $\beta$--bloccanti
 
 Atropina (antagonista colinergico): visite oculistiche, \dwa secrezione lacrimale
 
-\subsubsection{Agonisti colinergici}
+\subsection{Agonisti colinergici}
 
 \begin{tikzpicture}
 	\begin{scope}
@@ -448,7 +450,7 @@ Gli \amminaq hanno scarso assorbimento
 
 (a) Miastenia grave: malattia autoimmune della giunzione neuromuscolare con degradazione dei recettori, lisi della membrana post giunzionale, interferenza del legame Ach--recettore. La paralisi conseguente è simile, come effetto (ma non come durata), alla paralisi indotta da \index{tubocuranina}tubocuranina e bloccanti neuromuscolari simili.
 
-\subsubsection{Antagonisti colinergici}
+\subsection{Antagonisti colinergici}
 
 Sono principalmente antagonisti reversibili. Solo atropina e pochi altri sono agonisti parziali.
 
@@ -734,7 +736,7 @@ Il n. di dibucaina \`e un parametro per definire tali anomalie e dipende dal fat
 
 (a) il dantolene interferisce con la liberazione di calcio dal reticolo sarcoplasmatico bloccando il recettore per la rianidina che apre un canale del reticolo sarcolemmatico che lascia uscire il \ce{Ca^{2+}}.
 
-\subsection{Noradrenalina}
+\section{Noradrenalina}
 
 \begin{description}
 \item[Monoammine] contengono un gruppo ammino connesso a un anello aromatico da 2 catene carboniche (vedi formula di struttura della noradrenalina nel prosieguo
@@ -849,7 +851,7 @@ Il processo giunge a produrre adrenalina nel surrene e nel cervello.
 	]
 \end{tikzpicture}
 
-Il NET ricapta avidamente efedrina e anfetaminache trasportati avidamente da VMAT dentro le vescicole spiazzano la noradrenalina.
+Il NET ricapta avidamente efedrina e anfetamina che trasportati avidamente da VMAT dentro le vescicole spiazzano la noradrenalina.
 
 \begin{tikzpicture}
 	\tikzset{level distance=130pt}
@@ -897,28 +899,42 @@ Il NET ricapta avidamente efedrina e anfetaminache trasportati avidamente da VMA
 \end{scope}
 \end{tikzpicture}
 
+\subsection{Recettore adrenergico}
+
+Recettore associato a proteina G. Sette dominii transmembrana, tre anse intracellulari, 3 anse extracellulari. 
+
+Terminale N extra, C intracellulare.
+
+Proteina G formata da tre sub--unità $\alpha, \beta, \gamma$ che si differenziano per la sub--unità $\alpha$ in 
+
 \begin{tikzpicture}
 	\tikzset{level 2/.style={level distance=130pt}}
 	\tikzset{level 3/.style={level distance=130pt}}
 	\Tree	
 	[.{Proteine G}
-		[.{\ce{G_s}}
+		[.{\ce{G_s} con $\alpha_S$}
 			[.{stimolatorio dell'adenil--ciclasi}
 				{\upa cAMP}
 			]
 		]
-		[.{\ce{G_i},\ce{G_0}}
+		[.{\ce{G_i} con $\alpha_i$,\ce{G_0} con $\alpha_0$}
 			[.{inibitoria dell'adenil--ciclasi}
 				{\dwa cAMP}
 			]
 		]
-		[.{\ce{G_q},\ce{G_{11}}}
-			[.{accoppia i recettori $\alpha$ alla fosfolipasi C}
+		[.{\ce{G_q} con $\alpha_q$,\ce{G_{11}} con $\alpha_{11}$}
+			[.{accoppia le sub--unità $\alpha$ alla fosfolipasi C}
 				{\upa\ce{IP_3}, \upa\ce{Ca^{2+}}, \upa DAG}
 			]
 		]
 	]
 \end{tikzpicture}
+
+L'agonista adrenergico si lega in una tasca extracellulare. Ciò causa una modificazione che causa il distacco di GDP dalla sub-unità $\alpha$. A essa si lega GTP che causa il distacco della sub--unità $\alpha$ da $\beta$ e $\gamma$.
+
+$\alpha$ attivata produce gli effetti sopra descritti a seconda del tipo di $\alpha$.
+
+L'idrolisi del GTP causa la riassociazione di $\alpha$ a $\beta\gamma$.
 
 \begin{tikzpicture}
 	\tikzset{level distance=80pt}
@@ -958,7 +974,7 @@ Il NET ricapta avidamente efedrina e anfetaminache trasportati avidamente da VMA
 \end{tikzpicture}
 
 
-\subsubsection{Simpaticomimetici}
+\subsection{Agonista adrenegico (Farmaci simpaticomimetici)}
 
 \begin{tikzpicture}
 	\tikzset{frontier/.style={distance from root=350pt},level 2/.style={level distance=130pt}}
@@ -1148,7 +1164,7 @@ Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
 	]
 \end{tikzpicture}
 
-\subsubsection{Inibitori dei recettori adrenergici}
+\subsection{Antagonisti adrenergici}
 
 \begin{tikzpicture}
 	\Tree
@@ -1160,7 +1176,22 @@ Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
 	]
 \end{tikzpicture}
 
-\textsc{$\alpha$-bloccanti}
+\subsubsection{$\alpha$-bloccanti}
+
+\begin{tikzpicture}
+	\Tree
+	[.{azione}
+		[.reversibili
+			\node[farmaco]{\index{fentolamina}fentolamina};
+			\node[farmaco]{\index{prazosina}prazosina};
+		]
+		[.irreversibili
+			\node[farmaco]{\index{fenossibenzamina}fenossibenzamina};
+		]
+	]
+\end{tikzpicture}
+
+La fenossibenzamina si trasforma in etileenimammonio(??) \amminaq che si lega irreversibilmente ai recettori $\alpha$--adrenergici con giorni per il ripristino grazie alla formazione di nuovi recettori
 
 \begin{tikzpicture}
 	\tikzset{level distance=150pt}
@@ -1187,8 +1218,8 @@ Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
 	[.{usi clinici}
 		[.{non selettivi}
 			[.\node[farmaco]{\index{fenossibenzamina}fenossibenzamina\\ \index{fentolamina}fentolamina};
-				[.{riduzione pressione soprattutto\\ in presenza di elevato tono simpatico\\ (passaggio da prono a ortopostura)} {feocromocitoma\\ pre intervento}
-				]
+				{riduzione pressione soprattutto\\ in presenza di elevato tono simpatico\\ (passaggio da prono a ortopostura)} 
+				{feocromocitoma\\ pre intervento}
 			]
 		]
 		[.{$\alpha_1$}
@@ -1204,7 +1235,35 @@ Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
 	]
 \end{tikzpicture}
 
-\textsc{$\beta$-bloccanti}
+Il feocromocitoma non operabile viene trattato con \index{$\alpha$--metiltirosina}$\alpha$--metiltirosina, $\alpha$--metilato della tirosina, inibitore competitivo della tirosina ossidasi che limita la velocità di sintesi delle catecolammine.
+
+La fentolamina + papaverina (vasodilatatore) iniettata nel pene nel caso di disfunzione erettile (non efficace al viagra???)
+
+\subsubsection{$\beta$-bloccanti}
+
+I farmaci $\beta$--bloccanti agiscono sul recettore adrenergico~$\beta$, recettore metabotropo a proteina~G di tipo~\ce{G_s} prevalentemente stimolatorio presente nel cuore, adipociti, apparato iuxaglomerulare~($\beta_1$), nel muscolo liscio~($\beta_2$) e nella vescica~($\beta_3$).
+
+Il recettore attiva la cascata di segnalazione intracellulare tramite aumento di cAMP.
+
+Gli effetti dei farmaci $\beta$--bloccanti agiscono nell'apparato cardiocircolatorio sia inibendo il sistema renina---angiotensina con riduzione del tono arteriolare con conseguente diminuzione della pressione e del post--carico, sia come effetto diretto inotropo e cronotropo negativo sul muscolo cardiaco.
+
+Il \index{propanololo}propanololo agisce su tutti i recettori di questa famiglia ed è usato principalmente nell'angina, nell'infarto e nell'insufficienza cardiaca per ridurre le richieste metaboliche del miocardio, nelle aritmie, come farmaco di classe~II per ridurre il potenziale d'azione e aumentare il periodo refrattario~AV.
+
+Il \index{metoprololo}metoprololo viene usato nelle emicranie e nel tremore muscolare.
+
+Il \index{labetalolo}labetalolo (anche $\alpha$--bloccante) è usato per bloccare la cascata adrenergica introdotta dal feocromocitoma.
+
+Il \index{timololo} viene usato per la gestione del glaucoma.
+
+Quasi tutti i $\beta$--bloccanti sono lipofilici tipo il \index{propanololo}propanololo e sono assunti per os e ben assorbiti, con intenso metabolismo epatico.
+
+Alcuni $\beta$--bloccanti sono idrofilici tipo l'\index{atenololo}atenololo e non sono ben assorbiti per os. 
+
+Eventuali effetti collaterali sono il blocco della conduzione~AV soprattutto in unione con i~\ce{Ca^2+}--antagonisti, reazioni broncocostrittive e aumento della glicemia.
+
+Sono quasi tutti antagonisti reversibili. Alcuni sono agonisti parziali e altri agonisti inversi. 
+
+Hanno un notevole metabolismo di primo passaggio, volumi di distribuzione elevati e clereance epatica via P450.
 
 \begin{tikzpicture}
 	\tikzset{level 2/.style={level distance=120pt}}
@@ -1220,50 +1279,70 @@ Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
 				{allungamento PR}
 			]
 		]
+		[.vasi
+			{blocco vasodilatazione $\beta_2$ mediata}
+		]
 		[.polmone
-			[.{blocco $\beta_2$ nella\\ muscolatura liscia bronchiale}
-				{BPCO (soprattutto se associate\\ a cardiopatie ischemiche)}
+			[.{blocco $\beta_2$ nella\\ muscolatura liscia bronchiale\\ con broncospasmo}
+				{BPCO (soprattutto se associate\\ a cardiopatie ischemiche\\ evitare in asma e\\ preferire $\beta_1$ selettivi)}
 			]
 		]
 		[.occhio		
 			[.{riduzione della produzione\\ di umor acqueo} {glaucoma}
 			]
 		]
-		[.{blocco dei canali Na${}^+$} {azione anestetica locale}
+		[.{blocco dei canali Na${}^+$} 
+			[.{azione anestetica locale}
+				{non usato in clinica per\\ scarsa concentrazione plasmatica}
+			]
 		]
 	]	
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\tikzset{level 1/.style={level distance=120pt}}
-	\tikzset{level 2/.style={level distance=150pt}}
 	\Tree
 	[.{farmaci}
-		[.\node[farmaco]{\index{propanololo}propanololo\\ \index{atenololo}atenololo\\($\beta_1$ selettivi)};
-			{angina pectoris}
-			{infarto del miocardio}
-			{aritmie}
-			{insufficienza cardiaca}
-			{ipertiroidismo}
-			{tempesta tiroidea}
+		[.{non selettivi\\$\beta_1=\beta_2$\\ evitare negli asmatici}
+			\node[farmaco]{\index{propanololo}propanololo};
+			\node[farmaco]{\index{timolololo}timolololo};
 		]
-		[.\node[farmaco]{\index{metoprololo}metoprololo};
-			{emicrania}
-			{tremore muscolare}
-			{stati d'ansia}
+		[.{$\beta_1$ selettivi\\$\beta_1>\beta_2$\\ più sicuri negli asmatici}
+			\node[farmaco]{\index{metoprololo}metoprololo};
+			\node[farmaco]{\index{atenololo}atenololo};
 		]
-		[.\node[farmaco]{\index{labetalolo}labetalolo\\ \index{carvedilolo}carvedilolo\\(sono sia $\alpha$ che $\beta$};
-			{feocromocitoma}
-			{feoc. + scompenso + ipertensione}
-		]
-		[.\node[farmaco]{\index{timololo}timololo}; 
-			{glaucoma}
+		[.{sia $\alpha_1$ che $\beta_1$}
+			\node[farmaco]{\index{labetalolo}labetalolo};
+			\node[farmaco]{\index{carvediolo}carvediolo};
 		]
 	]
 \end{tikzpicture}
 
+\begin{tikzpicture}
+	\Tree
+	[.{usi}
+		[.{ipertensione,\\ angina,\\ aritmie}
+			\node[farmaco]{\index{propanololo}propanololo};
+			\node[farmaco]{\index{metoprololo}metoprololo};
+		]
+		[.ipertensione
+			\node[farmaco]{\index{labetalolo}labetalolo};			
+		]
+		[.feocromocitoma
+			\node[farmaco]{\index{labetalolo}labetalolo};
+		]
+		[.{insufficienza cardiaca}
+			\node[farmaco]{\index{carvediolo}carvediolo};
+		]
+		[.{ipertiroidismo,\\ tempesta tiroidea,\\ emicrania,\\ ansia,\\ tremore muscolare}
+			\node[farmaco]{\index{propanololo}propanololo};
+		]
+		[.{glaucoma cronico\\ (ad angolo aperto)}
+			\node[farmaco]{\index{timololo}timololo\\ può interagire con \index{verapamil}verapamil\\ per os con rischio di\\ arresto cardiaco };
+		]
+	]
+\end{tikzpicture}
 
-\subsection{Dopamina}
+\section{Dopamina}
 
 Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopaminergici sono recettori adrenergici
 
@@ -1297,13 +1376,13 @@ Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopamine
 	\tikzset{level distance=130pt}
 	\Tree
 	[.{Recettore dopaminergico}
-		[.{$\text D_1$, $\text D_5$, eccitatorio, $\uparrow$cAMP} {cervello (striato e ipotalamo),\\ muscolatura vasi rene} 
+		[.{$\text D_1$, $\text D_5$, eccitatorio, $\uparrow$cAMP} {cervello (striato e ipotalamo),\\  tessuti effettori della\\ muscolatura dei vasi del rene} 
 		]
-		[.{$\text D_2$, inibitorio,\\ apertura canali $\text K^+$\\ blocco dei canali \ce{Ca^2+}} { muscolatura liscia} 
+		[.{$\text D_2$, inibitorio, \dwa cAMP,\\ apertura canali $\text K^+$\\ blocco dei canali \ce{Ca^2+}} { cervello (tessuti effettori \\ della muscolatura dei vasi)} 
 		]
-		[.{$\text D_3$, inibitorio,\\ apertura canali $\text K^+$\\ blocco dei canali \ce{Ca^2+}} {cervello (sistema limbico)} 
+		[.{$\text D_3$, inibitorio, \dwa cAMP,\\\\ apertura canali $\text K^+$\\ blocco dei canali \ce{Ca^2+}} {cervello (sistema limbico)} 
 		]
-		[.{$\text D_4$, inibitorio,\\ apertura canali $\text K^+$\\ blocco dei canali \ce{Ca^2+}} {cervello, sistema cardio vascolare} 
+		[.{$\text D_4$, inibitorio, \dwa cAMP,\\\\ apertura canali $\text K^+$\\ blocco dei canali \ce{Ca^2+}} {cervello, sistema cardio vascolare} 
 		]
 	]
 \end{tikzpicture}
@@ -1318,7 +1397,7 @@ Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopamine
 	]
 \end{tikzpicture}
 
-\subsection{Serotonina (5-idrossitriptamina)}
+\section{Serotonina (5-idrossitriptamina)}
 
 \begin{tikzpicture}
 	\Tree
@@ -1328,6 +1407,8 @@ Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopamine
 		{nuclei del rafe}
 	]
 \end{tikzpicture}
+
+Tranne \ce{5-HT_3}, tutti i recettori sono metabotropi.
 
 \begin{tikzpicture}
 	\tikzset{level 3/.style={level distance=130pt}}
@@ -1383,7 +1464,7 @@ Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopamine
 	[.Effetti {piastrine: aggregazione} {terminazioni nervose: dolore} {SNC: eccitatorio 5-HT4,\\ inibitorio 5-HT1} {vasi: costrizione} {gastroenterico: attivazione secrezione\\ e peristalsi} ]
 \end{tikzpicture}
 
-\subsection{Neurotrasmettitori purinici}
+\section{Neurotrasmettitori purinici}
 
 \begin{tikzpicture}
 	\tikzset{level 2/.style={level distance=130pt}}
@@ -1395,12 +1476,15 @@ Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopamine
  	]
 \end{tikzpicture}
 
-\subsection{Monossido d'azoto (NO)}
+\section{Monossido d'azoto (NO)}
+
+Molecola altamente reattiva con un elettrone spaiato
 
 \begin{tikzpicture}
+	\tikzset{level distance=90pt}
 	\Tree
-	[.Tipi
-		[.iNOS {prodotto dai macrofagi tramite IF$\gamma$}
+	[.{Sintetizzato da}
+		[.iNOS {prodotto dai macrofagi\\ tramite IF$\gamma$}
 		]
 		[.eNOS {endotelio e piastrine}
 		]
@@ -1408,6 +1492,9 @@ Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopamine
 			[.neuroni
 				cervello
 				ippocampo
+				[.cervelletto
+					{Long Term Depression\\ della trasmissione sinaptica}
+				]
 			]	
 		]
 	]
@@ -1425,16 +1512,56 @@ Ricorda anche la dopamina \`e una catecolamina quindi anche i recettori dopamine
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\tikzset{level distance=160pt}
+	\tikzset{level distance=80pt}
 	\Tree
-	[.Causa {vasodilatazione} {inibizione dell'aggregazione piastrinica} {plasticit\`a sinaptica} {difesa da cellule neoplastiche, batteri, parassiti} ]
+	[.Causa 
+		[.{legame con\\ metalloproteine}
+			[.{guanidilciclasi\\ solubile\\ contiene\\ gruppo eme}
+				[.{\upa cGMP}
+					[.{\dwa \ce{Ca^{2+}}}
+						vasodilatazione
+					]
+				]
+			]
+			[.{inibizione\\ citocromo\\ ossidasi\\ ad alte\\ concentrazioni}
+				[.{inibizione\\ catena\\ trasporto \ce{e^-}}
+					{battericida\\(\index{isoniazide}isoniazide\\ antitubercolosi}
+				]
+			]	
+		]
+		{inibizione\\ dell'aggregazione\\ piastrinica} 
+		{plasticit\`a\\ sinaptica} 
+	]
 \end{tikzpicture}
+
+\begin{tikzpicture}
+	\Tree
+	[.{Donatori \ce{NO}}
+		[.{nitrati organici}
+			\node[farmaco]{\index{nitroglicerina}nitroglicerina};
+			\node[farmaco]{\index{isosorbide dinistrato}isosorbide dinistrato};
+		]
+		[.{nitriti organici}
+			[.\node[farmaco]{\index{nitritodiamile}nitritodiamile};
+				 {effetti euforizzanti\\ come sostanza d'abuso}
+				 {se usato con \index{sildenafil}sildenafil,\\ pericolo ipotensione grave}
+			]
+			\node[farmaco]{\index{nitroprussato}nitroprussato};
+			[.\node[farmaco]{\index{NO}NO per via\\ inalatoria};
+				ipertensione
+				{ipossiemia polmonare acuta}
+			]
+		]
+	]
+\end{tikzpicture}
+
+Nella sepsi, le endotossine batteriche inducono l'espressione di iNOS con \upa\ce{NO} e shock settico. Inibitori del NOS possono invertire questa ipotensione.
 
 Per via inalatoria $\downarrow$shunt, $\downarrow$broncocostrizione, $\downarrow$ipertensione polmonare e quindi utile anche nella cura dell'asma.
 
 Utile nel trattamento delle malattie neurovegetative e shock settico dove aumenta e nell'ateorscelosi e ipercolesterolemia dove diminuisce.
 
-\subsection{L-glutammato}
+\section{L-glutammato}
 
 Neurotrasmettitore ubiquitario eccitatorio del SNC
 
@@ -1446,14 +1573,16 @@ Neurotrasmettitore ubiquitario eccitatorio del SNC
 				{glutammato}
 			]
 		]
-		[.neurone \edge[<->] node {};
-			[.glutammato \edge[<->] node {};
-				[.{cellule della glia\\(astrocita)} \edge[<->] node {};
-					glutammina
+		[.\node(neurone){neurone}; \edge[<->] node[smallfont,above,xshift=+4em] {trasforma};
+			[.glutammato \edge[<->] node[smallfont,above,xshift=+4em] {esocitosi};
+				[.{cellule della glia\\(astrocita)} \edge[<->] node[smallfont,above,xshift=+4.4em] {glutammina} node[smallfont,below,xshift=+4.3em] {sintesasi};
+					\node(glutammina){glutammina};
 				]
 			]
 		]
 	]
+	\node[below=1em of glutammina](a){};
+	\draw[drawarrow] (glutammina) -- (a.north)  -| node[smallfont,below] {ricaptazione} (neurone);
 \end{tikzpicture}
 
 \begin{tikzpicture}
@@ -1567,7 +1696,9 @@ Neurotrasmettitore ubiquitario eccitatorio del SNC
 \end{tikzpicture}
 
 
-\subsection{GABA (Acido $\gamma$--amminobutirrico)}
+\section{GABA (Acido $\gamma$--amminobutirrico)}
+
+da studiare insieme ai sedativo--ipnotici e antiepilettici.
 
 \begin{tikzpicture}
 	\Tree
@@ -1622,13 +1753,24 @@ Enzima GABA--transaminasi (o GABA amminotransferasi). Utile informazione relativ
 \end{tikzpicture}
 
 \begin{tikzpicture}
+	\tikzset{level 1/.style={level distance=80pt}}
+	\tikzset{level 2/.style={level distance=90pt}}
+	\tikzset{level 3/.style={level distance=90pt}}
 	\Tree
 	[.farmaci
 		[.{\ce{GABA_a}}
 			[.agonisti
-				benzodiazepine
-				barbiturici
+				{benzodiazepine\\ su sito BZ}				
+				{barbiturici\\ su altro sito}
 				anestetici
+			]
+			[.antagonisti
+				[.\node[farmaco]{\index{flumazenil}flumazenil\\ (benzodiazepine)};
+					{blocca benzodiazepine ma non\\ barbiturici in quanto\\ si lega a BZ}
+				]
+			]
+			[.{agonisti inversi}
+				{modulatori\\ allosterici\\ negativi}
 			]
 		]
 		[.{\ce{GABA_b}}
@@ -1646,11 +1788,11 @@ Enzima GABA--transaminasi (o GABA amminotransferasi). Utile informazione relativ
 	]
 \end{tikzpicture}
 
-\subsection{GBH (Acido $\gamma$--idrossibutirrico)}
+\section{GBH (Acido $\gamma$--idrossibutirrico)}
 
 Proviene dalla sintesi del GABA. $\uparrow$rilascio GH, attiva le "vie della gratificazione", da euforia e disibinizione. Droga da strada.
 
-\subsection{Melatonina}
+\section{Melatonina}
 
 \begin{tikzpicture}
 	\Tree
@@ -1685,7 +1827,7 @@ Proviene dalla sintesi del GABA. $\uparrow$rilascio GH, attiva le "vie della gra
 	]
 \end{tikzpicture}
 
-\subsection{Glicina}
+\section{Glicina}
 
 \begin{tikzpicture}
 	\Tree
