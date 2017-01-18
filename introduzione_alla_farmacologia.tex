@@ -188,5 +188,76 @@ $$\log\frac{\ce{[HA]}}{\ce{[A^-]}} = \ce{pK_a} - \ce{pH}$$
 
 che si applica sia alle basi che agli acidi deboli. Per cui a $\ce{pH} > \ce{pK_a}$ si avrà che quella più rappresentata è la forma deprotonata ossia quella lipofilica per le basi deboli mentre a $\ce{pH} < \ce{pK_a}$ quella più rappresentata sarà quella protonata ossia la forma lipofilica per gli acidi deboli.
 
+L'uso dell'eq. di Hasselback può essere molto utile qualora si desideri causare intrappolamento o riassorbimeno di un farmaco nello stomaco, nell'intestino, latte materno, secrezioni prostatiche, vaginali e/o apparato urinario.
+
+Ad esempio se si vuole accellerare l'escrezione di una metanfetamina, base debole $\ce{pK_a} = 10$ per via urinaria bisogna impedirne il riassorbimento. Acidificando le urine con cloruro di ammonio si ottiene un equilibrio spostato verso la forma protonata che, nelle basi deboli, è la forma ionizzata e quindi lipofobica impedendone il riassorbimento dalle pareti dei tuboli renali.
+
+\section{Eq. legame agonista--recettore}
+
+Supponendo una interazione all'equilibro tra farmaco F e recettore R del tipo
+
+$$ \ce{R + F <->[K_1][K_{-1}] RF} $$
+
+si ha che $\Delta[RF] = K_1[R][F] - K_{-1}[RF]$ che, all'equilibrio è uguale a zero da cui
+
+$K_{-1}[RF] = K_1[R][F]$ e, d'altra parte, la concentrazione di farmaco totale è uguale a quello non legato sommato a quello legato quindi
+
+$F_{Tot} = [R] + [RF] \Rightarrow [R] = F_{Tot} - [RF]$ e sostituito
+
+$K_{-1}[RF] = K_1[F](F_{tot} - [RF]) = K_1[F]F_{Tot} - K_1[F][RF]$ e raccogliendo
+
+$[RF](K_{-1} + K_1[F]) = K_1F_T[F]$ da cui
+
+$$[RF] = \frac{K_1F_T[F]}{K_{-1}+K_1[F]}=\frac{F_T[F]}{\frac{K_1}{K_1} + [F]}$$
+
+e chiamando $K_d = \frac{K_1}{K_1}$ costante di dissociazione si ha che
+
+$$[RF]=\frac{F_T\cdot[F]}{K_d+[F]}$$
+
+Quindi la concentrazione del farmaco legato ai recettori dipende dalla concentrazione del farmaco libero $[F]$, da $F_T$ e da $K_d$.
+
+$K_d$ indica l'affinità inversa del farmaco al recettore e quindi più $K_d$ è bassa maggiore è l'affinità. $K_d$ indica la concentrazione del farmaco che da 1/2 del farma max legato infatti ponendo $K_d =[F]$
+
+$$ [RF] = \frac{F_T\cdot[F]}{2[F]}=\frac 12 F_T$$
+
+Quando $[F]\rightarrow\infty, [RF] \rightarrow F_T$ quindi $F_T$ è la concentrazione di farmaco legato per concentrazioni di farmaco libero infinitamente alte.
+
+Analoga relazione vi è tra l'effetto di un farmaco e la sua concentrazione
+
+$$E =\frac{E_{max}\cdot[F]}{EC_{50} + F}$$
+
+dove $E_{max}$ è l'effetto massimo ottenibile e $EC_{50}$ è la concentrazione del farmaco che da $\frac12 E_{max}$.
+
+Spesso $K_d\simeq EC_{50}$ a causa dei recettori di riserva ossia si ottiene un effetto max con concentrazioni di agosnista molto minori di quelle supposte. Il motivo è dovuto al fatto che un singolo recettore attiva più di una singola risposta e questo è dato dal fatto che se io aggiungo piccole quantità di antagonista la curva di effetto si sposta verso destra ma $E_{max}$ rimane invariata perchè vengono reclutati nuovi recettori tra quelli di riserva. 
+
+$EC_{50} \rightarrow K_d$ solo quando l'antagonista mi blocca quasi tutti i recettori di riserva e, da quel momento, anche $E_{max}$ inizia a diminuire.
+
+Un antagonista competitivo a fronte di una concentrazione fissa $[I]$ dell'agonista produce un effetto ridotto $C'$ tale che, a parità di effetto
+
+$$\frac{C'}{C} = 1+ \frac{[I]}{K'_D}$$
+
+dove $K'_D$ è la costante di dissociazione dell'antagonista. 
+
+Ma, come si nota, per $[I]\rightarrow\infty, \frac{C'}{C}\rightarrow 1$ infatti l'antagonista competitivo non alterà l'$E_{max}$ ma sposta solo la curva più a destra.
+
+Nel caso invece di antagonisti irreversibili la perdità irreversibile di recettori può dar luogo a una diminuzione di $E_{max}$.
+
+Altri due tipi di antagonismo sono:
+
+\begin{description}
+\item[Antagonismo chimico] un farmaco si lega ad un altro farmaco e lo neutralizza (antidoto). Ad esempio il \index{dimercaprolo}dimercaprolo, chelante del piombo.
+\item[Antagonismo fisiologico] Un farmaco che agisce su recettori differenti dal primo ma con effetti opposti. Ad esempio i glucocorticoidi \upa glicemia. Si da allora insulina che \dwa glicemia. Un altro antagonismo fisiologico è l'adrenalina che broncodilata e anatagonizza l'azione broncocostrittrice dell'istamina.
+\end{description}
+
+\begin{description}
+\item[Potenza farmacologica] relativa alla concentrazione $EC_{50}$ o alla dose $ED_{50}$ che causa il 50\% della risposta massima. Un farmaco è tanto più potente quanto più è bassa la $EC_{50}$, $ED_{50}$.
+
+\item[Efficacia massima] E' la $E_{max}$ ossia la risposta massima che posso produrre indipendentemente dalla dose.
+\end{description}
+
+
+
+
+
 
 
