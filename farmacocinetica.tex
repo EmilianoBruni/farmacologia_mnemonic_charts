@@ -1,5 +1,41 @@
 \chapter{Farmacocinetica}
 
+La curva dose/concentrazione di un farmaco si basa su una media del funzionamento del farmaco. Ma questa curva può variare di molto da individuo a individuo.
+
+I due parametri principali che influenzano questa variabilità sono il \textbf{volume di distribuzione} e la \textbf{cleareance}.
+
+\section{Volume di distribuzione}
+
+\`E quel volume teorico che contiene quella determinata concentrazione di farmaco nel comparto in oggetto, spesso il flusso sanguigno
+
+$$V =\frac{\text{quantità di farmaco nell'organismo}}{[F]}$$
+
+ove $[F]$ può essere riferito a sangue, plasma, farmaco libero.
+
+Come si vede dalla relazione $V$ è uno spazio virtuale in quanto si presuppone che la concentrazione misurata in $[F]$ sia omogenea su tutto il corpo.
+
+Quindi farmaci con distribuzione prettamente ematica danno delle $V$ piccole e confrontabili con il valore reale del compartimento che, per il sangue, è $\simeq 3\ce{L}/70\ce{Kg}$.
+
+Farmaci con distribuzione prettamente extravascolare avremo piccole concentrazioni nel sangue e quindi $V$ elevati. Ad esempio, per la digossina, $V \simeq 500\ce{L}/70\ce{Kg}$.
+
+La $V$ è utile, ad esempio, nel calcolo dell'emivita come vedremo a breve.
+
+\section{Clereance}
+
+\`E la quantità di farmaco eliminata nel tempo in rapporto alla sua concentrazione nel comparto in oggetto (sangue, plasma, farmaco libero)
+
+$$CL =\frac{\text{velocità di eliminazione}}{[F]}$$
+
+La clearenace è additiva per cui se un farmaco ha eliminazione renale, epatica e respiratoria
+
+$$ CL_{tot} = CL_{\text{rene}} + CL_{\text{epat.}} + CL_\text{resp.} = \frac{V_{\text{rene}}^{\text{elim}}}{[F]} + \frac{V_{\text{epat.}}^{\text{elim}}}{[F]} + \frac{V_{\text{resp}}^{\text{elim}}}{[F]}$$
+
+Per la maggior parte dei farmaci la clereance è costante all'interno del range di concentrazioni della pratica terapeutica per cui la velocità di eliminazione dipende solo dalla concentrazione del farmaco
+
+$$\ce{Vel.} = CL \cdot [F]$$
+
+Quando ciò accade si parla di cinematica di ordine 1. In questo caso la clereance può essere calcolata misuando l'area sotto la
+
 \section{Emivita}
 
 L'emivita di un farmaco è definita come il tempo necessario a ridurre

@@ -255,6 +255,80 @@ Altri due tipi di antagonismo sono:
 \item[Efficacia massima] E' la $E_{max}$ ossia la risposta massima che posso produrre indipendentemente dalla dose.
 \end{description}
 
+I concetti dose--risposta finora espressi sono basati su misure ex--vivo. Nell'essere umano le risposte invece dipendono da molteplici effetti.
+
+Nel vivente si parla quindi di \textbf{curve quantali} ossia curve dose--effetto basate sull'integrale della gaussiana delle percentuali di individui che, ad una certa dose, ottengono un determinato effetto.
+
+Queste percentuali si distribuiscono come una gaussiana attorno ad un valore medio che sarà detto $ED_{50}^m$ \textbf{dose efficace mediana} che causa l'effetto nel 50\% degli individui.
+
+Se l'effetto misurato è una tossicità allora si parla di $TD_{50}^m$ \textbf{dose tossica mediana}. Se l'effetto misurato è la morte si parla di $LD_{50}^m$ dose letale mediana
+
+{grafico}
+
+\section{Indice terapeoutico o finestra terapeutica}
+
+\`E una misura di quando "sicuro" sia un farmaco in quanto mette in relazione $TD_{50}^m$ con $ED_{50}^m$. Se questi valori sono simili, sono vicene le dosi efficaci con quelle tossiche e quindi il rischio tossicità è alto. Se lontane il farmaco è più sicuro
+
+$$I_T=\frac{TD_{50}}{ED_{50}}$$
+
+Ovviamente questo indice è dipendente dall'uso. Un farmaco per la cefalea deve avere un bassissimo rischio di tossicità mentre in uno per il linfoma di Hodking posso accettare anche un rischio di tossicità elevato in quanto il non trattamento porta alla morte.
+
+\begin{tikzpicture}
+	\Tree
+	[.{Risposta individuale\\ ad un famaco}
+		{nella norma}
+		[.{iporeattivo}
+			{effetto sotto $ED_{50}^m$}
+		]
+		[.{iperattivo}
+			{effetto sopra $ED_{50}^m$}
+		]
+		[.{tolleranza}
+			{risposta descresce dopo\\ somministrazioni ripetute}
+		]
+		[.{tachifilassi}
+			{risposta descresce molto\\ rapidamente}
+		]
+		[.{idiosincrasica}
+			{risposta insolita non\\ osservata nella maggior\\ parte dei pazienti}
+		]
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level distance=150pt}
+	\Tree
+	[.{cause di variabilità\\ nelle risposte}
+		{variazioni nella concentrazione}
+		{di farmaco che raggiunge il recettore}
+		[.{variazione nel numero di recettori}
+			{down--regolazione}
+			{desensibilizzazione}
+			{overshoot (rimbalzo\\ quando si interrompe\\ una cura}
+		]
+		{variazione nei componenti post--recettoriali}
+		{variazione nella concentrazione di un liqido endogeno}
+	]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tikzset{level 2/.style={level distance=150pt}}
+	\Tree
+	[.{Cause di tossicità}
+		[.{effetti terapeutici e tossici\\ mediati dallo stesso recettore}
+			{sanguinamento da terapia anticoagulante}
+			{ipoglicemia da insulina esogena}
+		]
+		[.{come sopra ma collegati\\ a effettori differenti}
+			{glicosidi digitalici}
+			{metrotrexato}
+		]
+		[.{mediato da recettori differenti}
+			{farmaci aspecifici si legano a\\ diversi recettori con effetti diversi}
+		]
+	]
+\end{tikzpicture}
+
 
 
 
