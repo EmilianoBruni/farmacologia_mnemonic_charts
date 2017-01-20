@@ -2,6 +2,8 @@
 
 \section{Farmaci sedativo/ansioliti e ipnotici}
 
+Classificazione sulla base dell'utilizzo clinico e non già sulle struttura chimica in quanto molto variabile
+
 \begin{tikzpicture}
 	\Tree
 	[.{scopo}
@@ -24,7 +26,7 @@
 
 \begin{tikzpicture}
 	\Tree
-	[.{relazione \\ dose/risposta}
+	[.{relazione \\ dose/risposta\\ lineare}
 		[.sedazione
 			[.ipnotico
 				[.anestesia
@@ -44,6 +46,10 @@
 	\end{scope}
 \end{tikzpicture}
 
+{grafico}
+
+Quelli più nuovi richiedono dosi non--lineari per le fasi post--ipnotich
+
 \begin{tikzpicture}
 	\tikzset{level 1/.style={level distance=130pt}}
 	\tikzset{frontier/.style={distance from root=250pt}}
@@ -56,8 +62,8 @@
 		]
 		[.barbiturici
 			\node[farmaco]{\index{pentobarbital}pentobarbital\\(ipnotico)};
-			\node[farmaco]{\index{fenobarbital}fenobarbital\\(più come antiepilettico)\\(ipnotico)};
-			\node[farmaco]{\index{tiopental}tiopental\\(più come anestetico generale\\ siero della verità)\\(ipnotico)};
+			\node[farmaco]{\index{fenobarbital}fenobarbital\\(ipnotico)\\(più come antiepilettico)};
+			\node[farmaco]{\index{tiopental}tiopental\\(ipnotico)\\(più come anestetico generale\\ siero della verità)};
 		]
 		\node[farmaco]{\index{buspirone}buspirone\\ (ansiol.)};
 		[.{ipnotici\\ non benzodiazepinici}
@@ -78,14 +84,28 @@
 
 \begin{tikzpicture}
 	\Tree
+	[.{Effetti BZD,\\ barbiturici e non}
+		sedazione
+		ipnosi
+		{anestesia\\ (vedi dopo)}
+		{anticonvulsivi\\ (vedi sezione)}
+		{miorilassanti\\ (non i più recenti)}
+		{depressione respiro\\ (soprattuto se già depresso\\ per altre patologie)}
+	]
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+	\Tree
 	[.{bezodiazepine}
 		[.meccanismo
 			[.{recettore \ce{GABA_a}\\ nel sito BZ}
 				[.{isoforma\\ con subunità $\alpha_1$}
-					{effetto sedazione}
+					{effetto sedativo/ipnotico}
 				]
 				[.{con subunità $\alpha_2$}
-					{isoforma\\ effetto ansiolitico}
+					{effetto solo sedativo}
 				]
 			]
 		]
@@ -95,13 +115,16 @@
 		[.metabolismo
 			[.epatico
 				[.{lunga emivita}
-					{desmetilazione con formazione\\ metabolita attivo\\ con emivita $>40$h}
+					{desmetilazione (desmetildiazepam)\\ con formazione\\ metabolita attivo\\ con emivita $>40$h}
 				]
 				[.{breve emivita}
-					[.{glucuronazione e\\ escrezione renale}
+					[.{glucuronazione e\\ escrezione renale\\ solo \index{diazepam}diazepam}
 					]
 				]
 			]
+		]
+		[.emivita
+			{$\sim$ 1h per \upa clearenace epatica}
 		]
 		[.{effetti terapeutici}
 			{$\downarrow$ansia\\ $\downarrow$aggressicità\\ induzione sonno}
@@ -115,6 +138,8 @@
 \footnotetext{Incapacità a ricordare azioni avvenute durante l'azione del farmaco. Roipnol, la droga dello stupro.}
 
 Per anatagonizzare i sovradosaggi delle benzodiazepine si usa il flumazenil, anche lui una benzodiazepina ma con azione antagonista su BZ.
+
+Alcune BZD come diazepam, lorazepam sono usati IV nell'induzione dell'anestesia con probabile contributo della depressione respiratoria post--anestesia.
 
 \begin{tikzpicture}
 	\Tree
@@ -232,13 +257,34 @@ Tutti questi farmaci si legano al \ce{GABA_A} tranne il buspirone che agisce com
 
 Tutti \upa inibizione GABAergica \upa permeabilità al \ce{Cl-} del canale \ce{GABA_A} tramie interazione allosterica con GABA.
 
-Le benzodiazepine \upa frequenza apertura del canale.
-I barbiturici \upa durata apertura del canale.
+\begin{tikzpicture}
+	\Tree
+	[.{apertura canale}
+		[.benzodiazepine
+			{\upa frequenza apertura}
+		]
+		[.barbiturici
+			{\upa durata apertura}
+		]
+	]
+\end{tikzpicture}
+
 I barbiturici sono anche GABA--mimetici quindi funzionano teoricamente anche senza GABA.
 
 \section{Farmaci anti--psicotici}
 
+La schizzofrenia è una persistente alienazione del pensiero che da sia disturbi positivi, con caratteristiche psicologiche aggiunte quali delirio, allucinazioni e aggressività, sia sintomi negativi, con caratteristiche psicologiche perse quali isolamento sociale, apatia e mancanza di iniziativa.
+
+Le teorie fisiopatologiche di questo disturbo sono tre. Una teoria dopaminergica che spiega i sintomi positivi che deriva la patologia da una iperstimolazione dei recettori~\ce{D_2}/\ce{D_4}; una teoria glutammatergica che deriva la patologi da bassi livelli di glutammato e da una conseguente iperstimolazione del recettore~NMDAM; una teoria serotoninergica derivata dall'osservazione che gli antagonisti serotoninergici sono antipsicotici e che l'LSD, un agonista~5-HT, fa venire i sintomi positivi.
+
+I farmaci usati si dividono in tipici a atipici. I tipici quali i fenotiazidici come la \index{clorpromazina}clorpromazina e i butirrofenonici come l'\index{aloperidolo}aloperidolo (Serenase), agiscono bloccando i recettori dopaminergici diminuendo i sintomi positivi e, i più recenti, anche quelli negativi ma hanno effetti collaterali sul sistema extrapiramidale come distonie acute e tardive. 
+
+Gli atipici non hanno effetti sulla via extrapiramidale in quando bloccano selettivamente la via mesolimbica (della gratificazione) ignorando la via nigrostriata e sono quindi usati principalmente se gli effetti collaterali dei tipici sono eccessivi. Tali farmaci bloccano anche i recettori $\alpha$--adrenergici e i~5-HT e sono la \index{clorapina}clorapina (una dibenzodiazepina) e l'\index{olanzapina}olanzapina.
+
+Il difetto di tutti i farmaci anti--psicotici descritti è che impiegano settimane prima del loro effetto terapeutico e questo è un segno che vi deve essere un qualche altro effetto secondario ad agire come, ad esempio, l'aumento dei~\ce{D_2} a livello limbico.
+
 \begin{tikzpicture}
+	\tikzset{level distance=150pt}
 	\Tree
 	[.{schizzofrenia}
 		{persistenza di alterazioni del pensiero,\\ del comportamente e delle affettività}
@@ -253,6 +299,7 @@ I barbiturici sono anche GABA--mimetici quindi funzionano teoricamente anche sen
 			allucinazioni
 			{pensieri disorganizzati}
 			aggressività
+			{convinzioni errate}
 		]
 		[.{negativi\\(caratt. psicol. perse)}
 			{isolamento sociale}
@@ -287,15 +334,15 @@ I barbiturici sono anche GABA--mimetici quindi funzionano teoricamente anche sen
 \begin{tikzpicture}
 	\Tree
 	[.{teorie fisiopatologiche}
-		[.{teoria dopaminergica}
-			[.{spiega sintomi positivi}
+		[.{teoria dopaminergica\\ (in disuso)}
+			[.{spiega sintomi positivi\\ perchè i farmaci dopaminergici\\ causano psicosi}
 				{\upa stimolazione \ce{D_2}/\ce{D_4}\\ oppure \upa stim. \ce{D_2}, \dwa stim. \ce{D_4}\\ pazienti schizzofrenici hanno \\\upa densità \ce{D_2} e \upa dopamina}
 			]
 		]
 		[.{teoria glutammatergica}
 			[.{bassi livelli\\ di glutammato}
 				[.{spiega sintomi negativi}
-					{\dwa stimolazione NMDA}
+					{\dwa stimolazione NMDA\\ perchè farmaci di questo tipi\\ causano carenze psichice}
 				]
 			]
 		]
@@ -311,7 +358,7 @@ I barbiturici sono anche GABA--mimetici quindi funzionano teoricamente anche sen
 \end{tikzpicture}
 
 \begin{definizione}{EPS} 
-Effetti collaterali extrapiramidali
+Effetti collaterali extrapiramidali, catalessi nelle cavie
 \end{definizione}
  
 
@@ -323,7 +370,7 @@ alta incidenza di EPS a dosi efficaci
 	\tikzset{frontier/.style={distance from root=300pt}}
 	\Tree
 	[.{farmaci}
-		[.tipici
+		[.{tipici\\ (hanno effetti neurolettici)}
 			[.fenotiazidici
 				\node[farmaco]{\index{clorpromazina}clorpromazina\\ agente neurolettico};
 			]
@@ -331,12 +378,14 @@ alta incidenza di EPS a dosi efficaci
 				\node[farmaco]{\index{aloperidolo}aloperidolo\\ (serenase)};
 			]
 		]
-		[.atipici
+		[.{atipici\\ (non hanno effetti neurolettici)}
 			\node[farmaco]{\index{clozapina}clozapina\\(dibenzodiazepina)};
 			\node[farmaco]{\index{olanzapina}olanzapina};
 		]
 	]
 \end{tikzpicture}
+
+La \index{reserpina}reserpina, ora in disuso, ha effetti collaterali di tipo parkinsoniano con blocco sistema dopaminergico
 
 I farmaci anti--psicotici impiegano settimane per l'effetto, segno che vi sia un effetto secondario tipo incremento dei recettori \ce{D_2} a livello limbico.
 

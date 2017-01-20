@@ -413,24 +413,24 @@ Gli \amminaq hanno scarso assorbimento
 (b) Se l'endotelio vasale è intatto, l'Ach stimola la produzione di \ce{NO} che attiva la guanidilciclasi con \upa \ce{cGMP} e conseguente vasodilatazione. Se l'endotelio non è intatto o dose dipendente, prevale l'effetto sui recettori \ce{M_3} della muscolatura vasale con \upa\ce{IP_3} e rilascio di \ce{Ca^{2+}} con conseguente vasocostrizione. La \index{pilocarpina}pilocarpina fa eccezione perchè se somministrata IV causa ipertensione (dopo breve ipotensione) per eccitazione degli \ce{M_1} presenti sulle fibre postgangliari muscolari.
 
 \begin{tikzpicture}
-	\tikzset{frontier/.style={distance from root=320pt}, level 2/.style={level distance=100pt}}
+	\tikzset{frontier/.style={distance from root=360pt}, level 2/.style={level distance=140pt}}
 	\Tree
 	[.{usi clinici}
 		[.\node[farmaco](pilocarpina){\index{pilocarpina}pilocarpina};
-			[.{xerostomia da\\ sindrome di Sjogren} {$\uparrow$secrezioni salivali}
+			[. {$\uparrow$secrezioni salivali} {xerostomia da\\ sindrome di Sjogren}
 			]
 		]
 		[.\node[farmaco](ecotiopato){\index{ecotiopato}ecotiopato};
-			[.\node(glaucoma){glaucoma};
-				{nelle emergenze ad angolo chiuso,\\ agonista muscarinico + inibitore colinesterasi. \\	nel glaucoma cronico ora si usano i $\beta$-bloccanti}
+			[.\node(glaucoma){nelle emergenze ad angolo chiuso,\\ agonista muscarinico + inibitore colinesterasi. \\	nel glaucoma cronico ora si usano i $\beta$-bloccanti};
+				{glaucoma}
 			]
 		]
 		[.\node[farmaco](betanecolo){\index{betanecolo}betanecolo};
 				\node(ritenzione){ritenzioni urinarie e ileo\\ depressione dell'attivit\`a senza ostruzione};
 		]
 		[.\node[farmaco](neostigmina){\index{neostigmina}neostigmina};
-			[.\node(miastenia){miastenia grave (a)};
-				{cura e mezzo diagnostico}
+			[.\node(miastenia){cura e mezzo diagnostico};
+				{miastenia grave (a)}
 			]
 		]
 		[.\node[farmaco](edrofonio){\index{edrofonio}edrofonio};
@@ -541,7 +541,7 @@ Sono principalmente antagonisti reversibili. Solo atropina e pochi altri sono ag
 		[.\node[farmaco]{\index{scopolamina}scopolamina};
 			{chinetosi\\ mal di mare\\ effetti sfarolevoli\\ sedazione e \\ secchezza fauci}
 		]
-		[.\node[farmaco]{\index{tiotropio}tiotropio};
+		[.\node[farmaco]{\index{tiotropio}tiotropio\\ il puff};
 			\node(bpco){BPCO\\ via aerosol};
 		]
 		[.\node[farmaco]{\index{oxibutina}oxibutina};
@@ -880,7 +880,8 @@ Il NET ricapta avidamente efedrina e anfetamina che trasportati avidamente da VM
 		\node [style=none] (5) at (-12, 1) {};
 		\node [style=none] (6) at (-14, -1) {};
 		\node [style=none] (7) at (4, -3.5) {};
-		\node [style=none] (8) at (-10.75, -2.5) {\tiny VMAT: trasportatore vescicolare delle monoammine};
+		\node [style=none] (8) at (-9.75, -3.5) {\tiny VMAT: trasportatore vescicolare delle monoammine};
+		\node [style=none] (8) at (-11.75, -4.2) {\tiny bloccato da reserpina};
 		\node [style=none] (9) at (-5, 0.25) {};
 		\node [style=none] (10) at (-5, -1.5) {};
 		\node [style=none] (11) at (-5, 0.25) {};
@@ -888,7 +889,7 @@ Il NET ricapta avidamente efedrina e anfetamina che trasportati avidamente da VM
 		\node [style=none] (13) at (-3.250001, -6.75) {};
 		\node [style=none] (14) at (-1, 3.25) {\tiny \bf Vescicola};
 		\node [style=none] (15) at (-10.5, 1.75) {\tiny $H^+$};
-		\node [style=none] (16) at (-12, -1.5) {\tiny Noradrenalina};
+		\node [style=none] (16) at (-12, -1.7) {\tiny Noradrenalina};
 		\draw [bend left, looseness=1.00] (0.center) to (2.center);
 		\draw [bend right, looseness=1.25] (1.center) to (3.center);
 		\draw [style=arrow, bend right=15, looseness=1.00] (5.center) to (4.center);
@@ -1068,17 +1069,9 @@ L'idrolisi del GTP causa la riassociazione di $\alpha$ a $\beta\gamma$.
 
 Nell'ipotensione acuta con pericolo di perfusione a cervello e coronarie si possono usare gli $\alpha$--agonisti che causano vasocostrizione (\index{fenilefedrina}fenilefedrina $\alpha_1$--agonista).
 
-Idem nel caso di shock soprattutto cardiogeno dove agenti inotropi come la \index{dobutamina}dobutamina possono aumentare la gittata con vasocostrizione periferica ridotta di modo da ottimizzare la perfusione.
-
-La \index{dobutamina}dobutamina viene anche usata nei test cardiologici da stress farmacologico.
-
-Nel caso di ipotensione ortostatica cronica si possono usare un $\alpha$--agonista (\index{midodrina}midodrina $\alpha_1$) per migliorare il riflesso di vaosocostrizione periferico.
-
-Cocaina, adrenalina e altri $\alpha$--agonisti possono essere usati localmente con anestetici locali per ridurre l'area di anestesia grazie ai loro effetti vasocostrittori. Occhio al rischio necrosi in alcuni distretti capillari (cocaina---naso).
-
 I decongestionanti nasali solo $\alpha$--agonisti
 
-Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
+Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma (perchè $\alpha_2$??).
 
 
 \begin{tikzpicture}
@@ -1098,22 +1091,25 @@ Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
 			{$\downarrow$prurito}
 			{esame retina (midriasi)}
 			\node(congestione){$\downarrow$congestione mucose};
-			{ipotensione con\\ ipoperfusione cerebrale\\ e/o coronarica}
+			{ipotensione con pericolo di\\ ipoperfusione cerebrale\\ e/o coronarica}
 			shock
 		]
 		[.\node[farmaco](oxi){\index{oximetazolina}oximetazolina\\($\alpha_2$)};
+		[.\node[farmaco]{\index{midodina}midodina\\($\alpha_1$)};
+			{nell'ipotensione ortostatica per\\ migliorare il riflesso di \upa RVP}
+		]
 		]
 		[.\node[farmaco]{\index{clonidina}clonidina\\($\alpha_2$)};
 			{ipertensione nelle gestanti}
 			{$\downarrow$vampate calore in menopausa}
 			{disintossicazione da droghe}
-			{stimolazione $\alpha_2$ vagale con vasocostrizione\footnotemark}
+			{stimolazione $\alpha_2$ vagale con vasocostrizione (a)}
 		]
 		[.\node[farmaco]{\index{metildopa}metildopa\\($\alpha_2$)};
-			{emergenze ipertensive\footnotemark}
+			{emergenze ipertensive (b)}
 		]
 		[.\node[farmaco]{\index{dobutamina}dobutamina\\($\beta_1$)};
-			[.{$\uparrow$gittata cardiaca ma non tachicardia}
+			[.{$\uparrow$gittata cardiaca ma non tachicardia\\ e non vasocostrizione periferica}
 				{insufficienza cardiaca}
 				{shock cardiogeno}
 				{test farmacologico da sforzo\\ quando non si pu\`o usare\\ la cyclette}
@@ -1127,8 +1123,9 @@ Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
 	\draw[drawarrow](oxi) to[out=0,in=180] (congestione);
 \end{tikzpicture}
 
-\footnotetext{Per cui pu\`o dare anche un aumento della pressione e per questo non si usa nelle emergenge da ipertensione}
-\footnotetext{\`E anche un inibitore della DOPA decarbossilasi per cui $\downarrow$dopamina.}
+(a) Per cui pu\`o dare anche un aumento della pressione e per questo non si usa nelle emergenge da ipertensione
+
+(b)\`E anche un inibitore della DOPA decarbossilasi per cui $\downarrow$dopamina.
 
 \begin{tikzpicture}
 	\tikzset{level 3/.style={level distance=150pt}}
@@ -1144,12 +1141,15 @@ Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
 		]
 		[.\node[farmaco]{\index{cocaina}cocaina};
 			[.{blocco ricaptazione noradrenalina\\ e dopamina}
-				{anestetico locale}
+				{anestetico locale (a)}
 				{nel SNC il blocco della ricaptazione\\ della dopamina provoca piacere}
 			]
 		]
 	]
 \end{tikzpicture}
+
+(a) Effetto simile ad adrenalina con riduzione dell'area anestetizzata per vasocostrizione. Occhia al rischio necrosi in alcuni distretti (cocaina/naso).
+
 
 \begin{tikzpicture}
 	\Tree
@@ -1165,6 +1165,8 @@ Farmaci $\alpha_2$--agonisti selettivi sono usati nel trattamento del glaucoma.
 \end{tikzpicture}
 
 \subsection{Antagonisti adrenergici}
+
+La \index{reserpina}reserpina, antiipertensivo e antipsicotico ma in disuso perchè causa effetti parkinsoniani. Non agisce sui recettori ma depauperando le riserve catecolaminiche nelle terminazioni nervose per interazione con il recettore VMAT delle catecolamine associato alle vescicole.
 
 \begin{tikzpicture}
 	\Tree
@@ -1270,10 +1272,12 @@ Hanno un notevole metabolismo di primo passaggio, volumi di distribuzione elevat
 	\tikzset{level 3/.style={level distance=140pt}}
 	\Tree
 	[.effetti
-		[.cuore
+		[.rene
 			[.{inibizione sistema renina-angiotensina} 
 				{$\downarrow$pressione arteriosa} 
 			]
+		]
+		[.cuore
 			[.{inibizione recettori adrenergici cardiaci}
 				{effetto inotropo-, cronotopo-}
 				{allungamento PR}
