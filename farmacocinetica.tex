@@ -34,7 +34,23 @@ Per la maggior parte dei farmaci la clereance è costante all'interno del range 
 
 $$\ce{Vel.} = CL \cdot [F]$$
 
-Quando ciò accade si parla di cinematica di ordine 1. In questo caso la clereance può essere calcolata misuando l'area sotto la
+Quando ciò accade si parla di cinematica di ordine 1. In questo caso la clereance può essere calcolata misurando l'area sotto la curva (AUC) delle concentrazioni ematiche nel tempo dopo somministrazione di una singola dose di farmaco come
+
+$$\text{CL} = \frac{\text{dose}}{\text{AUC}}$$
+
+\section{Eq. di Michaelis--Menten}
+
+Ma non tutti i farmaci seguono un andamento lineare. Alcuni farmaci (\index{fenitoina}fenitoina, \index{etanolo}etanolo, \index{acido acetilsalicilico}acido acetilsalicilico) hanno un'eliminazione saturabile a cinematica non lineare.
+
+Questi seguono l'equazione di Michaelis--Menten
+
+$$v_{\text{elim}} = \frac{v_{\text{max}}\cdot [F]}{K_m + [F]}$$
+
+dove $K_m$ è chiamata costante di Michaelis--Menten e rappresenta la concentrazione del farmaco che produce una velocità di eliminazione del 50\% della massima.
+
+A concentrazioni levate la $v_{\text{elim}}$ non dipende più dalla concentrazione e diventa costante con una cinetica di ordine 0. 
+
+Per questi farmaci non si può parlare di clereance ne usare l'AUC per descrivere la loro eliminazion.
 
 \section{Emivita}
 
@@ -42,49 +58,97 @@ L'emivita di un farmaco è definita come il tempo necessario a ridurre
 il farmaco a \unitfrac{1}{2} della quantità di farmaco presente nell'organismo
 allo steady-state.
 
-Presupponendo che la quantità di farmaco nell'organismo abbia un andamento esponenziale decrescente con il tempo, si pu definire questo matematicamente come:
+Supponendo un modello monocorpartimentale, la variazione della concentrazione nel tempo è una funzione lineare della concentrazione stessa
+
+$$\frac{d\,q}{d\,t} = -kq$$
+
+che ha come soluzione una esponenziale decrescente con il tempo:
 
 $$
-Q(t)=\alpha e^{-\beta t}
+q(t)=q_0 e^{-kt}
 $$
 
-Per trovare i due parametri $\alpha$ e $\beta$ consideriamo che a $t=0$
-$Q(0)=Q_{\text{TOT}}=\alpha$ e quindi l'equazione sopra si pro scrivere come
-$$
-Q(t)=Q_{\text{TOT}}e^{-\beta t}
-$$
-e d'altra parte se consideriamo la velocità di eliminazione del farmaco
-al tempo $t$ si ha che\vspace{.5em}
+con $q_0$ concentrazione iniziale. Per calcolare il parametro $k$ valutiamo la AUC di questo andamento
 
-$-\dfrac{\text{d}\,Q(t)}{\text{d}\,t}=v_{\text{elim}}(t)=-Q_{\text{TOT}}(-\beta)e^{-\beta t}$ \vspace{.5em}
+$\text{AUC} =\displaystyle\int_0^\infty q_0e^{-kt}\,dt = \frac{q_0}{k}$ ma d'altra parte $\text{AUC} = \displaystyle\frac{\text{dose}}{\text{CL}}$ ed essendo 
 
-Ma d'altra parte, per definizione
-$$
-\text{CL} = \dfrac{v_\text{ELIM}^\text{STEADY STATE}}{c^\text{STEADY STATE}} =\dfrac{v_\text{ELIM}(0)}{c(0)}
-$$
-e, a $t=0\Rightarrow v_{\text{elim}}(0)=\text{CL}\cdot c(0)=-Q_{\text{TOT}}(-\beta)$ da cui
-$\beta=\dfrac{\text{CL\ensuremath{\cdot}}c(0)}{Q_{\text{TOT}}}$ ma
+$\text{dose} = Vq_0$ si ha che $\displaystyle\frac{Vq_0}{\text{CL}} = \frac{q_0}{k} \Rightarrow k = \frac{\text{CL}}{V}$ e quindi
 
-$$V_\text{DIST} = \dfrac{Q_{\text{TOT}}}{c(0)}$$ 
+$$q(t) = q_0\,e^{-\frac{\text{CL}}{V}t}$$
 
-e quindi \vspace{.5em}
+e ponendo $q(t_{\unitfrac{1}{2}}) = \displaystyle\frac{q_0}{2}$ si ha che
 
-$\beta=\dfrac{\text{CL\ensuremath{\cdot}}\cancel{c(0)}}{V_{\text{DIST}}\cdot\cancel{c(0)}}\Rightarrow\beta=\dfrac{\text{CL}}{V_{\text{DIST}}}$ e quindi
+$$t_{\unitfrac{1}{2}}=\ln\,2\cdot\dfrac{V}{\text{CL}}\simeq0.7\cdot\dfrac{V}{\text{CL}}$$
 
-$$
-Q(t)=Q_{\text{TOT}}e^{-\frac{\text{CL}}{V_{\text{DIST}}}t}
-$$
+Identica curva, ma al contrario, per l'accumulo durante una somministrazione continua a velocità costante.
+
+Così, dopo $t_{\unitfrac 12}$ avrò il 5\% di $q_0$ e dopo circa 4 emivite avrò più del 90\% del $q_0$.
+
+Analogamente nell'eliminazione, dopo 4 emivite, avrò meno del 10\% del farmaco iniziale nel corpo.
+
+Nel caso di somministrazioni multiple, se l'intervallo tra le dosi è minore di 4 emivite avrò un accumulo di farmaco e questo accumulo è inveramente proporzionale alla frazione di farmaco eliminata
+
+$$\text{frazione di accumulo} = \frac{1}{\text{frazione di farmaco eliminato}} = \frac{1}{1-\text{frazione residua}}$$
+
+cosi, ad esempio, un farmaco somministrato ogni emivita ha una frazione di accumulo pari a $\frac{1}{0.5} = 2$.
+
+\section{Biodisponibilità}
+
+\`E la frazione di farmaco non modificato che raggiunge la circolazione sistemica
+
+\begin{tikzpicture}
+	\Tree
+	[.{vie di somministrazione}
+		[.{endovenosa (IV)}
+			{bio: 100\%}
+		]
+		[.{intramuscolare (IM)}
+			{bio: $75\sim \leq 100$}
+		]
+		[.{sottocutanea (SC)}
+			{bio: $75\sim \leq 100$}
+		]
+		[.{orale (PO)}
+			{bio: $5\sim < 100$}
+		]
+		[.{rettale (PR)}
+			{bio: $30\sim < 100$}
+		]
+		[.{inalatoria}
+			{bio: $5\sim < 100$}
+		]
+		[.{transdermica}
+			{bio: $80\sim \leq 100$}
+		]															
+	]
+\end{tikzpicture}
+
+\section{Effetto di primo passaggio}
+
+A seguito dell'assorbimento per os il farmaco attraversa il fegato prima di andare nella circolazione sistemica e qui può perdere una frazione $\text{ER}$ di quanto assorbito $f$ con un valore di biodisponibilità $F$ pari a 
+
+$$F=f(1-\text{ER})$$
+dove $\text{ER} = \displaystyle\frac{\text{CL}_{\text{fegato}}}{\Phi^{\text{fegato}}_{\text{ematico}}}$ con $\Phi\simeq 90$L/h/70Kg.
+
+Ad esempio, la morfina è quasi tutta assorbita nell'intestino per cui $f=1$. Tuttavia la $\text{CL}_{\text{fegato}}^{\text{morfina}} = 60$L/h/70Kg cosi che $\text{ER}=0.67$ da cui la biodisponibilità orale della morfina è $\simeq 0.33$.
+
+\section{Dose di mantenimento}
+
+I farmaci vengono somministrati per mantenere quanto più possibile uno stato stazionario ad un livello di concentrazione target $[F]_\text{target}$ andando a compensare l'eliminazione del farmaco. A regime quindi
+
+$$v_\text{somm} = v_\text{elim} = \text{CL}\cdot[F]_\text{target}$$
+
+e, se la via di somministrazione non è quella ideale ma, ad esempio, quella orale
+
+$$v_\text{somm}^\text{orale} = \frac{v_\text{somm}}{[F]_\text{orale}}$$
+
+Se invece di una somministrazione continua ho dosi ripetute, la dose di mantenimento è tale che 
+
+$$\text{dose}_\text{mant} = v_\text{somm} \cdot \text{intervallo tra le dosi}$$
+
+Se l'emivita del farmaco è lunga e quindi lo stato stazionario lo raggiungerei dopo molto tempo si può somministrare una dose di carico per raggiungere brevemente la concentrazione target come
+
+$$\text{dose}_\text{carico} = V_\text{DIST} \cdot [F]_\text{target}$$
 
 
-a $t=t_{\unitfrac{1}{2}}\Rightarrow Q(t_{\unitfrac{1}{2}})=\dfrac{1}{2}\cancel{Q_{\text{TOT}}}=\cancel{Q_{\text{TOT}}}e^{-\frac{\text{CL}}{V_{\text{DIST}}}t_{\unitfrac{1}{2}}}$ 
-
-e passando ai logaritmi naturali
-
-$\ln\dfrac{1}{2}=-\dfrac{\text{CL}}{V_{\text{DIST}}}t_{\unitfrac{1}{2}}\Rightarrow t_{\unitfrac{1}{2}}=\ln\dfrac{1}{2}\cdot\left(-\dfrac{V_{\text{DIST}}}{\text{CL}}\right)=\dfrac{\ln2\cdot V_{\text{DIST}}}{\text{CL}}$
-
-e quindi
-
-\[
-t_{\unitfrac{1}{2}}\simeq0.7\cdot\dfrac{V_{\text{DIST}}}{\text{CL}}
-\]
 
